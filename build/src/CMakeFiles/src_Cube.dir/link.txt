@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/src_Cube.dir/Cube.cpp.o  -o src_Cube ../glimac/libglimac.a -lSDL2 -lGL -lGLU -lGLEW 
