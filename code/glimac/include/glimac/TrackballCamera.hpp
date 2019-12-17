@@ -23,8 +23,8 @@ public:
 
     glm::mat4 getViewMatrix()const{
         glm::mat4 matrix = glm::translate(glm::mat4(1.f), glm::vec3(0,0,-m_fDistance));
-        matrix = glm::rotate(matrix, -m_fAngleX, glm::vec3(1.f, 0, 0));
-        matrix = glm::rotate(matrix, -m_fAngleY, glm::vec3(0, 1.f, 0));
+        matrix = glm::rotate(matrix, glm::radians(-m_fAngleX), glm::vec3(1.f, 0, 0));
+        matrix = glm::rotate(matrix, glm::radians(-m_fAngleY), glm::vec3(0, 1.f, 0));
 
         return matrix;
     }

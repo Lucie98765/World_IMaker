@@ -36,8 +36,8 @@
             }
 
             if(e.type ==SDL_MOUSEMOTION && (e.motion.state & SDL_BUTTON_LEFT)){
-                camera.rotateLeft(e.motion.yrel);
-                camera.rotateUp(e.motion.xrel); //A voir si on met -xrel et -yrel, voir si c'est plus intuitif
+                camera.rotateLeft(e.motion.xrel);
+                camera.rotateUp(e.motion.yrel); //A voir si on met -xrel et -yrel, voir si c'est plus intuitif
                 //std::cout<< e.motion.yrel <<std::endl;
             }
 
