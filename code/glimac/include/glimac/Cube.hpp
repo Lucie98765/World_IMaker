@@ -3,7 +3,7 @@
 #include <glm/glm.hpp>
 #include "common.hpp"
 
-#define INVISBILE 0
+#define INVISIBLE 0
 #define VISIBLE 1
 #define SELECTED 2
 
@@ -25,9 +25,15 @@ class Cube
 		Cube(glm::vec3 position);
 
 		//Methods
-		void set_face_color(int r, int g, int b);
-		void set_edge_color(int r, int g, int b);
-		void set_state(int state);
+		void position(glm::vec3 const position);
+		void face_color(glm::vec4 const color);
+		void edge_color(glm::vec4 const color);
+		void state(int state);
+
+		glm::vec3 position() const;
+		glm::vec4 face_color() const;
+		glm::vec4 edge_color() const;
+		int state() const;
 
 };
 

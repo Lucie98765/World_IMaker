@@ -123,19 +123,6 @@ glimac/fast:
 	$(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/build
 .PHONY : glimac/fast
 
-#=============================================================================
-# Target rules for targets named src_code_utilisation_camera
-
-# Build rule for target.
-src_code_utilisation_camera: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 src_code_utilisation_camera
-.PHONY : src_code_utilisation_camera
-
-# fast build rule for target.
-src_code_utilisation_camera/fast:
-	$(MAKE) -f src/CMakeFiles/src_code_utilisation_camera.dir/build.make src/CMakeFiles/src_code_utilisation_camera.dir/build
-.PHONY : src_code_utilisation_camera/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -145,7 +132,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... glimac"
-	@echo "... src_code_utilisation_camera"
 .PHONY : help
 
 

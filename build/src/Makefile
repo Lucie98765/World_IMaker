@@ -110,48 +110,6 @@ depend:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-src/CMakeFiles/src_code_utilisation_camera.dir/rule:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/src_code_utilisation_camera.dir/rule
-.PHONY : src/CMakeFiles/src_code_utilisation_camera.dir/rule
-
-# Convenience name for target.
-src_code_utilisation_camera: src/CMakeFiles/src_code_utilisation_camera.dir/rule
-
-.PHONY : src_code_utilisation_camera
-
-# fast build rule for target.
-src_code_utilisation_camera/fast:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f src/CMakeFiles/src_code_utilisation_camera.dir/build.make src/CMakeFiles/src_code_utilisation_camera.dir/build
-.PHONY : src_code_utilisation_camera/fast
-
-code_utilisation_camera.o: code_utilisation_camera.cpp.o
-
-.PHONY : code_utilisation_camera.o
-
-# target to build an object file
-code_utilisation_camera.cpp.o:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f src/CMakeFiles/src_code_utilisation_camera.dir/build.make src/CMakeFiles/src_code_utilisation_camera.dir/code_utilisation_camera.cpp.o
-.PHONY : code_utilisation_camera.cpp.o
-
-code_utilisation_camera.i: code_utilisation_camera.cpp.i
-
-.PHONY : code_utilisation_camera.i
-
-# target to preprocess a source file
-code_utilisation_camera.cpp.i:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f src/CMakeFiles/src_code_utilisation_camera.dir/build.make src/CMakeFiles/src_code_utilisation_camera.dir/code_utilisation_camera.cpp.i
-.PHONY : code_utilisation_camera.cpp.i
-
-code_utilisation_camera.s: code_utilisation_camera.cpp.s
-
-.PHONY : code_utilisation_camera.s
-
-# target to generate assembly for a file
-code_utilisation_camera.cpp.s:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f src/CMakeFiles/src_code_utilisation_camera.dir/build.make src/CMakeFiles/src_code_utilisation_camera.dir/code_utilisation_camera.cpp.s
-.PHONY : code_utilisation_camera.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,11 +117,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... src_code_utilisation_camera"
 	@echo "... edit_cache"
-	@echo "... code_utilisation_camera.o"
-	@echo "... code_utilisation_camera.i"
-	@echo "... code_utilisation_camera.s"
 .PHONY : help
 
 

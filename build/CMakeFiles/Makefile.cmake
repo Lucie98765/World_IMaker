@@ -53,5 +53,4 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "glimac/CMakeFiles/glimac.dir/DependInfo.cmake"
-  "src/CMakeFiles/src_code_utilisation_camera.dir/DependInfo.cmake"
   )
