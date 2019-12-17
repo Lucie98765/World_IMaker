@@ -1,0 +1,93 @@
+Definition classes:
+	Definition cube
+	Definition lumière
+Chargement shaders et programmes
+Ajout des cubes et des lumières dans tableaux globaux
+Init curseur au centre (0, 0, 0)
+// Génération textures
+Boucle principale:
+	switch(action):
+		//génération aléatoire:
+		//	BLAHBLAH
+		//chargement scène:
+		//	choisir chemin et nom
+		//	si valide:
+		//		afficher scène
+		//sauvegarder scène:
+		//	choisir nom (dossier sauvegarde préenregistré)
+		quitter:
+			free mémoire
+		bouger curseur:
+			current.move(+q-d, +z-s, +e-x)
+		bouger vue:
+			view.move(+q-d, +z-s, +e-x)
+		ajouter cube:
+			if !current.is_empty():
+				error(occupied)
+			else:
+				Cubes(current).visible()
+		supprimer cube:
+			if current.is_empty():
+				error(can't remove nothing)
+			else:
+				Cubes(current).invisible()
+		extruder:
+			if current.is_empty():
+				error(can't extrude nothing)
+			else:
+				(x,y,z) = (current.x, current.y, current.z)
+				while(!Cubes((x,y,z)).is_empty()):
+					if(z == max_z)
+						error(can't extrude more than max)
+						break !!!
+					else (x,y,z++)
+				add_cube((x,y,z))
+		creuser:
+			if current.is_empty():
+				error(can't dig nothing)
+			else:
+				while(!Cubes((x,y,z)).is_empty()):
+					if(z == 0)
+						error(can't dig underground)
+						break !!!
+					else (x,y,z--)
+				remove_cube((x,y,z))
+		modifier couleur cube
+			if current.is_empty():
+				error(can't change color of nothing)
+			else:
+				Cube(current).color(new_color)
+		déplacer cube:
+			if current.is_empty():
+				error(can't move nothing)
+			else:
+				origin = current
+				confirmed = false
+				while(!confirmed):
+					switch(action):
+						cancel:
+							break
+						bouger curseur:
+							current.move()
+						bouger_vue:
+							view.move()
+						select_box:
+							if !current.is_empty():
+								error(occupied)
+								continue
+							else:
+								confirmed = true
+				dest = current
+				Cubes(dest).visible();
+				Cubes(dest).color(origin.color())
+				Cubes(origin).invisible();
+		ajouter lumière:
+			if !current.is_empty():
+				error(occupied)
+			else:
+				add_light(current, type)
+		supprimer lumière:
+			if !current.is_empty():
+				error(occupied)
+			else:
+				remove_light(current)
