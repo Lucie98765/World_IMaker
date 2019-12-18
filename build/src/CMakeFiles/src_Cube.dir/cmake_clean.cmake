@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/src_Cube.dir/Cube.cpp.o"
-  "src_Cube.pdb"
-  "src_Cube"
+  "CMakeFiles/src_cube.dir/cube.cpp.o"
+  "src_cube.pdb"
+  "src_cube"
 )
 
 # Per-language clean rules from dependency scanning.
 foreach(lang CXX)
-  include(CMakeFiles/src_Cube.dir/cmake_clean_${lang}.cmake OPTIONAL)
+  include(CMakeFiles/src_cube.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()
