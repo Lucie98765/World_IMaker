@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles /home/louisa/IMAC2/POO/World_IMaker/build/doc/CMakeFiles/progress.marks
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 doc/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 doc/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,43 +97,32 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 doc/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 doc/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named glimac
+# Convenience name for target.
+doc/CMakeFiles/html.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 doc/CMakeFiles/html.dir/rule
+.PHONY : doc/CMakeFiles/html.dir/rule
 
-# Build rule for target.
-glimac: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 glimac
-.PHONY : glimac
+# Convenience name for target.
+html: doc/CMakeFiles/html.dir/rule
 
-# fast build rule for target.
-glimac/fast:
-	$(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/build
-.PHONY : glimac/fast
-
-#=============================================================================
-# Target rules for targets named html
-
-# Build rule for target.
-html: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 html
 .PHONY : html
 
 # fast build rule for target.
 html/fast:
-	$(MAKE) -f doc/CMakeFiles/html.dir/build.make doc/CMakeFiles/html.dir/build
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f doc/CMakeFiles/html.dir/build.make doc/CMakeFiles/html.dir/build
 .PHONY : html/fast
 
 # Help Target
@@ -143,9 +132,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... glimac"
 	@echo "... html"
+	@echo "... edit_cache"
 .PHONY : help
 
 
@@ -157,6 +145,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
