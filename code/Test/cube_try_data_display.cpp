@@ -166,6 +166,8 @@ int main(int argc, char** argv) {
     glUniform4fv(location_uFaceColor, 1, glm::value_ptr(cube.face_color()));
     glUniform4fv(location_uEdgeColor, 1, glm::value_ptr(cube.edge_color()));
 
+    glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
+
     // Application loop:
     bool done = false;
     while(!done) {
@@ -194,8 +196,8 @@ int main(int argc, char** argv) {
             }
 
             if(e.type == SDL_MOUSEMOTION && (e.motion.state & SDL_BUTTON_LEFT)){
-                camera.rotateLeft(e.motion.yrel);
-                camera.rotateUp(e.motion.xrel); //A voir si on met -xrel et -yrel, voir si c'est plus intuitif
+                camera.rotateLeft(e.motion.xrel);
+                camera.rotateUp(e.motion.yrel); //A voir si on met -xrel et -yrel, voir si c'est plus intuitif
                 //std::cout<< e.motion.yrel <<std::endl;
             }
         }

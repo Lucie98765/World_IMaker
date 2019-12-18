@@ -77,10 +77,8 @@ FilePath.hpp
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/FilePath.hpp
 
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/TrackballCamera.hpp
-glm/glm.hpp
--
-glimac/common.hpp
-/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/glimac/common.hpp
+common.hpp
+/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/common.hpp
 
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/common.hpp
 GL/glew.h

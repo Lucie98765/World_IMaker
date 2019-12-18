@@ -7,6 +7,7 @@ uniform mat4 uMVMatrix;
 uniform mat4 uNormalMatrix;
 
 out vec3 vVertexPosition;
+out vec3 vVertexAbsolutePosition;
 
 
 void main(){
@@ -18,5 +19,7 @@ void main(){
 
     //Calcul de la position projetée :
     gl_Position = uMVPMatrix * vertexPosition;
+
+    vVertexAbsolutePosition = aVertexPosition;
 
 }

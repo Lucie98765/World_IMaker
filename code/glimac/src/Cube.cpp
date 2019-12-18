@@ -16,7 +16,7 @@
 namespace glimac{
 
 	Cube::Cube():m_is_visible(false), m_is_selected(false){
-		m_face_color = glm::vec4(0, 1, 0, 1);
+		m_face_color = glm::vec4(0, 1, 0, 0.5);
 		m_edge_color = glm::vec4(1, 0, 0, 1);
 	}
 

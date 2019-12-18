@@ -13,7 +13,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/SDLWindowManager.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Shader.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Sphere.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o"
-  "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/TrackballCamera.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/tiny_obj_loader.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
