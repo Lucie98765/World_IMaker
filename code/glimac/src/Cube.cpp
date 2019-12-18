@@ -16,8 +16,8 @@
 namespace glimac{
 
 	Cube::Cube():m_is_visible(false), m_is_selected(false){
-		m_face_color = glm::vec4(0);
-		m_edge_color = glm::vec4(0);
+		m_face_color = glm::vec4(0, 1, 0, 1);
+		m_edge_color = m_face_color;
 	}
 
 	//SET
@@ -31,24 +31,20 @@ namespace glimac{
 
 	void Cube::visible(bool const state){
 		m_is_visible = state;
-		if(m_is_visible){
+		if(m_is_visible)
 			this->face_color(glm::vec4(0, 1, 0, 1));
-			this->edge_color(glm::vec4(0, 1, 0, 1));
-		}
-		else{
+		else
 			this->face_color(glm::vec4(0, 0, 0, 0));
-			this->edge_color(glm::vec4(0, 0, 0, 0));
-		}
 	}
 
 	void Cube::selected(bool const state){
 		m_is_selected = state;
 		if(m_is_selected)
-			this->edge_color(glm::vec4(1, 0, 0, 1));
+			this->edge_color(glm::vec4(1,0,0,1));
 		else if(m_is_visible)
-			this->edge_color(glm::vec4(0, 1, 0, 1));
+			this->edge_color(m_face_color);
 		else
-			this->edge_color(glm::vec4(0, 0, 0, 0));
+			this->edge_color(glm::vec4(0,0,0,0));
 	}
 
 

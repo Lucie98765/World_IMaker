@@ -124,17 +124,30 @@ glimac/fast:
 .PHONY : glimac/fast
 
 #=============================================================================
-# Target rules for targets named src_cube_try
+# Target rules for targets named Test_cube_try_data_display
 
 # Build rule for target.
-src_cube_try: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 src_cube_try
-.PHONY : src_cube_try
+Test_cube_try_data_display: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_cube_try_data_display
+.PHONY : Test_cube_try_data_display
 
 # fast build rule for target.
-src_cube_try/fast:
-	$(MAKE) -f src/CMakeFiles/src_cube_try.dir/build.make src/CMakeFiles/src_cube_try.dir/build
-.PHONY : src_cube_try/fast
+Test_cube_try_data_display/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_cube_try_data_display.dir/build.make Test/CMakeFiles/Test_cube_try_data_display.dir/build
+.PHONY : Test_cube_try_data_display/fast
+
+#=============================================================================
+# Target rules for targets named Test_cube_try_display
+
+# Build rule for target.
+Test_cube_try_display: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_cube_try_display
+.PHONY : Test_cube_try_display
+
+# fast build rule for target.
+Test_cube_try_display/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_cube_try_display.dir/build.make Test/CMakeFiles/Test_cube_try_display.dir/build
+.PHONY : Test_cube_try_display/fast
 
 #=============================================================================
 # Target rules for targets named html
@@ -158,7 +171,8 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... glimac"
-	@echo "... src_cube_try"
+	@echo "... Test_cube_try_data_display"
+	@echo "... Test_cube_try_display"
 	@echo "... html"
 .PHONY : help
 

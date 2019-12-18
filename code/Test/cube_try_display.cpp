@@ -8,6 +8,9 @@
 #include <glimac/TrackballCamera.hpp>
 #include <glimac/Image.hpp>
 
+#define WINDOW_WIDTH 800
+#define WINDOW_HEIGHT 800
+
 using namespace glimac;
 
 struct Vertex3DColor
@@ -34,7 +37,7 @@ struct Vertex3DColor
 
 int main(int argc, char** argv) {
     // Initialize SDL and open a window
-    SDLWindowManager windowManager(800, 600, "Dessin de cube please");
+    SDLWindowManager windowManager(WINDOW_WIDTH, WINDOW_HEIGHT, "Dessin de cube please");
 
     // Initialize glew for OpenGL3+ support
     GLenum glewInitError = glewInit();
@@ -174,7 +177,7 @@ int main(int argc, char** argv) {
     //Matrices
     glm::mat4 ProjMatrix = glm::perspective (
             glm::radians(70.f), //Angle vertical de vue
-            (GLfloat)800/(GLfloat)800, //Ratio fenetre
+            (GLfloat)WINDOW_WIDTH/(GLfloat)WINDOW_HEIGHT, //Ratio fenetre
             0.1f, //near
             100.f //far
     );
@@ -193,7 +196,8 @@ int main(int argc, char** argv) {
         // Event loop:
         SDL_Event e;
         while(windowManager.pollEvent(e)) {
-            if(e.type == SDL_QUIT) {
+            if(e.type == SDL_QUIT || ( e.type == SDL_KEYDOWN 
+                && (e.key.keysym.sym == SDLK_q || e.key.keysym.sym == SDLK_ESCAPE))) {
                 done = true; // Leave the loop after this iteration
             }
 
