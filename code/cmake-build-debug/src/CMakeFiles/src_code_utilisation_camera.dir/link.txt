@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/src_code_utilisation_camera.dir/code_utilisation_camera.cpp.o  -o src_code_utilisation_camera ../glimac/libglimac.a -lSDL2 -lGL -lGLU 
