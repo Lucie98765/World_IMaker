@@ -110,6 +110,48 @@ depend:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+src/CMakeFiles/src_cube_try.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/src_cube_try.dir/rule
+.PHONY : src/CMakeFiles/src_cube_try.dir/rule
+
+# Convenience name for target.
+src_cube_try: src/CMakeFiles/src_cube_try.dir/rule
+
+.PHONY : src_cube_try
+
+# fast build rule for target.
+src_cube_try/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f src/CMakeFiles/src_cube_try.dir/build.make src/CMakeFiles/src_cube_try.dir/build
+.PHONY : src_cube_try/fast
+
+cube_try.o: cube_try.cpp.o
+
+.PHONY : cube_try.o
+
+# target to build an object file
+cube_try.cpp.o:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f src/CMakeFiles/src_cube_try.dir/build.make src/CMakeFiles/src_cube_try.dir/cube_try.cpp.o
+.PHONY : cube_try.cpp.o
+
+cube_try.i: cube_try.cpp.i
+
+.PHONY : cube_try.i
+
+# target to preprocess a source file
+cube_try.cpp.i:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f src/CMakeFiles/src_cube_try.dir/build.make src/CMakeFiles/src_cube_try.dir/cube_try.cpp.i
+.PHONY : cube_try.cpp.i
+
+cube_try.s: cube_try.cpp.s
+
+.PHONY : cube_try.s
+
+# target to generate assembly for a file
+cube_try.cpp.s:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f src/CMakeFiles/src_cube_try.dir/build.make src/CMakeFiles/src_cube_try.dir/cube_try.cpp.s
+.PHONY : cube_try.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -117,7 +159,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... src_cube_try"
 	@echo "... edit_cache"
+	@echo "... cube_try.o"
+	@echo "... cube_try.i"
+	@echo "... cube_try.s"
 .PHONY : help
 
 

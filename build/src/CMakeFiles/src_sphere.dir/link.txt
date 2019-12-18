@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/src_sphere.dir/sphere.cpp.o  -o src_sphere ../glimac/libglimac.a -lSDL2 -lGL -lGLU -lGLEW 

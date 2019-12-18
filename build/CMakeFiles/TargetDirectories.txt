@@ -4,6 +4,7 @@
 /home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/edit_cache.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/src/CMakeFiles/rebuild_cache.dir
+/home/louisa/IMAC2/POO/World_IMaker/build/src/CMakeFiles/src_cube_try.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/src/CMakeFiles/edit_cache.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/doc/CMakeFiles/rebuild_cache.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/doc/CMakeFiles/html.dir

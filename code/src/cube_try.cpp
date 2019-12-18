@@ -65,9 +65,6 @@ int main(int argc, char** argv) {
      *********************************/
 
     GLuint vbo, vao;
-    const GLuint VERTEX_ATTR_POSITION = 0;
-    const GLuint VERTEX_ATTR_TEXTCOORD = 1;
-    const GLuint VERTEX_ATTR_NORMALE = 2;
 
     glGenBuffers(1, &vbo);
     glBindBuffer(GL_ARRAY_BUFFER, vbo); //Binder la VBO
@@ -124,9 +121,11 @@ int main(int argc, char** argv) {
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
 
+
+    const GLuint VERTEX_ATTR_POSITION = 0;
+    const GLuint VERTEX_ATTR_COLOR = 1;
     glEnableVertexAttribArray(VERTEX_ATTR_POSITION);
-    glEnableVertexAttribArray(VERTEX_ATTR_TEXTCOORD);
-    glEnableVertexAttribArray(VERTEX_ATTR_NORMALE);
+    glEnableVertexAttribArray(VERTEX_ATTR_COLOR);
 
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
@@ -139,20 +138,12 @@ int main(int argc, char** argv) {
             (const GLvoid*)offsetof(Vertex3DColor, position) /* OpenGL doit utiliser le VBO attaché à GL_ARRAY_BUFFER et commencer à l'offset 0 */
     );
     glVertexAttribPointer(
-            VERTEX_ATTR_TEXTCOORD,
+            VERTEX_ATTR_COLOR,
             2,
             GL_FLOAT,
             GL_FALSE,
             sizeof(Vertex3DColor), /* Taille en octet d'un vertex complet entre chaque attribut position */
             (const GLvoid*)offsetof(Vertex3DColor, color)
-    );
-    glVertexAttribPointer(
-            VERTEX_ATTR_NORMALE,
-            3,
-            GL_FLOAT,
-            GL_FALSE,
-            sizeof(Vertex3DColor), /* Taille en octet d'un vertex complet entre chaque attribut position */
-            0
     );
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
