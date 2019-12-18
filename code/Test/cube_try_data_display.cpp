@@ -158,7 +158,7 @@ int main(int argc, char** argv) {
     glm::mat4 cameraVM(1);
 
     cube.visible(true);
-    cube.selected(true);
+    cube.selected(false);
     std::cout << "Cube visible ? " << cube.is_visible() << std::endl; 
     std::cout << "Cube selectionné ? " << cube.is_selected() << std::endl;
     std::cout << "Couleur face : " << cube.face_color() << std::endl;
@@ -166,7 +166,6 @@ int main(int argc, char** argv) {
     glUniform4fv(location_uFaceColor, 1, glm::value_ptr(cube.face_color()));
     glUniform4fv(location_uEdgeColor, 1, glm::value_ptr(cube.edge_color()));
 
-    glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
 
     // Application loop:
     bool done = false;
