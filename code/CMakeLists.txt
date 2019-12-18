@@ -43,7 +43,7 @@ endif()
 include_directories(${EIGEN3_INCLUDE_DIR})
 
 
-file(GLOB exec_dir "src")
+file(GLOB exec_dir src Test)
 
 foreach(dir ${exec_dir})
     add_subdirectory(${dir})

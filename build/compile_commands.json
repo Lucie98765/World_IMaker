@@ -46,12 +46,22 @@
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/glimac",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include    -std=c++11 -o CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/TrackballCamera.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/TrackballCamera.cpp"
+},
+{
+  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/glimac",
   "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include    -std=c++11 -o CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/tiny_obj_loader.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/tiny_obj_loader.cpp"
 },
 {
-  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/src",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3    -std=c++11 -o CMakeFiles/src_cube_try.dir/cube_try.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/src/cube_try.cpp",
-  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/src/cube_try.cpp"
+  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3    -std=c++11 -o CMakeFiles/Test_cube_try_data_display.dir/cube_try_data_display.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/cube_try_data_display.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/cube_try_data_display.cpp"
+},
+{
+  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3    -std=c++11 -o CMakeFiles/Test_cube_try_display.dir/cube_try_display.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/cube_try_display.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/cube_try_display.cpp"
 }
 ]
