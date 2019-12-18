@@ -124,6 +124,19 @@ glimac/fast:
 .PHONY : glimac/fast
 
 #=============================================================================
+# Target rules for targets named src_cube_try
+
+# Build rule for target.
+src_cube_try: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 src_cube_try
+.PHONY : src_cube_try
+
+# fast build rule for target.
+src_cube_try/fast:
+	$(MAKE) -f src/CMakeFiles/src_cube_try.dir/build.make src/CMakeFiles/src_cube_try.dir/build
+.PHONY : src_cube_try/fast
+
+#=============================================================================
 # Target rules for targets named html
 
 # Build rule for target.
@@ -145,6 +158,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... glimac"
+	@echo "... src_cube_try"
 	@echo "... html"
 .PHONY : help
 

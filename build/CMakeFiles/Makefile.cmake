@@ -60,5 +60,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "glimac/CMakeFiles/glimac.dir/DependInfo.cmake"
+  "src/CMakeFiles/src_cube_try.dir/DependInfo.cmake"
   "doc/CMakeFiles/html.dir/DependInfo.cmake"
   )
