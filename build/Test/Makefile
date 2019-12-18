@@ -111,6 +111,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+Test/CMakeFiles/Test_scene_cubes.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_scene_cubes.dir/rule
+.PHONY : Test/CMakeFiles/Test_scene_cubes.dir/rule
+
+# Convenience name for target.
+Test_scene_cubes: Test/CMakeFiles/Test_scene_cubes.dir/rule
+
+.PHONY : Test_scene_cubes
+
+# fast build rule for target.
+Test_scene_cubes/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_cubes.dir/build.make Test/CMakeFiles/Test_scene_cubes.dir/build
+.PHONY : Test_scene_cubes/fast
+
+# Convenience name for target.
 Test/CMakeFiles/Test_cube_try_data_display.dir/rule:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_cube_try_data_display.dir/rule
 .PHONY : Test/CMakeFiles/Test_cube_try_data_display.dir/rule
@@ -194,6 +209,33 @@ cube_try_display.cpp.s:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_cube_try_display.dir/build.make Test/CMakeFiles/Test_cube_try_display.dir/cube_try_display.cpp.s
 .PHONY : cube_try_display.cpp.s
 
+scene_cubes.o: scene_cubes.cpp.o
+
+.PHONY : scene_cubes.o
+
+# target to build an object file
+scene_cubes.cpp.o:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_cubes.dir/build.make Test/CMakeFiles/Test_scene_cubes.dir/scene_cubes.cpp.o
+.PHONY : scene_cubes.cpp.o
+
+scene_cubes.i: scene_cubes.cpp.i
+
+.PHONY : scene_cubes.i
+
+# target to preprocess a source file
+scene_cubes.cpp.i:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_cubes.dir/build.make Test/CMakeFiles/Test_scene_cubes.dir/scene_cubes.cpp.i
+.PHONY : scene_cubes.cpp.i
+
+scene_cubes.s: scene_cubes.cpp.s
+
+.PHONY : scene_cubes.s
+
+# target to generate assembly for a file
+scene_cubes.cpp.s:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_cubes.dir/build.make Test/CMakeFiles/Test_scene_cubes.dir/scene_cubes.cpp.s
+.PHONY : scene_cubes.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -201,6 +243,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... Test_scene_cubes"
 	@echo "... Test_cube_try_data_display"
 	@echo "... edit_cache"
 	@echo "... Test_cube_try_display"
@@ -210,6 +253,9 @@ help:
 	@echo "... cube_try_display.o"
 	@echo "... cube_try_display.i"
 	@echo "... cube_try_display.s"
+	@echo "... scene_cubes.o"
+	@echo "... scene_cubes.i"
+	@echo "... scene_cubes.s"
 .PHONY : help
 
 

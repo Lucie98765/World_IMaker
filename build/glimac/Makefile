@@ -368,6 +368,33 @@ src/Sphere.cpp.s:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.s
 .PHONY : src/Sphere.cpp.s
 
+src/TrackballCamera.o: src/TrackballCamera.cpp.o
+
+.PHONY : src/TrackballCamera.o
+
+# target to build an object file
+src/TrackballCamera.cpp.o:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o
+.PHONY : src/TrackballCamera.cpp.o
+
+src/TrackballCamera.i: src/TrackballCamera.cpp.i
+
+.PHONY : src/TrackballCamera.i
+
+# target to preprocess a source file
+src/TrackballCamera.cpp.i:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.i
+.PHONY : src/TrackballCamera.cpp.i
+
+src/TrackballCamera.s: src/TrackballCamera.cpp.s
+
+.PHONY : src/TrackballCamera.s
+
+# target to generate assembly for a file
+src/TrackballCamera.cpp.s:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.s
+.PHONY : src/TrackballCamera.cpp.s
+
 src/tiny_obj_loader.o: src/tiny_obj_loader.cpp.o
 
 .PHONY : src/tiny_obj_loader.o
@@ -431,6 +458,9 @@ help:
 	@echo "... src/Sphere.o"
 	@echo "... src/Sphere.i"
 	@echo "... src/Sphere.s"
+	@echo "... src/TrackballCamera.o"
+	@echo "... src/TrackballCamera.i"
+	@echo "... src/TrackballCamera.s"
 	@echo "... src/tiny_obj_loader.o"
 	@echo "... src/tiny_obj_loader.i"
 	@echo "... src/tiny_obj_loader.s"

@@ -124,6 +124,19 @@ glimac/fast:
 .PHONY : glimac/fast
 
 #=============================================================================
+# Target rules for targets named Test_scene_cubes
+
+# Build rule for target.
+Test_scene_cubes: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_scene_cubes
+.PHONY : Test_scene_cubes
+
+# fast build rule for target.
+Test_scene_cubes/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes.dir/build.make Test/CMakeFiles/Test_scene_cubes.dir/build
+.PHONY : Test_scene_cubes/fast
+
+#=============================================================================
 # Target rules for targets named Test_cube_try_data_display
 
 # Build rule for target.
@@ -171,6 +184,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... glimac"
+	@echo "... Test_scene_cubes"
 	@echo "... Test_cube_try_data_display"
 	@echo "... Test_cube_try_display"
 	@echo "... html"

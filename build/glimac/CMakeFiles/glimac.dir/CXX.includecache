@@ -84,6 +84,12 @@ vector
 common.hpp
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/common.hpp
 
+/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/TrackballCamera.hpp
+glm/glm.hpp
+-
+glimac/common.hpp
+/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/glimac/common.hpp
+
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/common.hpp
 GL/glew.h
 -
@@ -187,6 +193,10 @@ glimac/common.hpp
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/glimac/common.hpp
 glimac/Sphere.hpp
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/glimac/Sphere.hpp
+
+/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/TrackballCamera.cpp
+../include/glimac/TrackballCamera.hpp
+/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/TrackballCamera.hpp
 
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/stb_image.h
 stdio.h
