@@ -157,8 +157,9 @@ int main(int argc, char** argv) {
     TrackballCamera camera;
     glm::mat4 cameraVM(1);
 
+
     cube.visible(true);
-    cube.selected(false);
+    cube.selected(true);
     std::cout << "Cube visible ? " << cube.is_visible() << std::endl; 
     std::cout << "Cube selectionné ? " << cube.is_selected() << std::endl;
     std::cout << "Couleur face : " << cube.face_color() << std::endl;
@@ -180,24 +181,12 @@ int main(int argc, char** argv) {
 
             if(e.type == SDL_MOUSEWHEEL)
             {
-                if(e.wheel.y > 0) // scroll up
-                {
-                    std::cout<<"scroll up"<<std::endl;
-                    //camera.rotateUp(e.wheel.y);
-                    camera.moveFront(e.wheel.y);
-                }
-                else if(e.wheel.y < 0) // scroll down
-                {
-                    std::cout<<"scroll down"<<std::endl;
-                    //camera.rotateUp(e.wheel.y);
-                    camera.moveFront(e.wheel.y);
-                }
+                camera.moveFront(e.wheel.y);
             }
 
             if(e.type == SDL_MOUSEMOTION && (e.motion.state & SDL_BUTTON_LEFT)){
                 camera.rotateLeft(e.motion.xrel);
-                camera.rotateUp(e.motion.yrel); //A voir si on met -xrel et -yrel, voir si c'est plus intuitif
-                //std::cout<< e.motion.yrel <<std::endl;
+                camera.rotateUp(e.motion.yrel); 
             }
         }
 
@@ -211,13 +200,14 @@ int main(int argc, char** argv) {
         glBindVertexArray(vao); 
 
 
-        if(cube.is_visible()){
-            MVMatrix = glm::translate(MVMatrix,glm::vec3(0.f,0.f,0.f));
-            glUniformMatrix4fv(location_uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * MVMatrix));
-            glUniformMatrix4fv(location_uMVMatrix, 1, GL_FALSE, glm::value_ptr(MVMatrix));
-            glUniformMatrix4fv(location_uNormalMatrix, 1, GL_FALSE, glm::value_ptr(NormalMatrix));
-            glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
-        }           
+        MVMatrix = glm::translate(MVMatrix,glm::vec3(0.f,0.f,0.f));
+        glUniformMatrix4fv(location_uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * MVMatrix));
+        glUniformMatrix4fv(location_uMVMatrix, 1, GL_FALSE, glm::value_ptr(MVMatrix));
+        glUniformMatrix4fv(location_uNormalMatrix, 1, GL_FALSE, glm::value_ptr(NormalMatrix));
+        glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+
+
+                 
 
         glBindVertexArray(0);
         windowManager.swapBuffers();
