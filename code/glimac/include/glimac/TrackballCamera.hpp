@@ -1,38 +1,30 @@
 #pragma once
 
-#include "common.hpp"
+#include <glm/glm.hpp>
+#include  "glimac/common.hpp"
 
-namespace glimac {
- class TrackballCamera {
-    
-public:
-    TrackballCamera():m_fDistance(0.f),m_fAngleX(0.f),m_fAngleY(0.f)
-    {}
 
-    void moveFront(float delta){
-        m_fDistance += delta;
-    }
-
-    void rotateLeft(float degrees){
-        m_fAngleY += degrees;
-    }
-
-    void rotateUp(float degrees){
-        m_fAngleX += degrees;
-    }
-
-    glm::mat4 getViewMatrix()const{
-        glm::mat4 matrix = glm::translate(glm::mat4(1.f), glm::vec3(0,0,-m_fDistance));
-        matrix = glm::rotate(matrix, glm::radians(-m_fAngleX), glm::vec3(1.f, 0, 0));
-        matrix = glm::rotate(matrix, glm::radians(-m_fAngleY), glm::vec3(0, 1.f, 0));
-
-        return matrix;
-    }
-
+class TrackballCamera
+{
 private:
-    float m_fDistance;
-    float m_fAngleX;
-    float m_fAngleY;
+    float m_fDistance; //Distance par rapport au centre de la scene
+    float m_fAngleX; //Angle cam par rapport à l'axe x du centre de la scene = rotation haut bas
+    float m_fAngleY; //Par rapport à l'axe y = rotation droite gauche
+
+
+public:
+    //Constructeur
+    TrackballCamera();
+
+    //Avancer et reculer la caméra
+    void moveFront(float delta);
+
+    //Tourner latéralement autour du centre
+    void rotateLeft(float degrees);
+
+    //Tourner verticalement autour du centre
+    void rotateUp(float degrees);
+
+
+    glm::mat4 getViewMatrix() const;
 };
-    
-}
