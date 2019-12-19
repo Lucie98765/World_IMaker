@@ -110,6 +110,48 @@ depend:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+src/CMakeFiles/src_cube_freefly.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/src_cube_freefly.dir/rule
+.PHONY : src/CMakeFiles/src_cube_freefly.dir/rule
+
+# Convenience name for target.
+src_cube_freefly: src/CMakeFiles/src_cube_freefly.dir/rule
+
+.PHONY : src_cube_freefly
+
+# fast build rule for target.
+src_cube_freefly/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f src/CMakeFiles/src_cube_freefly.dir/build.make src/CMakeFiles/src_cube_freefly.dir/build
+.PHONY : src_cube_freefly/fast
+
+cube_freefly.o: cube_freefly.cpp.o
+
+.PHONY : cube_freefly.o
+
+# target to build an object file
+cube_freefly.cpp.o:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f src/CMakeFiles/src_cube_freefly.dir/build.make src/CMakeFiles/src_cube_freefly.dir/cube_freefly.cpp.o
+.PHONY : cube_freefly.cpp.o
+
+cube_freefly.i: cube_freefly.cpp.i
+
+.PHONY : cube_freefly.i
+
+# target to preprocess a source file
+cube_freefly.cpp.i:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f src/CMakeFiles/src_cube_freefly.dir/build.make src/CMakeFiles/src_cube_freefly.dir/cube_freefly.cpp.i
+.PHONY : cube_freefly.cpp.i
+
+cube_freefly.s: cube_freefly.cpp.s
+
+.PHONY : cube_freefly.s
+
+# target to generate assembly for a file
+cube_freefly.cpp.s:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f src/CMakeFiles/src_cube_freefly.dir/build.make src/CMakeFiles/src_cube_freefly.dir/cube_freefly.cpp.s
+.PHONY : cube_freefly.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -117,7 +159,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... src_cube_freefly"
 	@echo "... edit_cache"
+	@echo "... cube_freefly.o"
+	@echo "... cube_freefly.i"
+	@echo "... cube_freefly.s"
 .PHONY : help
 
 

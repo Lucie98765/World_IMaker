@@ -179,6 +179,33 @@ src/Cube.cpp.s:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Cube.cpp.s
 .PHONY : src/Cube.cpp.s
 
+src/FreeFlyCamera.o: src/FreeFlyCamera.cpp.o
+
+.PHONY : src/FreeFlyCamera.o
+
+# target to build an object file
+src/FreeFlyCamera.cpp.o:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/FreeFlyCamera.cpp.o
+.PHONY : src/FreeFlyCamera.cpp.o
+
+src/FreeFlyCamera.i: src/FreeFlyCamera.cpp.i
+
+.PHONY : src/FreeFlyCamera.i
+
+# target to preprocess a source file
+src/FreeFlyCamera.cpp.i:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/FreeFlyCamera.cpp.i
+.PHONY : src/FreeFlyCamera.cpp.i
+
+src/FreeFlyCamera.s: src/FreeFlyCamera.cpp.s
+
+.PHONY : src/FreeFlyCamera.s
+
+# target to generate assembly for a file
+src/FreeFlyCamera.cpp.s:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/FreeFlyCamera.cpp.s
+.PHONY : src/FreeFlyCamera.cpp.s
+
 src/Geometry.o: src/Geometry.cpp.o
 
 .PHONY : src/Geometry.o
@@ -314,6 +341,33 @@ src/SDLWindowManager.cpp.s:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.s
 .PHONY : src/SDLWindowManager.cpp.s
 
+src/Scene.o: src/Scene.cpp.o
+
+.PHONY : src/Scene.o
+
+# target to build an object file
+src/Scene.cpp.o:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Scene.cpp.o
+.PHONY : src/Scene.cpp.o
+
+src/Scene.i: src/Scene.cpp.i
+
+.PHONY : src/Scene.i
+
+# target to preprocess a source file
+src/Scene.cpp.i:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Scene.cpp.i
+.PHONY : src/Scene.cpp.i
+
+src/Scene.s: src/Scene.cpp.s
+
+.PHONY : src/Scene.s
+
+# target to generate assembly for a file
+src/Scene.cpp.s:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Scene.cpp.s
+.PHONY : src/Scene.cpp.s
+
 src/Shader.o: src/Shader.cpp.o
 
 .PHONY : src/Shader.o
@@ -437,6 +491,9 @@ help:
 	@echo "... src/Cube.o"
 	@echo "... src/Cube.i"
 	@echo "... src/Cube.s"
+	@echo "... src/FreeFlyCamera.o"
+	@echo "... src/FreeFlyCamera.i"
+	@echo "... src/FreeFlyCamera.s"
 	@echo "... src/Geometry.o"
 	@echo "... src/Geometry.i"
 	@echo "... src/Geometry.s"
@@ -452,6 +509,9 @@ help:
 	@echo "... src/SDLWindowManager.o"
 	@echo "... src/SDLWindowManager.i"
 	@echo "... src/SDLWindowManager.s"
+	@echo "... src/Scene.o"
+	@echo "... src/Scene.i"
+	@echo "... src/Scene.s"
 	@echo "... src/Shader.o"
 	@echo "... src/Shader.i"
 	@echo "... src/Shader.s"
