@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Imagev2.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Program.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Program.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/SDLWindowManager.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o"
+  "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Scene.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Scene.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Shader.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Sphere.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/TrackballCamera.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o"

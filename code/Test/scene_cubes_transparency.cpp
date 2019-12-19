@@ -54,6 +54,8 @@ int main(int argc, char** argv) {
     std::cout << "Location uFaceColor : " << location_uFaceColor << std::endl;
     GLint location_uEdgeColor = glGetUniformLocation(program.getGLId(), "uEdgeColor");
     std::cout << "Location uEdgeColor : " << location_uEdgeColor << std::endl;
+    GLint location_uEdgeMode = glGetUniformLocation(program.getGLId(), "uEdgeMode");
+    std::cout << "Location uEdgeMode : " << location_uEdgeMode << std::endl;
 
     /*********************************
      * HERE SHOULD COME THE INITIALIZATION CODE
@@ -165,17 +167,32 @@ int main(int argc, char** argv) {
         for(int j = 0; j < H; j++){
             for(int k = 0; k < L; k++){
                 scene[i][j][k] = Cube();
-                (scene[i][j][k]).visible(false);
-                (scene[i][j][k]).selected(true);
+                (scene[i][j][k]).visible(true);
+                (scene[i][j][k]).selected(false);
             }
         }
     }
     
     (scene[0][0][0]).visible(false);
     (scene[0][0][0]).selected(true);
+    (scene[0][0][2]).visible(false);
+    (scene[0][0][2]).selected(true);
+    
+    (scene[2][0][0]).visible(false);
+    (scene[2][0][0]).selected(true);
+    (scene[2][0][2]).visible(false);
+    (scene[2][0][2]).selected(true);
+    
+    (scene[0][2][0]).visible(false);
+    (scene[0][2][0]).selected(true);
+    (scene[0][2][2]).visible(false);
+    (scene[0][2][2]).selected(true);
+    
+    (scene[2][2][0]).visible(false);
+    (scene[2][2][0]).selected(true);
+    (scene[2][2][2]).visible(false);
+    (scene[2][2][2]).selected(true);
 
-    (scene[W/2][H/2][L/2]).visible(true);
-    (scene[W/2][H/2][L/2]).selected(true);
 
     float espace = 1.5f;
     // Application loop:
@@ -208,6 +225,8 @@ int main(int argc, char** argv) {
 
 
         glBindVertexArray(vao); 
+
+        glUniform1ui(location_uEdgeMode, 0);
 
         //std::cout << "Centre " << glm::vec3(W/2, H/2, L/2) << std::endl;
         for(int i = 0; i < W; i++){
@@ -262,6 +281,33 @@ int main(int argc, char** argv) {
                 }
             }
         }
+
+        for(int i = 0; i < W; i++){
+            for(int j = 0; j < H; j++){
+                for(int k = 0; k < L; k++){
+                    Cube current = scene[i][j][k];
+                    if(current.is_selected()){
+
+                        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+                        glUniform1i(location_uEdgeMode, 1);
+                        MVMatrix = camera.getViewMatrix();
+                        MVMatrix = glm::translate(MVMatrix,glm::vec3(-W/2, -H/2, -L/2));
+                        MVMatrix = glm::translate(MVMatrix,glm::vec3(-0.5f+espace*i,-0.5f+espace*j,-0.5f+espace*k));
+
+                        glUniformMatrix4fv(location_uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * MVMatrix));
+                        glUniformMatrix4fv(location_uMVMatrix, 1, GL_FALSE, glm::value_ptr(MVMatrix));
+                        glUniformMatrix4fv(location_uNormalMatrix, 1, GL_FALSE, glm::value_ptr(NormalMatrix));
+
+                        glUniform4fv(location_uFaceColor, 1, glm::value_ptr(current.face_color()));
+                        glUniform4fv(location_uEdgeColor, 1, glm::value_ptr(current.edge_color()));
+
+                        glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+                        //std::cout<<i<< j<< k <<std::endl;
+                    }
+                }
+            }
+        }
+        glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
         //done = true;
 

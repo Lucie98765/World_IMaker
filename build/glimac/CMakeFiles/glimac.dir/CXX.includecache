@@ -76,6 +76,18 @@ SDL.h
 glm.hpp
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/glm.hpp
 
+/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/Scene.hpp
+glm/glm.hpp
+-
+common.hpp
+/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/common.hpp
+vector
+-
+glimac/Cube.hpp
+/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/glimac/Cube.hpp
+glimac/TrackballCamera.hpp
+/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/glimac/TrackballCamera.hpp
+
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/Shader.hpp
 GL/glew.h
 -
@@ -181,6 +193,14 @@ iostream
 -
 GL/gl.h
 -
+
+/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Scene.cpp
+glm/glm.hpp
+-
+vector
+-
+glimac/Scene.hpp
+/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/glimac/Scene.hpp
 
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Shader.cpp
 glimac/Shader.hpp

@@ -7,6 +7,7 @@ out vec4 fFragColor;
 
 uniform vec4 uFaceColor;
 uniform vec4 uEdgeColor;
+uniform int uEdgeMode;
 
 void main() {
 
@@ -35,12 +36,13 @@ void main() {
 	)
 		fFragColor = uEdgeColor;
 
-	else if(y == 0.5)
-		fFragColor = vec4(0,0,1,0.5);
+	/*else if(z == -0.5)
+		fFragColor = vec4(0,0,1,0.5);*/
 
-	else 
+	else
 		fFragColor = uFaceColor;
-
+	if(0 == uEdgeMode)
+		fFragColor.a = 0;
 
 }
 
