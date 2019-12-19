@@ -8,6 +8,9 @@
 #include <glimac/TrackballCamera.hpp>
 #include <glimac/Image.hpp>
 
+#define WINDOW_WIDTH 800
+#define WINDOW_HEIGHT 800
+
 using namespace glimac;
 
 struct Vertex3DColor
@@ -34,7 +37,7 @@ struct Vertex3DColor
 
 int main(int argc, char** argv) {
     // Initialize SDL and open a window
-    SDLWindowManager windowManager(800, 600, "Dessin de cube please");
+    SDLWindowManager windowManager(WINDOW_WIDTH, WINDOW_HEIGHT, "Dessin de cube please");
 
     // Initialize glew for OpenGL3+ support
     GLenum glewInitError = glewInit();
@@ -65,9 +68,6 @@ int main(int argc, char** argv) {
      *********************************/
 
     GLuint vbo, vao;
-    const GLuint VERTEX_ATTR_POSITION = 0;
-    const GLuint VERTEX_ATTR_TEXTCOORD = 1;
-    const GLuint VERTEX_ATTR_NORMALE = 2;
 
     glGenBuffers(1, &vbo);
     glBindBuffer(GL_ARRAY_BUFFER, vbo); //Binder la VBO
@@ -124,9 +124,11 @@ int main(int argc, char** argv) {
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
 
+
+    const GLuint VERTEX_ATTR_POSITION = 0;
+    const GLuint VERTEX_ATTR_COLOR = 1;
     glEnableVertexAttribArray(VERTEX_ATTR_POSITION);
-    glEnableVertexAttribArray(VERTEX_ATTR_TEXTCOORD);
-    glEnableVertexAttribArray(VERTEX_ATTR_NORMALE);
+    glEnableVertexAttribArray(VERTEX_ATTR_COLOR);
 
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
@@ -139,20 +141,12 @@ int main(int argc, char** argv) {
             (const GLvoid*)offsetof(Vertex3DColor, position) /* OpenGL doit utiliser le VBO attaché à GL_ARRAY_BUFFER et commencer à l'offset 0 */
     );
     glVertexAttribPointer(
-            VERTEX_ATTR_TEXTCOORD,
+            VERTEX_ATTR_COLOR,
             2,
             GL_FLOAT,
             GL_FALSE,
             sizeof(Vertex3DColor), /* Taille en octet d'un vertex complet entre chaque attribut position */
             (const GLvoid*)offsetof(Vertex3DColor, color)
-    );
-    glVertexAttribPointer(
-            VERTEX_ATTR_NORMALE,
-            3,
-            GL_FLOAT,
-            GL_FALSE,
-            sizeof(Vertex3DColor), /* Taille en octet d'un vertex complet entre chaque attribut position */
-            0
     );
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -183,7 +177,7 @@ int main(int argc, char** argv) {
     //Matrices
     glm::mat4 ProjMatrix = glm::perspective (
             glm::radians(70.f), //Angle vertical de vue
-            (GLfloat)800/(GLfloat)800, //Ratio fenetre
+            (GLfloat)WINDOW_WIDTH/(GLfloat)WINDOW_HEIGHT, //Ratio fenetre
             0.1f, //near
             100.f //far
     );
@@ -202,7 +196,8 @@ int main(int argc, char** argv) {
         // Event loop:
         SDL_Event e;
         while(windowManager.pollEvent(e)) {
-            if(e.type == SDL_QUIT) {
+            if(e.type == SDL_QUIT || ( e.type == SDL_KEYDOWN 
+                && (e.key.keysym.sym == SDLK_q || e.key.keysym.sym == SDLK_ESCAPE))) {
                 done = true; // Leave the loop after this iteration
             }
 
