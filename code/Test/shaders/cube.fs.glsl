@@ -13,19 +13,6 @@ void main() {
 	float x = vVertexAbsolutePosition.x;
 	float y = vVertexAbsolutePosition.y;
 	float z = vVertexAbsolutePosition.z;
-	
-
-	/*if((y == -0.5f || y == 0.5f) && (z == -0.5f || z == 0.5f))
-		fFragColor = uEdgeColor;
-
-	else if((x == -0.5f || x == 0.5f) && (z == -0.5f || z == 0.5f))
-		fFragColor = uEdgeColor;
-
-	else if((x == -0.5f || x == 0.5f) && (y == -0.5f || y == 0.5f))
-		fFragColor = uEdgeColor;
-
-	else
-		fFragColor = uFaceColor;*/
 
 	float e = 0.01;
 
@@ -47,6 +34,9 @@ void main() {
 		((-0.5-e <= y && y <= -0.5+e) || (0.5-e <= y && y <= 0.5+e))
 	)
 		fFragColor = uEdgeColor;
+
+	else if(x == 0.5)
+		fFragColor = vec4(0,0,1,0.5);
 
 	else 
 		fFragColor = uFaceColor;

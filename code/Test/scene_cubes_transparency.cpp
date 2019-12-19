@@ -165,19 +165,14 @@ int main(int argc, char** argv) {
         for(int j = 0; j < H; j++){
             for(int k = 0; k < L; k++){
                 scene[i][j][k] = Cube();
-                (scene[i][j][k]).visible(true);
-                (scene[i][j][k]).selected(false);
+                (scene[i][j][k]).visible(false);
+                (scene[i][j][k]).selected(true);
             }
         }
     }
     
     (scene[0][0][0]).visible(false);
     (scene[0][0][0]).selected(true);
-    (scene[2][2][2]).face_color(glm::vec4(0, 0, 1, 0.5));
-    (scene[0][1][1]).face_color(glm::vec4(1, 0, 0, 1));
-    (scene[0][1][0]).visible(false);
-    (scene[2][1][2]).visible(false);
-    (scene[2][2][2]).visible(false);
 
     (scene[W/2][H/2][L/2]).visible(true);
     (scene[W/2][H/2][L/2]).selected(true);
@@ -215,18 +210,18 @@ int main(int argc, char** argv) {
         glBindVertexArray(vao); 
 
         //std::cout << "Centre " << glm::vec3(W/2, H/2, L/2) << std::endl;
-        for(int i = W-1; i >= 0; i--){
-            for(int j = H-1; j >= 0; j--){
-                for(int k = L-1; k >=0; k--){
+        for(int i = 0; i < W; i++){
+            for(int j = 0; j < H; j++){
+                for(int k = 0; k < L; k++){
                     Cube current = scene[i][j][k];
 
-                    if(! current.is_visible()){
+                    if(current.is_visible()){
                     //std::cout << "Décalage " << glm::vec3(k,j,i) << std::endl;
                     //std::cout << "\t==> " << glm::vec3(k-W/2,j-H/2,i-L/2) << std::endl;
 
                     MVMatrix = camera.getViewMatrix();
                     MVMatrix = glm::translate(MVMatrix,glm::vec3(-W/2, -H/2, -L/2));
-                    MVMatrix = glm::translate(MVMatrix,glm::vec3(espace*(i+W/2),espace*(j+H/2),espace*(k+L/2)));
+                    MVMatrix = glm::translate(MVMatrix,glm::vec3(-0.5f+espace*i,-0.5f+espace*j,-0.5f+espace*k));
 
                     glUniformMatrix4fv(location_uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * MVMatrix));
                     glUniformMatrix4fv(location_uMVMatrix, 1, GL_FALSE, glm::value_ptr(MVMatrix));
@@ -246,13 +241,13 @@ int main(int argc, char** argv) {
             for(int j = 0; j < H; j++){
                 for(int k = 0; k < L; k++){
                     Cube current = scene[i][j][k];
-                    if(current.is_visible()){
+                    if(!current.is_visible()){
                     //std::cout << "Décalage " << glm::vec3(k,j,i) << std::endl;
                     //std::cout << "\t==> " << glm::vec3(k-W/2,j-H/2,i-L/2) << std::endl;
 
                     MVMatrix = camera.getViewMatrix();
                     MVMatrix = glm::translate(MVMatrix,glm::vec3(-W/2, -H/2, -L/2));
-                    MVMatrix = glm::translate(MVMatrix,glm::vec3(espace*(i+W/2),espace*(j+H/2),espace*(k+L/2)));
+                    MVMatrix = glm::translate(MVMatrix,glm::vec3(-0.5f+espace*i,-0.5f+espace*j,-0.5f+espace*k));
 
                     glUniformMatrix4fv(location_uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * MVMatrix));
                     glUniformMatrix4fv(location_uMVMatrix, 1, GL_FALSE, glm::value_ptr(MVMatrix));
