@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/louisa/IMAC2/POO/World_IMaker/code/Test/cube_try_data_display.cpp
+/home/louisa/IMAC2/POO/World_IMaker/code/Test/scene_cubes.cpp
 glimac/SDLWindowManager.hpp
 -
 GL/glew.h

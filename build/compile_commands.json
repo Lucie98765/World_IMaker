@@ -46,8 +46,18 @@
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/glimac",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include    -std=c++11 -o CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/TrackballCamera.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/TrackballCamera.cpp"
+},
+{
+  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/glimac",
   "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include    -std=c++11 -o CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/tiny_obj_loader.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/tiny_obj_loader.cpp"
+},
+{
+  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3    -std=c++11 -o CMakeFiles/Test_scene_cubes.dir/scene_cubes.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/scene_cubes.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/scene_cubes.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",

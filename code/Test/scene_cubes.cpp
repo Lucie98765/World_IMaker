@@ -158,16 +158,24 @@ int main(int argc, char** argv) {
     glm::mat4 cameraVM(1);
 
 
-    cube.visible(true);
-    cube.selected(true);
-    std::cout << "Cube visible ? " << cube.is_visible() << std::endl; 
-    std::cout << "Cube selectionné ? " << cube.is_selected() << std::endl;
-    std::cout << "Couleur face : " << cube.face_color() << std::endl;
-    std::cout << "Couleur arete : " << cube.edge_color() << std::endl;
-    glUniform4fv(location_uFaceColor, 1, glm::value_ptr(cube.face_color()));
-    glUniform4fv(location_uEdgeColor, 1, glm::value_ptr(cube.edge_color()));
+    Cube scene[W][H][L];
+    for(int i = 0; i < W; i++){
+        for(int j = 0; j < H; j++){
+            for(int k = 0; k < L; k++){
+                scene[i][j][k] = Cube();
+                (scene[i][j][k]).visible(true);
+                (scene[i][j][k]).selected(false);
+            }
+        }
+    }
+    
+    (scene[0][0][0]).visible(false);
+    (scene[0][0][0]).selected(true);
 
+    (scene[W/2][H/2][L/2]).visible(true);
+    (scene[W/2][H/2][L/2]).selected(true);
 
+    float espace = 1.5f;
     // Application loop:
     bool done = false;
     while(!done) {
@@ -199,12 +207,32 @@ int main(int argc, char** argv) {
 
         glBindVertexArray(vao); 
 
+        //std::cout << "Centre " << glm::vec3(W/2, H/2, L/2) << std::endl;
+        for(int i = 0; i < W; i++){
+            for(int j = 0; j < H; j++){
+                for(int k = 0; k < L; k++){
+                    Cube current = scene[i][j][k];
 
-        MVMatrix = glm::translate(MVMatrix,glm::vec3(0.f,0.f,0.f));
-        glUniformMatrix4fv(location_uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * MVMatrix));
-        glUniformMatrix4fv(location_uMVMatrix, 1, GL_FALSE, glm::value_ptr(MVMatrix));
-        glUniformMatrix4fv(location_uNormalMatrix, 1, GL_FALSE, glm::value_ptr(NormalMatrix));
-        glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+                    //std::cout << "Décalage " << glm::vec3(k,j,i) << std::endl;
+                    //std::cout << "\t==> " << glm::vec3(k-W/2,j-H/2,i-L/2) << std::endl;
+
+                    MVMatrix = camera.getViewMatrix();
+                    MVMatrix = glm::translate(MVMatrix,glm::vec3(-W/2, -H/2, -L/2));
+                    MVMatrix = glm::translate(MVMatrix,glm::vec3(espace*(i+W/2),espace*(j+H/2),espace*(k+L/2)));
+
+                    glUniformMatrix4fv(location_uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * MVMatrix));
+                    glUniformMatrix4fv(location_uMVMatrix, 1, GL_FALSE, glm::value_ptr(MVMatrix));
+                    glUniformMatrix4fv(location_uNormalMatrix, 1, GL_FALSE, glm::value_ptr(NormalMatrix));
+
+                    glUniform4fv(location_uFaceColor, 1, glm::value_ptr(current.face_color()));
+                    glUniform4fv(location_uEdgeColor, 1, glm::value_ptr(current.edge_color()));
+                    
+                    glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+                }
+            }
+        }
+
+        //done = true;
 
 
                  
