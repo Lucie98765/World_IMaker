@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Cone.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Cone.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Cube.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Cube.cpp.o"
+  "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/FreeFlyCamera.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/FreeFlyCamera.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Geometry.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Image.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Image.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Imagev2.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.o"

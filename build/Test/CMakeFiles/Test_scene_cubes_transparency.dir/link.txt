@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/Test_scene_cubes_transparency.dir/scene_cubes_transparency.cpp.o  -o Test_scene_cubes_transparency ../glimac/libglimac.a -lSDL2 -lGL -lGLU -lGLEW 

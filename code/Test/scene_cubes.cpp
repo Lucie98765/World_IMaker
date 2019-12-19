@@ -218,7 +218,7 @@ int main(int argc, char** argv) {
 
                     MVMatrix = camera.getViewMatrix();
                     MVMatrix = glm::translate(MVMatrix,glm::vec3(-W/2, -H/2, -L/2));
-                    MVMatrix = glm::translate(MVMatrix,glm::vec3(espace*(i+W/2),espace*(j+H/2),espace*(k+L/2)));
+                    MVMatrix = glm::translate(MVMatrix,glm::vec3(-0.5f+espace*(i),-0.5f+espace*(j),-0.5f+espace*(k)));
 
                     glUniformMatrix4fv(location_uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * MVMatrix));
                     glUniformMatrix4fv(location_uMVMatrix, 1, GL_FALSE, glm::value_ptr(MVMatrix));
