@@ -252,7 +252,7 @@ int main(int argc, char** argv) {
                         break;
                     case SDLK_LEFT :
                         if (cursor[0] > 0){
-                            std::cout<< "left" << cursor[0] << std::endl;
+                            //std::cout<< "left" << cursor[0] << std::endl;
                             int current_x = cursor[0];
                             int current_y = cursor[1];
                             int current_z = cursor[2];
@@ -262,8 +262,8 @@ int main(int argc, char** argv) {
                         }
                         break;
                     case SDLK_RIGHT :
-                        if (cursor[0] < L){
-                            std::cout<< "right"<< cursor[0] << std::endl;
+                        if (cursor[0] < W){
+                            //std::cout<< "right"<< cursor[0] << std::endl;
                             int current_x = cursor[0];
                             int current_y = cursor[1];
                             int current_z = cursor[2];
@@ -274,7 +274,7 @@ int main(int argc, char** argv) {
                         break;
                     case SDLK_UP :
                         if (cursor[1] < H){
-                            std::cout<< "up"<< cursor[1] << std::endl;
+                            //std::cout<< "up"<< cursor[1] << std::endl;
                             int current_x = cursor[0];
                             int current_y = cursor[1];
                             int current_z = cursor[2];
@@ -285,7 +285,7 @@ int main(int argc, char** argv) {
                         break;
                     case SDLK_DOWN :
                         if (cursor[1] > 0){
-                            std::cout<< "down"<< cursor[1] << std::endl;
+                            //std::cout<< "down"<< cursor[1] << std::endl;
                             int current_x = cursor[0];
                             int current_y = cursor[1];
                             int current_z = cursor[2];
@@ -294,9 +294,9 @@ int main(int argc, char** argv) {
                             cursor = glm::vec3 (current_x, current_y-1, current_z);
                         }
                         break;
-                    case SDLK_KP_PLUS :
+                    case SDLK_o :
                         if (cursor[2] < L){
-                            std::cout<< "far "<< cursor[2] << std::endl;
+                            //std::cout<< "far "<< cursor[2] << std::endl;
                             int current_x = cursor[0];
                             int current_y = cursor[1];
                             int current_z = cursor[2];
@@ -305,9 +305,9 @@ int main(int argc, char** argv) {
                             cursor = glm::vec3 (current_x, current_y, current_z+1);
                         }
                         break;
-                    case SDLK_KP_MINUS :
-                        if (cursor[2] < L){
-                            std::cout<< "near "<< cursor[2] << std::endl;
+                    case SDLK_l :
+                        if (cursor[2] > 0){
+                            //std::cout<< "near "<< cursor[2] << std::endl;
                             int current_x = cursor[0];
                             int current_y = cursor[1];
                             int current_z = cursor[2];
