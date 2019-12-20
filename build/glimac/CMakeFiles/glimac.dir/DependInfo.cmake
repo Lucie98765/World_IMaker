@@ -6,11 +6,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Cone.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Cone.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Cube.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Cube.cpp.o"
+  "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/FreeFlyCamera.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/FreeFlyCamera.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Geometry.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Image.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Image.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Imagev2.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Program.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Program.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/SDLWindowManager.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o"
+  "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Scene.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Scene.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Shader.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Sphere.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/TrackballCamera.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o"

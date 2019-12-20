@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/src_cube_freefly.dir/cube_freefly.cpp.o  -o src_cube_freefly ../glimac/libglimac.a -lSDL2 -lGL -lGLU -lGLEW 

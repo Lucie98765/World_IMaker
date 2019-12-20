@@ -124,6 +124,32 @@ glimac/fast:
 .PHONY : glimac/fast
 
 #=============================================================================
+# Target rules for targets named src_cube_freefly
+
+# Build rule for target.
+src_cube_freefly: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 src_cube_freefly
+.PHONY : src_cube_freefly
+
+# fast build rule for target.
+src_cube_freefly/fast:
+	$(MAKE) -f src/CMakeFiles/src_cube_freefly.dir/build.make src/CMakeFiles/src_cube_freefly.dir/build
+.PHONY : src_cube_freefly/fast
+
+#=============================================================================
+# Target rules for targets named Test_scene_cubes_transparency
+
+# Build rule for target.
+Test_scene_cubes_transparency: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_scene_cubes_transparency
+.PHONY : Test_scene_cubes_transparency
+
+# fast build rule for target.
+Test_scene_cubes_transparency/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/build
+.PHONY : Test_scene_cubes_transparency/fast
+
+#=============================================================================
 # Target rules for targets named Test_scene_cubes
 
 # Build rule for target.
@@ -184,6 +210,8 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... glimac"
+	@echo "... src_cube_freefly"
+	@echo "... Test_scene_cubes_transparency"
 	@echo "... Test_scene_cubes"
 	@echo "... Test_cube_try_data_display"
 	@echo "... Test_cube_try_display"

@@ -111,6 +111,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule
+.PHONY : Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule
+
+# Convenience name for target.
+Test_scene_cubes_transparency: Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule
+
+.PHONY : Test_scene_cubes_transparency
+
+# fast build rule for target.
+Test_scene_cubes_transparency/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/build
+.PHONY : Test_scene_cubes_transparency/fast
+
+# Convenience name for target.
 Test/CMakeFiles/Test_scene_cubes.dir/rule:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_scene_cubes.dir/rule
 .PHONY : Test/CMakeFiles/Test_scene_cubes.dir/rule
@@ -236,12 +251,40 @@ scene_cubes.cpp.s:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_cubes.dir/build.make Test/CMakeFiles/Test_scene_cubes.dir/scene_cubes.cpp.s
 .PHONY : scene_cubes.cpp.s
 
+scene_cubes_transparency.o: scene_cubes_transparency.cpp.o
+
+.PHONY : scene_cubes_transparency.o
+
+# target to build an object file
+scene_cubes_transparency.cpp.o:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/scene_cubes_transparency.cpp.o
+.PHONY : scene_cubes_transparency.cpp.o
+
+scene_cubes_transparency.i: scene_cubes_transparency.cpp.i
+
+.PHONY : scene_cubes_transparency.i
+
+# target to preprocess a source file
+scene_cubes_transparency.cpp.i:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/scene_cubes_transparency.cpp.i
+.PHONY : scene_cubes_transparency.cpp.i
+
+scene_cubes_transparency.s: scene_cubes_transparency.cpp.s
+
+.PHONY : scene_cubes_transparency.s
+
+# target to generate assembly for a file
+scene_cubes_transparency.cpp.s:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/scene_cubes_transparency.cpp.s
+.PHONY : scene_cubes_transparency.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... Test_scene_cubes_transparency"
 	@echo "... rebuild_cache"
 	@echo "... Test_scene_cubes"
 	@echo "... Test_cube_try_data_display"
@@ -256,6 +299,9 @@ help:
 	@echo "... scene_cubes.o"
 	@echo "... scene_cubes.i"
 	@echo "... scene_cubes.s"
+	@echo "... scene_cubes_transparency.o"
+	@echo "... scene_cubes_transparency.i"
+	@echo "... scene_cubes_transparency.s"
 .PHONY : help
 
 
