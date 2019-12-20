@@ -157,9 +157,14 @@ int main(int argc, char** argv) {
     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(MVMatrix));
 
 
-    //Camera Trackball
+    //Trackball Camera
     TrackballCamera camera;
     glm::mat4 cameraVM(1);
+
+
+    //Cursor
+    glm::vec3 cursor;
+    cursor = glm::vec3(1, 0, 0);
 
 
     Cube scene[W][H][L];
@@ -172,10 +177,10 @@ int main(int argc, char** argv) {
             }
         }
     }
-    
-    (scene[0][0][0]).visible(false);
-    (scene[0][0][0]).selected(true);
-    (scene[0][0][2]).visible(false);
+
+    (scene[1][0][0]).visible(false);
+    (scene[1][0][0]).selected(true);
+    /*(scene[0][0][2]).visible(false);
     (scene[0][0][2]).selected(true);
     
     (scene[2][0][0]).visible(false);
@@ -191,18 +196,18 @@ int main(int argc, char** argv) {
     (scene[2][2][0]).visible(false);
     (scene[2][2][0]).selected(true);
     (scene[2][2][2]).visible(false);
-    (scene[2][2][2]).selected(true);
+    (scene[2][2][2]).selected(true);*/
 
 
     float espace = 1.5f;
+    int current_x, current_y, current_z;
     // Application loop:
     bool done = false;
     while(!done) {
         // Event loop:
         SDL_Event e;
         while(windowManager.pollEvent(e)) {
-            if(e.type == SDL_QUIT || ( e.type == SDL_KEYDOWN 
-                && e.key.keysym.sym == SDLK_ESCAPE)) {
+            if(e.type == SDL_QUIT) {
                 done = true; // Leave the loop after this iteration
             }
 
@@ -214,6 +219,168 @@ int main(int argc, char** argv) {
             if(e.type == SDL_MOUSEMOTION && (e.motion.state & SDL_BUTTON_LEFT)){
                 camera.rotateLeft(e.motion.yrel);
                 camera.rotateUp(e.motion.xrel); 
+            }
+
+            if( e.type == SDL_KEYDOWN){
+                std::cout << e.key.keysym.sym << std::endl;
+                switch (e.key.keysym.sym){
+                    case SDLK_1 :
+                        std::cout<<"Create a new cube" << std::endl;
+                        current_x = cursor[0];
+                        current_y = cursor[1];
+                        current_z = cursor[2];
+                        if (scene[current_x][current_y][current_z].is_visible()){
+                            std::cout<<"This cube already exists."<<std::endl;
+                        } else {
+                            scene[current_x][current_y][current_z].visible(true);
+                        }
+                        break;
+                    case SDLK_2 :
+                        std::cout<<"Delete this cube" << std::endl;
+                        current_x = cursor[0];
+                        current_y = cursor[1];
+                        current_z = cursor[2];
+                        if (scene[current_x][current_y][current_z].is_visible()){
+                            scene[current_x][current_y][current_z].visible(false);
+                        } else {
+                            std::cout<<"There is no cube here to delete."<<std::endl;
+                        }
+                        break;
+                    case SDLK_3 :
+                        std::cout<<"Extrude" << std::endl;
+                        break;
+                    case SDLK_4 :
+                        std::cout<<"Dig" << std::endl;
+                        break;
+                    case SDLK_5 :
+                        std::cout<<"Paint in red" << std::endl;
+                        current_x = cursor[0];
+                        current_y = cursor[1];
+                        current_z = cursor[2];
+                        if (scene[current_x][current_y][current_z].is_visible()){
+                            scene[current_x][current_y][current_z].face_color(glm::vec4(1, 0, 0, 1));
+                        } else {
+                            std::cout << "You should first create this cube before changing its color." << std::endl;
+                        }
+                        break;
+                    case SDLK_6 :
+                        std::cout<<"Paint in yellow" << std::endl;
+                        current_x = cursor[0];
+                        current_y = cursor[1];
+                        current_z = cursor[2];
+                        if (scene[current_x][current_y][current_z].is_visible()){
+                            scene[current_x][current_y][current_z].face_color(glm::vec4(1, 1, 0, 1));
+                        } else {
+                            std::cout << "You should first create this cube before changing its color." << std::endl;
+                        }
+                        break;
+                    case SDLK_7 :
+                        std::cout<<"Paint in cyan" << std::endl;
+                        current_x = cursor[0];
+                        current_y = cursor[1];
+                        current_z = cursor[2];
+                        if (scene[current_x][current_y][current_z].is_visible()){
+                            scene[current_x][current_y][current_z].face_color(glm::vec4(0, 1, 1, 1));
+                        } else {
+                            std::cout << "You should first create this cube before changing its color." << std::endl;
+                        }
+                        break;
+                    case SDLK_8 :
+                        std::cout<<"Paint in green" << std::endl;
+                        current_x = cursor[0];
+                        current_y = cursor[1];
+                        current_z = cursor[2];
+                        if (scene[current_x][current_y][current_z].is_visible()){
+                            scene[current_x][current_y][current_z].face_color(glm::vec4(0, 1, 0, 1));
+                        } else {
+                            std::cout << "You should first create this cube before changing its color." << std::endl;
+                        }
+                        break;
+                    case SDLK_9 :
+                        std::cout<<"Paint in magenta" << std::endl;
+                        current_x = cursor[0];
+                        current_y = cursor[1];
+                        current_z = cursor[2];
+                        if (scene[current_x][current_y][current_z].is_visible()){
+                            scene[current_x][current_y][current_z].face_color(glm::vec4(1, 0, 1, 1));
+                        } else {
+                            std::cout << "You should first create this cube before changing its color." << std::endl;
+                        }
+                        break;
+                    case SDLK_LEFT :
+                        if (cursor[0] > 0){
+                            //std::cout<< "left" << cursor[0] << std::endl;
+                            current_x = cursor[0];
+                            current_y = cursor[1];
+                            current_z = cursor[2];
+                            scene[current_x][current_y][current_z].selected(false);
+                            scene[current_x - 1][current_y][current_z].selected(true);
+                            cursor = glm::vec3 (current_x-1, current_y, current_z);
+                        }
+                        break;
+                    case SDLK_RIGHT :
+                        if (cursor[0] < W){
+                            //std::cout<< "right"<< cursor[0] << std::endl;
+                            current_x = cursor[0];
+                            current_y = cursor[1];
+                            current_z = cursor[2];
+                            scene[current_x][current_y][current_z].selected(false);
+                            scene[current_x + 1][current_y][current_z].selected(true);
+                            cursor = glm::vec3 (current_x+1, current_y, current_z);
+                        }
+                        break;
+                    case SDLK_UP :
+                        if (cursor[1] < H){
+                            //std::cout<< "up"<< cursor[1] << std::endl;
+                            current_x = cursor[0];
+                            current_y = cursor[1];
+                            current_z = cursor[2];
+                            scene[current_x][current_y][current_z].selected(false);
+                            scene[current_x][current_y+1][current_z].selected(true);
+                            cursor = glm::vec3 (current_x, current_y+1, current_z);
+                        }
+                        break;
+                    case SDLK_DOWN :
+                        if (cursor[1] > 0){
+                            //std::cout<< "down"<< cursor[1] << std::endl;
+                            current_x = cursor[0];
+                            current_y = cursor[1];
+                            current_z = cursor[2];
+                            scene[current_x][current_y][current_z].selected(false);
+                            scene[current_x][current_y-1][current_z].selected(true);
+                            cursor = glm::vec3 (current_x, current_y-1, current_z);
+                        }
+                        break;
+                    case SDLK_KP_PLUS :
+                        if (cursor[2] < L){
+                            //std::cout<< "far "<< cursor[2] << std::endl;
+                            current_x = cursor[0];
+                            current_y = cursor[1];
+                            current_z = cursor[2];
+                            scene[current_x][current_y][current_z].selected(false);
+                            scene[current_x][current_y][current_z+1].selected(true);
+                            cursor = glm::vec3 (current_x, current_y, current_z+1);
+                        }
+                        break;
+                    case SDLK_KP_MINUS :
+                        if (cursor[2] > 0){
+                            //std::cout<< "near "<< cursor[2] << std::endl;
+                            current_x = cursor[0];
+                            current_y = cursor[1];
+                            current_z = cursor[2];
+                            scene[current_x][current_y][current_z].selected(false);
+                            scene[current_x][current_y][current_z-1].selected(true);
+                            cursor = glm::vec3 (current_x, current_y, current_z-1);
+                        }
+                        break;
+                    case SDLK_ESCAPE :
+                        done = true;
+                        break;
+                    default :
+                        std::cout << "This command doesn't exist." << std::endl;
+                        break;
+                }
+
             }
         }
 
