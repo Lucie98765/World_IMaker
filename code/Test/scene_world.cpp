@@ -5,10 +5,10 @@
 #include <glimac/FilePath.hpp>
 #include <glimac/glm.hpp>
 #include <cstddef>
-#include <glimac/TrackballCamera.hpp>
 #include <glimac/Image.hpp>
 
 #include <glimac/Cube.hpp>
+#include <glimac/TrackballCamera.hpp>
 #include <glimac/Scene.hpp>
 
 #define WINDOW_WIDTH 800
@@ -168,10 +168,6 @@ int main(int argc, char** argv) {
     glm::mat4 MVMatrix = glm::translate(glm::mat4(1),glm::vec3(0.f,0.f,-5.f));
     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(MVMatrix));
 
-
-    //Trackball Camera
-    glm::mat4 cameraVM(1);
-
     float espace = 1.5f;
     
     // Application loop:
@@ -257,8 +253,6 @@ int main(int argc, char** argv) {
 
             }
         }
-
-
 
         MVMatrix = world.camera().getViewMatrix();
         // std::cout << "MVMatrix" << std::endl;

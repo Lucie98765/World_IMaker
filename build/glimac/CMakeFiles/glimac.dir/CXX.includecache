@@ -60,6 +60,28 @@ glm.hpp
 FilePath.hpp
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/FilePath.hpp
 
+/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/Interface.hpp
+glimac/SDLWindowManager.hpp
+-
+GL/glew.h
+-
+iostream
+-
+glimac/Program.hpp
+-
+glimac/FilePath.hpp
+-
+glimac/glm.hpp
+-
+cstddef
+-
+common.hpp
+/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/common.hpp
+vector
+-
+glimac/Scene.hpp
+/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/glimac/Scene.hpp
+
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/Program.hpp
 GL/glew.h
 -
@@ -179,6 +201,16 @@ stb_image.h
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/stb_image.h
 iostream
 -
+
+/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Interface.cpp
+iostream
+-
+glm/glm.hpp
+-
+vector
+-
+glimac/Interface.hpp
+/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/glimac/Interface.hpp
 
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Program.cpp
 glimac/Program.hpp

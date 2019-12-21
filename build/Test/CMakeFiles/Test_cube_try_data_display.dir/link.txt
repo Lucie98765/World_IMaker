@@ -1,1 +1,1 @@
-/usr/bin/c++    -rdynamic CMakeFiles/Test_cube_try_data_display.dir/cube_try_data_display.cpp.o  -o Test_cube_try_data_display ../glimac/libglimac.a -lSDL2 -lGL -lGLU -lGLEW 
+/usr/bin/c++   -Wall -g -O2  -rdynamic CMakeFiles/Test_cube_try_data_display.dir/cube_try_data_display.cpp.o  -o Test_cube_try_data_display ../glimac/libglimac.a -lSDL2 -lGL -lGLU -lGLEW 

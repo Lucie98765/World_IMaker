@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/louisa/IMAC2/POO/World_IMaker/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -124,6 +124,21 @@ Test_cube_try_data_display: Test/CMakeFiles/Test_cube_try_data_display.dir/rule
 Test_cube_try_data_display/fast:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_cube_try_data_display.dir/build.make Test/CMakeFiles/Test_cube_try_data_display.dir/build
 .PHONY : Test_cube_try_data_display/fast
+
+# Convenience name for target.
+Test/CMakeFiles/Test_world_draw.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_world_draw.dir/rule
+.PHONY : Test/CMakeFiles/Test_world_draw.dir/rule
+
+# Convenience name for target.
+Test_world_draw: Test/CMakeFiles/Test_world_draw.dir/rule
+
+.PHONY : Test_world_draw
+
+# fast build rule for target.
+Test_world_draw/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_world_draw.dir/build.make Test/CMakeFiles/Test_world_draw.dir/build
+.PHONY : Test_world_draw/fast
 
 # Convenience name for target.
 Test/CMakeFiles/Test_cube_try_display.dir/rule:
@@ -320,15 +335,43 @@ scene_world.cpp.s:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_world.dir/build.make Test/CMakeFiles/Test_scene_world.dir/scene_world.cpp.s
 .PHONY : scene_world.cpp.s
 
+world_draw.o: world_draw.cpp.o
+
+.PHONY : world_draw.o
+
+# target to build an object file
+world_draw.cpp.o:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_world_draw.dir/build.make Test/CMakeFiles/Test_world_draw.dir/world_draw.cpp.o
+.PHONY : world_draw.cpp.o
+
+world_draw.i: world_draw.cpp.i
+
+.PHONY : world_draw.i
+
+# target to preprocess a source file
+world_draw.cpp.i:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_world_draw.dir/build.make Test/CMakeFiles/Test_world_draw.dir/world_draw.cpp.i
+.PHONY : world_draw.cpp.i
+
+world_draw.s: world_draw.cpp.s
+
+.PHONY : world_draw.s
+
+# target to generate assembly for a file
+world_draw.cpp.s:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_world_draw.dir/build.make Test/CMakeFiles/Test_world_draw.dir/world_draw.cpp.s
+.PHONY : world_draw.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Test_cube_try_data_display"
+	@echo "... rebuild_cache"
+	@echo "... Test_world_draw"
 	@echo "... Test_cube_try_display"
 	@echo "... Test_scene_cubes"
 	@echo "... Test_scene_cubes_transparency"
@@ -348,6 +391,9 @@ help:
 	@echo "... scene_world.o"
 	@echo "... scene_world.i"
 	@echo "... scene_world.s"
+	@echo "... world_draw.o"
+	@echo "... world_draw.i"
+	@echo "... world_draw.s"
 .PHONY : help
 
 

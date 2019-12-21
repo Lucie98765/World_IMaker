@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.0)
 
 project(World_IMaker)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -g -O2")
+
 add_definitions(-std=c++11)
 
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/CMake)

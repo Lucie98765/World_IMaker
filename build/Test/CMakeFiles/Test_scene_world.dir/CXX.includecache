@@ -21,11 +21,11 @@ glimac/glm.hpp
 -
 cstddef
 -
-glimac/TrackballCamera.hpp
--
 glimac/Image.hpp
 -
 glimac/Cube.hpp
+-
+glimac/TrackballCamera.hpp
 -
 glimac/Scene.hpp
 -

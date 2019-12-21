@@ -150,6 +150,19 @@ Test_cube_try_data_display/fast:
 .PHONY : Test_cube_try_data_display/fast
 
 #=============================================================================
+# Target rules for targets named Test_world_draw
+
+# Build rule for target.
+Test_world_draw: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_world_draw
+.PHONY : Test_world_draw
+
+# fast build rule for target.
+Test_world_draw/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_world_draw.dir/build.make Test/CMakeFiles/Test_world_draw.dir/build
+.PHONY : Test_world_draw/fast
+
+#=============================================================================
 # Target rules for targets named Test_cube_try_display
 
 # Build rule for target.
@@ -225,6 +238,7 @@ help:
 	@echo "... glimac"
 	@echo "... src_cube_freefly"
 	@echo "... Test_cube_try_data_display"
+	@echo "... Test_world_draw"
 	@echo "... Test_cube_try_display"
 	@echo "... Test_scene_cubes"
 	@echo "... Test_scene_cubes_transparency"

@@ -1,11 +1,11 @@
 ///
-/// \file Scene.hpp
-/// \brief header classe Scene
+/// \file Scene.cpp
+/// \brief source classe Scene
 /// \author CHIKAR LESBATS
 /// \version 0.1
 /// \date 19 dec 2019
 ///
-/// Code sourve de la classe Scene
+/// Code source de la classe Scene
 ///
 ///
 
