@@ -10,7 +10,7 @@
 ///
 
 
-
+#include <string>
 #include <iostream>
 #include <glm/glm.hpp>
 #include <vector>
@@ -18,24 +18,46 @@
 #include "glimac/Interface.hpp"
 
 namespace glimac{
-	Interface::Interface(char* path,
-		std::string fragment_shader,
-		std::string vertex_shader,
-		std::vector<glm::vec3> vertices,
-		glm::mat4 viewMatrix){
+	Interface::Interface(){
+		std::cout << "CONSTRUCTEUR" << std::endl;
+		std::string path = "./Test/Test_world_draw";
 
-		espace = 1.5f;
+		std::string fragment_shader = "cube.fs.glsl";
+		std::string vertex_shader = "cube.vs.glsl";
+
+		std::vector<glm::vec3> vertices(8);
+		vertices.push_back(glm::vec3(-0.5, -0.5, -0.5));
+        vertices.push_back(glm::vec3(0.5, -0.5, -0.5));
+        vertices.push_back(glm::vec3(-0.5, 0.5, -0.5));
+        vertices.push_back(glm::vec3(0.5, 0.5, -0.5));
+        vertices.push_back(glm::vec3(-0.5, -0.5, 0.5));
+        vertices.push_back(glm::vec3(0.5, -0.5, 0.5));
+        vertices.push_back(glm::vec3(-0.5, 0.5, 0.5));
+        vertices.push_back(glm::vec3(0.5, 0.5, 0.5));
+
+        glm::mat4 viewMatrix(1);
+        viewMatrix = glm::translate(viewMatrix,glm::vec3(0.f,0.f,0));
+	    viewMatrix = glm::rotate(viewMatrix, glm::radians(0.f), glm::vec3(1, 0, 0));
+    	viewMatrix = glm::rotate(viewMatrix, glm::radians(0.f), glm::vec3(0, 1, 0));
+
+
+	    std::cout << "path : " << path << std::endl;
+
+	    std::cout<<"test vertices" << std::endl;
+	    for(int i = 0; i < vertices.size(); i++)
+	        std::cout << vertices[i]<<std::endl;
+
+	    std::cout << "test camera" << viewMatrix << std::endl;
+
+
+	    std::cout << "Fragment Shader : " << fragment_shader << std::endl;
+	    std::cout << "Vertex Shader : " << fragment_shader << std::endl;
+
+
+
 		std::cout << "hello" << std::endl;
-
-		GLenum glewInitError = glewInit();
-	    if(GLEW_OK != glewInitError) {
-	        std::cerr << glewGetErrorString(glewInitError) << std::endl;
-	        // return EXIT_FAILURE;
-	    }
-
-	    std::cout << "OpenGL Version : " << glGetString(GL_VERSION) << std::endl;
-	    std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
-
+		espace = 1.5f;
+		std::cout << "world" << std::endl;
 
 	    //Shaders
 	    std::cout << "load program" << std::endl;

@@ -23,6 +23,8 @@ cstddef
 -
 glimac/Image.hpp
 -
+string
+-
 glimac/Cube.hpp
 -
 glimac/TrackballCamera.hpp

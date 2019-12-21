@@ -54,7 +54,12 @@ namespace glimac{
 			float espace;
 
 		public:
-			Interface(char* path, std::string fragment_shader, std::string vertex_shader, std::vector<glm::vec3> vertices, glm::mat4 viewMatrix);
+			// Interface(std::string path,
+			// 	std::string fragment_shader,
+			// 	std::string vertex_shader,
+			// 	std::vector<glm::vec3> vertices,
+			// 	glm::mat4 viewMatrix);
+			Interface();
 
 			~Interface();
 

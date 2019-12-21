@@ -6,6 +6,7 @@
 #include <glimac/glm.hpp>
 #include <cstddef>
 #include <glimac/Image.hpp>
+#include <string>
 
 #include <glimac/Cube.hpp>
 #include <glimac/TrackballCamera.hpp>
@@ -24,21 +25,44 @@ int main(int argc, char** argv) {
     SDLWindowManager windowManager(WINDOW_WIDTH, WINDOW_HEIGHT, "World Imaker");
     std::cout<<"test 1"<<std::endl;
 
+    
+    GLenum glewInitError = glewInit();
+    if(GLEW_OK != glewInitError) {
+        std::cerr << glewGetErrorString(glewInitError) << std::endl;
+        return EXIT_FAILURE;
+    }
+
+
+    std::cout << "OpenGL Version : " << glGetString(GL_VERSION) << std::endl;
+    std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
+
+
     Scene world(W, L, H);
 
-    std::cout << "path : " << argv[0] << std::endl;
+    std::string path = argv[0];
+    std::vector<glm::vec3> vertices = world.cubes()[0][0][0].vertices();
+    glm::mat4 viewMatrix = world.camera().getViewMatrix();
+
+    std::cout << "path : " << path << std::endl;
 
     std::cout<<"test vertices" << std::endl;
-    for(int i = 0; i < world.cubes()[0][0][0].vertices().size(); i++)
-        std::cout << world.cubes()[0][0][0].vertices()[i]<<std::endl;
+    for(int i = 0; i < vertices.size(); i++)
+        std::cout << vertices[i]<<std::endl;
 
-    std::cout << "test camera" << world.camera().getViewMatrix() << std::endl;
+    std::cout << "test camera" << viewMatrix << std::endl;
 
-    Interface interface(argv[0],
-        "cube.fs.glsl",
-        "cube.vs.glsl",
-        world.cubes()[0][0][0].vertices(),
-        world.camera().getViewMatrix());
+    std::string fragment_shader = "cube.fs.glsl";
+    std::string vertex_shader = "cube.vs.glsl";
+    std::cout << "Fragment Shader : " << fragment_shader << std::endl;
+    std::cout << "Vertex Shader : " << fragment_shader << std::endl;
+
+    // Interface interface(path,
+    //     fragment_shader,
+    //     vertex_shader,
+    //     vertices,
+    //     viewMatrix);
+
+    Interface interface;
     
     // Application loop:
     bool done = false;

@@ -203,6 +203,8 @@ iostream
 -
 
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Interface.cpp
+string
+-
 iostream
 -
 glm/glm.hpp
