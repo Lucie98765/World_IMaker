@@ -25,7 +25,7 @@ int main(int argc, char** argv) {
     SDLWindowManager windowManager(WINDOW_WIDTH, WINDOW_HEIGHT, "World Imaker");
     std::cout<<"test 1"<<std::endl;
 
-    
+
     GLenum glewInitError = glewInit();
     if(GLEW_OK != glewInitError) {
         std::cerr << glewGetErrorString(glewInitError) << std::endl;
@@ -39,30 +39,12 @@ int main(int argc, char** argv) {
 
     Scene world(W, L, H);
 
-    std::string path = argv[0];
-    std::vector<glm::vec3> vertices = world.cubes()[0][0][0].vertices();
-    glm::mat4 viewMatrix = world.camera().getViewMatrix();
+    Interface interface(argv[0],
+        "cube.fs.glsl",
+        "cube.vs.glsl",
+        world.cubes()[0][0][0].vertices(),
+        world.camera().getViewMatrix());
 
-    std::cout << "path : " << path << std::endl;
-
-    std::cout<<"test vertices" << std::endl;
-    for(int i = 0; i < vertices.size(); i++)
-        std::cout << vertices[i]<<std::endl;
-
-    std::cout << "test camera" << viewMatrix << std::endl;
-
-    std::string fragment_shader = "cube.fs.glsl";
-    std::string vertex_shader = "cube.vs.glsl";
-    std::cout << "Fragment Shader : " << fragment_shader << std::endl;
-    std::cout << "Vertex Shader : " << fragment_shader << std::endl;
-
-    // Interface interface(path,
-    //     fragment_shader,
-    //     vertex_shader,
-    //     vertices,
-    //     viewMatrix);
-
-    Interface interface;
     
     // Application loop:
     bool done = false;
@@ -157,6 +139,7 @@ int main(int argc, char** argv) {
             for(int j = 0; j < world.height(); j++){
                 for(int k = 0; k < world.length(); k++){
                     if(world.cubes()[i][j][k].is_visible()){
+                        interface.affect_view(world.camera().getViewMatrix(), glm::vec3(world.width()/2, world.height()/2, world.length()/2), glm::vec3(i,j,k));
                         interface.affect_uniforms(world.cubes()[i][j][k].face_color(), world.cubes()[i][j][k].edge_color(), 0);
                         interface.draw();
                     }
@@ -168,6 +151,7 @@ int main(int argc, char** argv) {
             for(int j = 0; j < world.height(); j++){
                 for(int k = 0; k < world.length(); k++){
                     if(!world.cubes()[i][j][k].is_visible()){
+                        interface.affect_view(world.camera().getViewMatrix(), glm::vec3(world.width()/2, world.height()/2, world.length()/2), glm::vec3(i,j,k));
                         interface.affect_uniforms(world.cubes()[i][j][k].face_color(), world.cubes()[i][j][k].edge_color(), 0);
                         interface.draw();
                     }
@@ -179,6 +163,7 @@ int main(int argc, char** argv) {
             for(int j = 0; j < world.height(); j++){
                 for(int k = 0; k < world.length(); k++){
                     if(world.cubes()[i][j][k].is_selected()){
+                        interface.affect_view(world.camera().getViewMatrix(), glm::vec3(world.width()/2, world.height()/2, world.length()/2), glm::vec3(i,j,k));
                         interface.affect_uniforms(world.cubes()[i][j][k].face_color(), world.cubes()[i][j][k].edge_color(), 1);
                         interface.draw();
 
