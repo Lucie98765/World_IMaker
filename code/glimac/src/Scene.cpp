@@ -53,6 +53,58 @@ namespace glimac{
 		return m_cursor;
 	}
 
+	void Scene::add_cube(){
+        if (m_cubes[m_cursor[0]][m_cursor[1]][m_cursor[2]].is_visible()){
+            std::cout<<"This cube already exists."<< std::endl;
+        } else {
+            m_cubes[m_cursor[0]][m_cursor[1]][m_cursor[2]].visible(true);
+        }
+	}
+
+	void Scene::delete_cube(){
+		if (m_cubes[m_cursor[0]][m_cursor[1]][m_cursor[2]].is_visible()){
+            m_cubes[m_cursor[0]][m_cursor[1]][m_cursor[2]].visible(false);
+        } else {
+            std::cout<< "There is no cube here to delete."<<std::endl;
+        }
+	}
+
+
+	void Scene::extrude_cube(){
+		if(!m_cubes[m_cursor[0]][m_cursor[1]][m_cursor[2]].is_visible()){
+			std::cout << "Can't extrude nothing." << std::endl;
+			return;
+		}
+		float current_x, current_y, current_z;
+		current_x = m_cursor[0];
+		current_y = m_cursor[1];
+		current_z = m_cursor[2];
+		while(m_cubes[current_x][current_y][current_z].is_visible()){
+			if(current_y == m_height-1){
+				std::cout << "Can't extrude more than max." << std::endl;
+				return;
+			}
+			current_y++;
+		}
+		m_cubes[current_x][current_y][current_z].visible(true);
+	}
+
+	void Scene::dig_cube(){
+		if(!m_cubes[m_cursor[0]][m_cursor[1]][m_cursor[2]].is_visible()){
+			std::cout << "Can't dig nothing." << std::endl;
+			return;
+		}
+		float current_x, current_y, current_z;
+		current_x = m_cursor[0];
+		current_y = m_height-1;;
+		current_z = m_cursor[2];
+
+		while(!m_cubes[current_x][current_y][current_z].is_visible()){
+			current_y--;
+		}
+		m_cubes[current_x][current_y][current_z].visible(false);
+	}
+
 	void Scene::move_cursor(int direction){
 		float current_x, current_y, current_z;
 		current_x = m_cursor[0];
@@ -87,8 +139,7 @@ namespace glimac{
 				break;
 			case UP :
                 if (m_cursor[1] < m_height-1){
-                    std::cout<< "up"<< m_cursor << std::endl;
-		            std::cout << "unselect cube " << m_cursor << std::endl; 
+                    // std::cout<< "up"<< m_cursor << std::endl; 
 		            
                     m_cubes[current_x][current_y][current_z].selected(false);
                     m_cubes[current_x][current_y+1][current_z].selected(true);
@@ -137,7 +188,6 @@ namespace glimac{
 				break;
 		}
 	}
-
 
 	void Scene::change_color(glm::vec4 color){
 		if(m_cubes[m_cursor[0]][m_cursor[1]][m_cursor[2]].is_visible())

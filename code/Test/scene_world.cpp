@@ -199,25 +199,19 @@ int main(int argc, char** argv) {
                 switch (e.key.keysym.sym){
                     case SDLK_1 :
                         std::cout<<"Create a new cube" << std::endl;
-                        if (world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].is_visible()){
-                            std::cout<<"This cube already exists."<<std::endl;
-                        } else {
-                            world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].visible(true);
-                        }
+                        world.add_cube();
                         break;
                     case SDLK_2 :
                         std::cout<<"Delete this cube" << std::endl;
-                        if (world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].is_visible()){
-                            world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].visible(false);
-                        } else {
-                            std::cout<<"There is no cube here to delete."<<std::endl;
-                        }
+                        world.delete_cube();
                         break;
                     case SDLK_3 :
                         std::cout<<"Extrude" << std::endl;
+                        world.extrude_cube();
                         break;
                     case SDLK_4 :
                         std::cout<<"Dig" << std::endl;
+                        world.dig_cube();
                         break;
                     case SDLK_5 :
                         std::cout<<"Paint in red" << std::endl;
@@ -344,6 +338,7 @@ int main(int argc, char** argv) {
                         glUniform4fv(location_uEdgeColor, 1, glm::value_ptr(world.cubes()[i][j][k].edge_color()));
 
                         glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+
                     }
                 }
             }

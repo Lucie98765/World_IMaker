@@ -55,11 +55,11 @@ class Scene
 		TrackballCamera& camera();
 		glm::vec3 cursor();		
 
-		void add_cube(glm::vec3 pos);
-		void delete_cube(glm::vec3 pos);
-		void extrude_cube(glm::vec3 pos);
-		void dig_cube(glm::vec3 pos);
-		void move_cube(glm::vec3 src, glm::vec3 dst);
+		void add_cube();
+		void delete_cube();
+		void extrude_cube();
+		void dig_cube();
+		void move_cube(glm::vec3 dst);
 
 		void move_cursor(int direction);
 		void change_color(glm::vec4 color);
