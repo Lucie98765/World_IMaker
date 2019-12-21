@@ -23,8 +23,6 @@ using namespace glimac;
 
 int main(int argc, char** argv) {
     SDLWindowManager windowManager(WINDOW_WIDTH, WINDOW_HEIGHT, "World Imaker");
-    std::cout<<"test 1"<<std::endl;
-
 
     GLenum glewInitError = glewInit();
     if(GLEW_OK != glewInitError) {
@@ -131,50 +129,7 @@ int main(int argc, char** argv) {
         }
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-
-        glBindVertexArray(interface.get_vao()); 
-
-        for(int i = 0; i < world.width(); i++){
-            for(int j = 0; j < world.height(); j++){
-                for(int k = 0; k < world.length(); k++){
-                    if(world.cubes()[i][j][k].is_visible()){
-                        interface.affect_view(world.camera().getViewMatrix(), glm::vec3(world.width()/2, world.height()/2, world.length()/2), glm::vec3(i,j,k));
-                        interface.affect_uniforms(world.cubes()[i][j][k].face_color(), world.cubes()[i][j][k].edge_color(), 0);
-                        interface.draw();
-                    }
-                }
-            }
-        }
-
-        for(int i = 0; i < world.width(); i++){
-            for(int j = 0; j < world.height(); j++){
-                for(int k = 0; k < world.length(); k++){
-                    if(!world.cubes()[i][j][k].is_visible()){
-                        interface.affect_view(world.camera().getViewMatrix(), glm::vec3(world.width()/2, world.height()/2, world.length()/2), glm::vec3(i,j,k));
-                        interface.affect_uniforms(world.cubes()[i][j][k].face_color(), world.cubes()[i][j][k].edge_color(), 0);
-                        interface.draw();
-                    }
-                }
-            }
-        }
-
-        for(int i = 0; i < world.width(); i++){
-            for(int j = 0; j < world.height(); j++){
-                for(int k = 0; k < world.length(); k++){
-                    if(world.cubes()[i][j][k].is_selected()){
-                        interface.affect_view(world.camera().getViewMatrix(), glm::vec3(world.width()/2, world.height()/2, world.length()/2), glm::vec3(i,j,k));
-                        interface.affect_uniforms(world.cubes()[i][j][k].face_color(), world.cubes()[i][j][k].edge_color(), 1);
-                        interface.draw();
-
-                    }
-                }
-            }
-        }
-
-        //done = true;
-
-        glBindVertexArray(0);
+        interface.draw(world);
         windowManager.swapBuffers();
     }
 

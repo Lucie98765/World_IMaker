@@ -128,7 +128,7 @@ namespace glimac{
 	}
 
 	void Interface::affect_view(glm::mat4 view, glm::vec3 center, glm::vec3 translate_vector){
-		
+
 		float i = translate_vector[0];
 		float j = translate_vector[1];
 		float k = translate_vector[2];
@@ -138,7 +138,6 @@ namespace glimac{
 	}
 
 	void Interface::affect_uniforms(glm::vec4 fcolor, glm::vec4 ecolor, int edge_mode){
-		std::cout << "affect_uniforms" << std::endl;
 		glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * MVMatrix));
         glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(MVMatrix));
         glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(NormalMatrix));
@@ -151,7 +150,53 @@ namespace glimac{
         	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	}
 
-	void Interface::draw(){
-		glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+	void Interface::draw(Scene &world){
+		glBindVertexArray(vao); 
+
+        for(int i = 0; i < world.width(); i++){
+            for(int j = 0; j < world.height(); j++){
+                for(int k = 0; k < world.length(); k++){
+                    if(world.cubes()[i][j][k].is_visible()){
+                        std::cout << "DRAW visible " << i << ", " << j << ", " << k <<std::endl;
+                        this->affect_view(world.camera().getViewMatrix(),glm::vec3(world.width()/2, world.height()/2, world.length()/2), glm::vec3(i,j,k));
+                        this->affect_uniforms(world.cubes()[i][j][k].face_color(),world.cubes()[i][j][k].edge_color(), 0);                        
+                        glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+                    }
+                }
+            }
+        }
+
+        for(int i = 0; i < world.width(); i++){
+            for(int j = 0; j < world.height(); j++){
+                for(int k = 0; k < world.length(); k++){
+
+                    if(!world.cubes()[i][j][k].is_visible()){
+                        std::cout << "DRAW invisible " << i << ", " << j << ", " << k <<std::endl;
+                        this->affect_view(world.camera().getViewMatrix(),glm::vec3(world.width()/2, world.height()/2, world.length()/2), glm::vec3(i,j,k));
+                        this->affect_uniforms(world.cubes()[i][j][k].face_color(),world.cubes()[i][j][k].edge_color(), 0);
+
+                        glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+                    }
+                }
+            }
+        }
+
+        for(int i = 0; i < world.width(); i++){
+            for(int j = 0; j < world.height(); j++){
+                for(int k = 0; k < world.length(); k++){
+
+                    if(world.cubes()[i][j][k].is_selected()){
+                        std::cout << "DRAW selected " << i << ", " << j << ", " << k <<std::endl;
+                        this->affect_view(world.camera().getViewMatrix(),glm::vec3(world.width()/2, world.height()/2, world.length()/2), glm::vec3(i,j,k));
+                        this->affect_uniforms(world.cubes()[i][j][k].face_color(),world.cubes()[i][j][k].edge_color(), 1);
+
+                        glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+
+                    }
+                }
+            }
+        }
+        glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+        glBindVertexArray(0);
 	}
 }

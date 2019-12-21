@@ -67,6 +67,6 @@ namespace glimac{
 			void affect_view(glm::mat4 view, glm::vec3 center, glm::vec3 translate_vector);
 			void affect_uniforms(glm::vec4 fcolor, glm::vec4 ecolor, int edge_mode);
 			
-			void draw();
+			void draw(Scene &world);
 	};
 }
