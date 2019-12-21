@@ -47,13 +47,11 @@ namespace glimac{
 	}
 
 	void Cube::selected(bool state){
-		// std::cout << "switch selection from " << m_is_selected << " to " << state << std::endl;
 		m_is_selected = state;
 		if(m_is_selected)
 			this->edge_color(glm::vec4(1, 0, 0, 1));
 		else
 			this->edge_color(m_face_color);
-		// std::cout << "Edge " << m_edge_color << std::endl;
 	}
 
 

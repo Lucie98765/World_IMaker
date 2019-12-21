@@ -172,15 +172,11 @@ int main(int argc, char** argv) {
     //Trackball Camera
     glm::mat4 cameraVM(1);
 
-
-    Cube &current_cube = world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]];
     float espace = 1.5f;
     
     // Application loop:
     bool done = false;
     while(!done) {
-        current_cube = world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]];
-
         // Event loop:
         SDL_Event e;
         while(windowManager.pollEvent(e)) {
@@ -203,16 +199,16 @@ int main(int argc, char** argv) {
                 switch (e.key.keysym.sym){
                     case SDLK_1 :
                         std::cout<<"Create a new cube" << std::endl;
-                        if (current_cube.is_visible()){
+                        if (world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].is_visible()){
                             std::cout<<"This cube already exists."<<std::endl;
                         } else {
-                            current_cube.visible(true);
+                            world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].visible(true);
                         }
                         break;
                     case SDLK_2 :
                         std::cout<<"Delete this cube" << std::endl;
-                        if (current_cube.is_visible()){
-                            current_cube.visible(false);
+                        if (world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].is_visible()){
+                            world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].visible(false);
                         } else {
                             std::cout<<"There is no cube here to delete."<<std::endl;
                         }
@@ -225,40 +221,40 @@ int main(int argc, char** argv) {
                         break;
                     case SDLK_5 :
                         std::cout<<"Paint in red" << std::endl;
-                        if (current_cube.is_visible()){
-                            current_cube.face_color(glm::vec4(1, 0, 0, 1));
+                        if (world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].is_visible()){
+                            world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].face_color(glm::vec4(1, 0, 0, 1));
                         } else {
                             std::cout << "You should first create this cube before changing its color." << std::endl;
                         }
                         break;
                     case SDLK_6 :
                         std::cout<<"Paint in yellow" << std::endl;
-                        if (current_cube.is_visible()){
-                            current_cube.face_color(glm::vec4(1, 1, 0, 1));
+                        if (world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].is_visible()){
+                            world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].face_color(glm::vec4(1, 1, 0, 1));
                         } else {
                             std::cout << "You should first create this cube before changing its color." << std::endl;
                         }
                         break;
                     case SDLK_7 :
                         std::cout<<"Paint in cyan" << std::endl;
-                        if (current_cube.is_visible()){
-                            current_cube.face_color(glm::vec4(0, 1, 1, 1));
+                        if (world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].is_visible()){
+                            world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].face_color(glm::vec4(0, 1, 1, 1));
                         } else {
                             std::cout << "You should first create this cube before changing its color." << std::endl;
                         }
                         break;
                     case SDLK_8 :
                         std::cout<<"Paint in green" << std::endl;
-                        if (current_cube.is_visible()){
-                            current_cube.face_color(glm::vec4(0, 1, 0, 1));
+                        if (world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].is_visible()){
+                            world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].face_color(glm::vec4(0, 1, 0, 1));
                         } else {
                             std::cout << "You should first create this cube before changing its color." << std::endl;
                         }
                         break;
                     case SDLK_9 :
                         std::cout<<"Paint in magenta" << std::endl;
-                        if (current_cube.is_visible()){
-                            current_cube.face_color(glm::vec4(1, 0, 1, 1));
+                        if (world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].is_visible()){
+                            world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].face_color(glm::vec4(1, 0, 1, 1));
                         } else {
                             std::cout << "You should first create this cube before changing its color." << std::endl;
                         }
@@ -301,13 +297,10 @@ int main(int argc, char** argv) {
 
         glUniform1ui(location_uEdgeMode, 0);
 
-        //std::cout << "Centre " << glm::vec3(W/2, H/2, L/2) << std::endl;
         for(int i = 0; i < world.width(); i++){
             for(int j = 0; j < world.height(); j++){
                 for(int k = 0; k < world.length(); k++){
-                    Cube& current = world.cubes()[i][j][k];
-
-                    if(current.is_visible()){
+                    if(world.cubes()[i][j][k].is_visible()){
                         //std::cout << "DRAW visible " << i << ", " << j << ", " << k <<std::endl;
                         MVMatrix = world.camera().getViewMatrix();
                         MVMatrix = glm::translate(MVMatrix,glm::vec3(-W/2, -H/2, -L/2));
@@ -317,8 +310,8 @@ int main(int argc, char** argv) {
                         glUniformMatrix4fv(location_uMVMatrix, 1, GL_FALSE, glm::value_ptr(MVMatrix));
                         glUniformMatrix4fv(location_uNormalMatrix, 1, GL_FALSE, glm::value_ptr(NormalMatrix));
 
-                        glUniform4fv(location_uFaceColor, 1, glm::value_ptr(current.face_color()));
-                        glUniform4fv(location_uEdgeColor, 1, glm::value_ptr(current.edge_color()));
+                        glUniform4fv(location_uFaceColor, 1, glm::value_ptr(world.cubes()[i][j][k].face_color()));
+                        glUniform4fv(location_uEdgeColor, 1, glm::value_ptr(world.cubes()[i][j][k].edge_color()));
                         
                         glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
                     }
@@ -329,8 +322,8 @@ int main(int argc, char** argv) {
         for(int i = 0; i < world.width(); i++){
             for(int j = 0; j < world.height(); j++){
                 for(int k = 0; k < world.length(); k++){
-                    Cube& current = world.cubes()[i][j][k];
-                    if(!current.is_visible()){
+
+                    if(!world.cubes()[i][j][k].is_visible()){
                         // std::cout << "DRAW invisible " << i << ", " << j << ", " << k <<std::endl;
 
                         MVMatrix = world.camera().getViewMatrix();
@@ -341,8 +334,8 @@ int main(int argc, char** argv) {
                         glUniformMatrix4fv(location_uMVMatrix, 1, GL_FALSE, glm::value_ptr(MVMatrix));
                         glUniformMatrix4fv(location_uNormalMatrix, 1, GL_FALSE, glm::value_ptr(NormalMatrix));
 
-                        glUniform4fv(location_uFaceColor, 1, glm::value_ptr(current.face_color()));
-                        glUniform4fv(location_uEdgeColor, 1, glm::value_ptr(current.edge_color()));
+                        glUniform4fv(location_uFaceColor, 1, glm::value_ptr(world.cubes()[i][j][k].face_color()));
+                        glUniform4fv(location_uEdgeColor, 1, glm::value_ptr(world.cubes()[i][j][k].edge_color()));
 
                         glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
                     }
@@ -353,9 +346,9 @@ int main(int argc, char** argv) {
         for(int i = 0; i < world.width(); i++){
             for(int j = 0; j < world.height(); j++){
                 for(int k = 0; k < world.length(); k++){
-                    Cube& current = world.cubes()[i][j][k];
-                    if(current.is_selected()){
-                        //std::cout << "DRAW selected " << i << ", " << j << ", " << k <<std::endl;
+
+                    if(world.cubes()[i][j][k].is_selected()){
+                        // std::cout << "DRAW selected " << i << ", " << j << ", " << k <<std::endl;
 
                         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
                         glUniform1i(location_uEdgeMode, 1);
@@ -367,8 +360,8 @@ int main(int argc, char** argv) {
                         glUniformMatrix4fv(location_uMVMatrix, 1, GL_FALSE, glm::value_ptr(MVMatrix));
                         glUniformMatrix4fv(location_uNormalMatrix, 1, GL_FALSE, glm::value_ptr(NormalMatrix));
 
-                        glUniform4fv(location_uFaceColor, 1, glm::value_ptr(current.face_color()));
-                        glUniform4fv(location_uEdgeColor, 1, glm::value_ptr(current.edge_color()));
+                        glUniform4fv(location_uFaceColor, 1, glm::value_ptr(world.cubes()[i][j][k].face_color()));
+                        glUniform4fv(location_uEdgeColor, 1, glm::value_ptr(world.cubes()[i][j][k].edge_color()));
 
                         glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
                     }

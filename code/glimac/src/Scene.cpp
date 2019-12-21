@@ -18,8 +18,7 @@
 
 namespace glimac{
 
-	Scene::Scene(uint w, uint h, uint l):m_width(w),m_height(h),m_length(l),m_camera(),m_cubes(w, std::vector<std::vector<Cube>>(h, std::vector<Cube>(l))){
-		m_cursor = glm::vec3(w/2,h/2,l/2);
+	Scene::Scene(uint w, uint h, uint l):m_width(w),m_height(h),m_length(l),m_camera(),m_cubes(w, std::vector<std::vector<Cube>>(h, std::vector<Cube>(l))),m_cursor(w/2,h/2,l/2){
 		m_cubes[m_cursor[0]][m_cursor[1]][m_cursor[2]].selected(true);
 	}
 
@@ -64,8 +63,7 @@ namespace glimac{
 		switch(direction){
 			case LEFT :
 				if (m_cursor[0] > 0){
-		            std::cout<< "left" << m_cursor << std::endl;
-		            std::cout << "unselect cube " << m_cursor << std::endl; 
+		            // std::cout<< "left" << m_cursor << std::endl;
 		            
 		            (m_cubes[current_x][current_y][current_z]).selected(false);
 		            m_cubes[current_x - 1][current_y][current_z].selected(true);
@@ -77,8 +75,7 @@ namespace glimac{
 		        break;
 			case RIGHT :
 				if (m_cursor[0] < m_width-1){
-                    std::cout<< "right"<< m_cursor << std::endl;
-		            std::cout << "unselect cube " << m_cursor << std::endl; 
+                    // std::cout<< "right"<< m_cursor << std::endl;
 		            
                     m_cubes[current_x][current_y][current_z].selected(false);
                     m_cubes[current_x + 1][current_y][current_z].selected(true);
@@ -103,8 +100,7 @@ namespace glimac{
 				break;
 			case DOWN :
                 if (m_cursor[1] > 0){
-                    std::cout<< "down"<< m_cursor << std::endl;
-		            std::cout << "unselect cube " << m_cursor << std::endl; 
+                    // std::cout<< "down"<< m_cursor << std::endl;
 		            
                     m_cubes[current_x][current_y][current_z].selected(false);
                     m_cubes[current_x][current_y-1][current_z].selected(true);
@@ -116,8 +112,7 @@ namespace glimac{
 				break;
 			case FORWARD :
                 if (m_cursor[2] < m_length-1){
-                    std::cout<< "far "<< m_cursor << std::endl;
-		            std::cout << "unselect cube " << m_cursor << std::endl; 
+                    // std::cout<< "far "<< m_cursor << std::endl; 
 		            
                     m_cubes[current_x][current_y][current_z].selected(false);
                     m_cubes[current_x][current_y][current_z+1].selected(true);
@@ -129,9 +124,7 @@ namespace glimac{
 				break;
 			case BACKWARD :
                 if (m_cursor[2] > 0){
-                    std::cout<< "near "<< m_cursor << std::endl;
-		            std::cout << "unselect cube " << m_cursor << std::endl; 
-		            
+                    // std::cout<< "near "<< m_cursor << std::endl;
                     m_cubes[current_x][current_y][current_z].selected(false);
                     m_cubes[current_x][current_y][current_z-1].selected(true);
                     m_cursor = glm::vec3 (current_x, current_y, current_z-1);
