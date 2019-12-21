@@ -111,36 +111,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule
-.PHONY : Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule
-
-# Convenience name for target.
-Test_scene_cubes_transparency: Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule
-
-.PHONY : Test_scene_cubes_transparency
-
-# fast build rule for target.
-Test_scene_cubes_transparency/fast:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/build
-.PHONY : Test_scene_cubes_transparency/fast
-
-# Convenience name for target.
-Test/CMakeFiles/Test_scene_cubes.dir/rule:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_scene_cubes.dir/rule
-.PHONY : Test/CMakeFiles/Test_scene_cubes.dir/rule
-
-# Convenience name for target.
-Test_scene_cubes: Test/CMakeFiles/Test_scene_cubes.dir/rule
-
-.PHONY : Test_scene_cubes
-
-# fast build rule for target.
-Test_scene_cubes/fast:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_cubes.dir/build.make Test/CMakeFiles/Test_scene_cubes.dir/build
-.PHONY : Test_scene_cubes/fast
-
-# Convenience name for target.
 Test/CMakeFiles/Test_cube_try_data_display.dir/rule:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_cube_try_data_display.dir/rule
 .PHONY : Test/CMakeFiles/Test_cube_try_data_display.dir/rule
@@ -169,6 +139,51 @@ Test_cube_try_display: Test/CMakeFiles/Test_cube_try_display.dir/rule
 Test_cube_try_display/fast:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_cube_try_display.dir/build.make Test/CMakeFiles/Test_cube_try_display.dir/build
 .PHONY : Test_cube_try_display/fast
+
+# Convenience name for target.
+Test/CMakeFiles/Test_scene_cubes.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_scene_cubes.dir/rule
+.PHONY : Test/CMakeFiles/Test_scene_cubes.dir/rule
+
+# Convenience name for target.
+Test_scene_cubes: Test/CMakeFiles/Test_scene_cubes.dir/rule
+
+.PHONY : Test_scene_cubes
+
+# fast build rule for target.
+Test_scene_cubes/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_cubes.dir/build.make Test/CMakeFiles/Test_scene_cubes.dir/build
+.PHONY : Test_scene_cubes/fast
+
+# Convenience name for target.
+Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule
+.PHONY : Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule
+
+# Convenience name for target.
+Test_scene_cubes_transparency: Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule
+
+.PHONY : Test_scene_cubes_transparency
+
+# fast build rule for target.
+Test_scene_cubes_transparency/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/build
+.PHONY : Test_scene_cubes_transparency/fast
+
+# Convenience name for target.
+Test/CMakeFiles/Test_scene_world.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_scene_world.dir/rule
+.PHONY : Test/CMakeFiles/Test_scene_world.dir/rule
+
+# Convenience name for target.
+Test_scene_world: Test/CMakeFiles/Test_scene_world.dir/rule
+
+.PHONY : Test_scene_world
+
+# fast build rule for target.
+Test_scene_world/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_world.dir/build.make Test/CMakeFiles/Test_scene_world.dir/build
+.PHONY : Test_scene_world/fast
 
 cube_try_data_display.o: cube_try_data_display.cpp.o
 
@@ -278,18 +293,46 @@ scene_cubes_transparency.cpp.s:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/scene_cubes_transparency.cpp.s
 .PHONY : scene_cubes_transparency.cpp.s
 
+scene_world.o: scene_world.cpp.o
+
+.PHONY : scene_world.o
+
+# target to build an object file
+scene_world.cpp.o:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_world.dir/build.make Test/CMakeFiles/Test_scene_world.dir/scene_world.cpp.o
+.PHONY : scene_world.cpp.o
+
+scene_world.i: scene_world.cpp.i
+
+.PHONY : scene_world.i
+
+# target to preprocess a source file
+scene_world.cpp.i:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_world.dir/build.make Test/CMakeFiles/Test_scene_world.dir/scene_world.cpp.i
+.PHONY : scene_world.cpp.i
+
+scene_world.s: scene_world.cpp.s
+
+.PHONY : scene_world.s
+
+# target to generate assembly for a file
+scene_world.cpp.s:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_world.dir/build.make Test/CMakeFiles/Test_scene_world.dir/scene_world.cpp.s
+.PHONY : scene_world.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... Test_scene_cubes_transparency"
 	@echo "... rebuild_cache"
-	@echo "... Test_scene_cubes"
-	@echo "... Test_cube_try_data_display"
 	@echo "... edit_cache"
+	@echo "... Test_cube_try_data_display"
 	@echo "... Test_cube_try_display"
+	@echo "... Test_scene_cubes"
+	@echo "... Test_scene_cubes_transparency"
+	@echo "... Test_scene_world"
 	@echo "... cube_try_data_display.o"
 	@echo "... cube_try_data_display.i"
 	@echo "... cube_try_data_display.s"
@@ -302,6 +345,9 @@ help:
 	@echo "... scene_cubes_transparency.o"
 	@echo "... scene_cubes_transparency.i"
 	@echo "... scene_cubes_transparency.s"
+	@echo "... scene_world.o"
+	@echo "... scene_world.i"
+	@echo "... scene_world.s"
 .PHONY : help
 
 

@@ -137,32 +137,6 @@ src_cube_freefly/fast:
 .PHONY : src_cube_freefly/fast
 
 #=============================================================================
-# Target rules for targets named Test_scene_cubes_transparency
-
-# Build rule for target.
-Test_scene_cubes_transparency: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Test_scene_cubes_transparency
-.PHONY : Test_scene_cubes_transparency
-
-# fast build rule for target.
-Test_scene_cubes_transparency/fast:
-	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/build
-.PHONY : Test_scene_cubes_transparency/fast
-
-#=============================================================================
-# Target rules for targets named Test_scene_cubes
-
-# Build rule for target.
-Test_scene_cubes: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Test_scene_cubes
-.PHONY : Test_scene_cubes
-
-# fast build rule for target.
-Test_scene_cubes/fast:
-	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes.dir/build.make Test/CMakeFiles/Test_scene_cubes.dir/build
-.PHONY : Test_scene_cubes/fast
-
-#=============================================================================
 # Target rules for targets named Test_cube_try_data_display
 
 # Build rule for target.
@@ -189,6 +163,45 @@ Test_cube_try_display/fast:
 .PHONY : Test_cube_try_display/fast
 
 #=============================================================================
+# Target rules for targets named Test_scene_cubes
+
+# Build rule for target.
+Test_scene_cubes: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_scene_cubes
+.PHONY : Test_scene_cubes
+
+# fast build rule for target.
+Test_scene_cubes/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes.dir/build.make Test/CMakeFiles/Test_scene_cubes.dir/build
+.PHONY : Test_scene_cubes/fast
+
+#=============================================================================
+# Target rules for targets named Test_scene_cubes_transparency
+
+# Build rule for target.
+Test_scene_cubes_transparency: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_scene_cubes_transparency
+.PHONY : Test_scene_cubes_transparency
+
+# fast build rule for target.
+Test_scene_cubes_transparency/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/build
+.PHONY : Test_scene_cubes_transparency/fast
+
+#=============================================================================
+# Target rules for targets named Test_scene_world
+
+# Build rule for target.
+Test_scene_world: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_scene_world
+.PHONY : Test_scene_world
+
+# fast build rule for target.
+Test_scene_world/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_scene_world.dir/build.make Test/CMakeFiles/Test_scene_world.dir/build
+.PHONY : Test_scene_world/fast
+
+#=============================================================================
 # Target rules for targets named html
 
 # Build rule for target.
@@ -211,10 +224,11 @@ help:
 	@echo "... edit_cache"
 	@echo "... glimac"
 	@echo "... src_cube_freefly"
-	@echo "... Test_scene_cubes_transparency"
-	@echo "... Test_scene_cubes"
 	@echo "... Test_cube_try_data_display"
 	@echo "... Test_cube_try_display"
+	@echo "... Test_scene_cubes"
+	@echo "... Test_scene_cubes_transparency"
+	@echo "... Test_scene_world"
 	@echo "... html"
 .PHONY : help
 
