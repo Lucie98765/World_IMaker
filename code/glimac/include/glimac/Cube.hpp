@@ -21,7 +21,11 @@ namespace glimac{
 
 class Cube
 {
-	private:
+	private:		
+		///
+		/// position des sommets
+		///
+		std::vector<glm::vec3> m_vertices;
 		///
 		/// couleur des faces
 		///
@@ -49,58 +53,63 @@ class Cube
 		/// Initialise un cube au centre du monde en etant invisible
 		///
 		Cube();
-
 		
 		///
-		/// \fn face_volor()
-		/// \param vec4 const color
+		/// \fn face_color()
+		/// \param vec4 color
 		/// \brief Modifie la couleur des faces du cube
 		///
-		void face_color(glm::vec4 const color);
+		void face_color(glm::vec4 color);
 		///
 		/// \fn edge_volor()
-		/// \param vec4 const color
+		/// \param vec4 color
 		/// \brief Modifie la couleur des aretes du cube
 		///
-		void edge_color(glm::vec4 const color);
+		void edge_color(glm::vec4 color);
 		///
 		/// \fn visible()
-		/// \param bool const state
+		/// \param bool state
 		/// \brief Modifie la visibilite du cube
 		///
-		void visible(bool const state);
+		void visible(bool state);
 		///
 		/// \fn selected()
-		/// \param bool const state
+		/// \param bool state
 		/// \brief Modifie l'etat de selection du cube
 		///
-		void selected(bool const state);
+		void selected(bool state);
 
 		
 		///
-		/// \fn face_color() const
+		/// \fn vertices()
+		/// \brief Accesseur de la position des sommets du
+		/// \return std::vector<glm::vec3> m_vertices
+		///
+		std::vector<glm::vec3> vertices();
+		///
+		/// \fn face_color()
 		/// \brief Accesseur de la couleur des faces du cube
-		/// \return glm::vec4 const m_face_color
+		/// \return glm::vec4 m_face_color
 		///
-		glm::vec4 face_color() const;
+		glm::vec4 face_color();
 		///
-		/// \fn edge_color() const
+		/// \fn edge_color()
 		/// \brief Accesseur de la couleur des aretes du cube
-		/// \return glm::vec4 const m_edge_color
+		/// \return glm::vec4 m_edge_color
 		///
-		glm::vec4 edge_color() const;
+		glm::vec4 edge_color();
 		///
-		/// \fn is_visible() const
+		/// \fn is_visible()
 		/// \brief Accesseur de la visibilite du cube
-		/// \return bool const m_is_visible
+		/// \return bool m_is_visible
 		///
-		bool is_visible() const;
+		bool is_visible();
 		///
-		/// \fn is_selected() const
+		/// \fn is_selected()
 		/// \brief Accesseur de l'etat de selection du cube
-		/// \return bool const m_is_selected
+		/// \return bool m_is_selected
 		///
-		bool is_selected() const;
+		bool is_selected();
 
 };
 
