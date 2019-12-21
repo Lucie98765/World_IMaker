@@ -62,6 +62,7 @@ class Scene
 		void move_cube(glm::vec3 src, glm::vec3 dst);
 
 		void move_cursor(int direction);
+		void change_color(glm::vec4 color);
 
 };
 

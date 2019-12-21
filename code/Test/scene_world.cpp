@@ -221,43 +221,23 @@ int main(int argc, char** argv) {
                         break;
                     case SDLK_5 :
                         std::cout<<"Paint in red" << std::endl;
-                        if (world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].is_visible()){
-                            world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].face_color(glm::vec4(1, 0, 0, 1));
-                        } else {
-                            std::cout << "You should first create this cube before changing its color." << std::endl;
-                        }
+                        world.change_color(glm::vec4(1, 0, 0, 1));
                         break;
                     case SDLK_6 :
                         std::cout<<"Paint in yellow" << std::endl;
-                        if (world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].is_visible()){
-                            world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].face_color(glm::vec4(1, 1, 0, 1));
-                        } else {
-                            std::cout << "You should first create this cube before changing its color." << std::endl;
-                        }
+                        world.change_color(glm::vec4(1, 1, 0, 1));
                         break;
                     case SDLK_7 :
                         std::cout<<"Paint in cyan" << std::endl;
-                        if (world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].is_visible()){
-                            world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].face_color(glm::vec4(0, 1, 1, 1));
-                        } else {
-                            std::cout << "You should first create this cube before changing its color." << std::endl;
-                        }
+                        world.change_color(glm::vec4(0, 1, 1, 1));
                         break;
                     case SDLK_8 :
                         std::cout<<"Paint in green" << std::endl;
-                        if (world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].is_visible()){
-                            world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].face_color(glm::vec4(0, 1, 0, 1));
-                        } else {
-                            std::cout << "You should first create this cube before changing its color." << std::endl;
-                        }
+                        world.change_color(glm::vec4(0, 1, 0, 1));
                         break;
                     case SDLK_9 :
                         std::cout<<"Paint in magenta" << std::endl;
-                        if (world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].is_visible()){
-                            world.cubes()[world.cursor()[0]][world.cursor()[1]][world.cursor()[2]].face_color(glm::vec4(1, 0, 1, 1));
-                        } else {
-                            std::cout << "You should first create this cube before changing its color." << std::endl;
-                        }
+                        world.change_color(glm::vec4(1, 0, 1, 1));
                         break;
                     case SDLK_LEFT : world.move_cursor(LEFT);
                         break;

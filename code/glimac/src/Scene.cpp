@@ -139,4 +139,11 @@ namespace glimac{
 	}
 
 
+	void Scene::change_color(glm::vec4 color){
+		if(m_cubes[m_cursor[0]][m_cursor[1]][m_cursor[2]].is_visible())
+			m_cubes[m_cursor[0]][m_cursor[1]][m_cursor[2]].face_color(color);
+		else
+            std::cout << "You should first create this cube before changing its color." << std::endl;
+	}
+
 }
