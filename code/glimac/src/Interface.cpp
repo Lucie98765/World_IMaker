@@ -18,9 +18,15 @@
 #include "glimac/Interface.hpp"
 
 namespace glimac{
-	Interface::Interface(char* path, std::string fragment_shader, std::string vertex_shader, std::vector<glm::vec3> vertices, glm::mat4 viewMatrix):espace(1.5f){
-		
+	Interface::Interface(char* path,
+		std::string fragment_shader,
+		std::string vertex_shader,
+		std::vector<glm::vec3> vertices,
+		glm::mat4 viewMatrix){
+
+		espace = 1.5f;
 		std::cout << "hello" << std::endl;
+
 		GLenum glewInitError = glewInit();
 	    if(GLEW_OK != glewInitError) {
 	        std::cerr << glewGetErrorString(glewInitError) << std::endl;
@@ -34,8 +40,8 @@ namespace glimac{
 	    //Shaders
 	    std::cout << "load program" << std::endl;
 	    FilePath applicationPath(path);
-	    Program program = loadProgram(applicationPath.dirPath() + "shaders/"+VERT_SHAD,
-	                                  applicationPath.dirPath() + "shaders/"+FRAG_SHAD);
+	    Program program = loadProgram(applicationPath.dirPath() + "shaders/"+vertex_shader,
+	                                  applicationPath.dirPath() + "shaders/"+fragment_shader);
 	    program.use();
 
 	    //Uniform Matrix

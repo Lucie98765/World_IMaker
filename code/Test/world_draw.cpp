@@ -22,11 +22,23 @@ using namespace glimac;
 
 int main(int argc, char** argv) {
     SDLWindowManager windowManager(WINDOW_WIDTH, WINDOW_HEIGHT, "World Imaker");
-    /*********************************
-     * HERE SHOULD COME THE INITIALIZATION CODE
-     *********************************/
+    std::cout<<"test 1"<<std::endl;
+
     Scene world(W, L, H);
-    Interface interface(argv[0], "cube.fs.glsl", "cube.vs.glsl", world.cubes()[0][0][0].vertices(), world.camera().getViewMatrix());
+
+    std::cout << "path : " << argv[0] << std::endl;
+
+    std::cout<<"test vertices" << std::endl;
+    for(int i = 0; i < world.cubes()[0][0][0].vertices().size(); i++)
+        std::cout << world.cubes()[0][0][0].vertices()[i]<<std::endl;
+
+    std::cout << "test camera" << world.camera().getViewMatrix() << std::endl;
+
+    Interface interface(argv[0],
+        "cube.fs.glsl",
+        "cube.vs.glsl",
+        world.cubes()[0][0][0].vertices(),
+        world.camera().getViewMatrix());
     
     // Application loop:
     bool done = false;
