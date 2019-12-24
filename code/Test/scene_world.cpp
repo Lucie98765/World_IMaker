@@ -58,6 +58,19 @@ int main(int argc, char** argv) {
     GLint location_uEdgeMode = glGetUniformLocation(program.getGLId(), "uEdgeMode");
     std::cout << "Location uEdgeMode : " << location_uEdgeMode << std::endl;
 
+
+    //Directionnal light :
+    GLint uKd = glGetUniformLocation(program.getGLId(), "uKd");
+    std::cout << "Location uKd : " << uKd << std::endl;
+    GLint uKs = glGetUniformLocation(program.getGLId(), "uKs");
+    std::cout << "Location uKs : " << uKs << std::endl;
+    GLint uShininess = glGetUniformLocation(program.getGLId(), "uShininess");
+    std::cout << "Location uShininess : " << uShininess << std::endl;
+    GLint uLightDir_vs = glGetUniformLocation(program.getGLId(), "uLightDir_vs");
+    std::cout << "Location uLightDir_vs : " << uLightDir_vs << std::endl;
+    GLint uLightIntensity = glGetUniformLocation(program.getGLId(), "uLightIntensity");
+    std::cout << "Location uLightIntensity : " << uLightIntensity << std::endl;
+
     /*********************************
      * HERE SHOULD COME THE INITIALIZATION CODE
      *********************************/
@@ -173,6 +186,15 @@ int main(int argc, char** argv) {
     glm::mat4 cameraVM(1);
 
     float espace = 1.5f;
+
+
+
+    //Directionnal light
+    /*glm::vec3 Kd = glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0));
+    glm::vec3 Ks = glm::vec3(glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0),glm::linearRand (0.0,1.0));
+    float Shininess = glm::linearRand (0.0,3.0);
+    glm::vec3 LightDir= glm::vec3(1.0,1.0,1.0);
+    glm::vec3 LightIntensity = glm::vec3(0.5,0.5,0.5);*/
     
     // Application loop:
     bool done = false;
@@ -270,6 +292,28 @@ int main(int argc, char** argv) {
         glBindVertexArray(vao); 
 
         glUniform1ui(location_uEdgeMode, 0);
+
+        /*Envoi des variables uniformes au shader */
+        glm::vec4 lightDir4 =  glm::vec4(1.0f, 1.0f, 1.0f, 0.0f);
+        lightDir4 = lightDir4 * world.camera().getViewMatrix();
+        glm::vec3 lightDir = glm::vec3(lightDir4.x, lightDir4.y, lightDir4.z);
+
+        glUniform3fv(uKd, 1,  glm::value_ptr(glm::vec3(3.f, 1.f, 2.f)));
+        glUniform3fv(uKs, 1, glm::value_ptr(glm::vec3(2.f, 1.f, 0.1f)));
+        glUniform1f(uShininess,0.5f);
+        glUniform3fv(uLightDir_vs, 1, glm::value_ptr(lightDir));
+        glUniform3fv(uLightIntensity, 1, glm::value_ptr(glm::vec3(0.3f, 0.3f, 0.3f)));
+
+
+
+
+       /* glUniform3fv(uKd, 1, glm::value_ptr(Kd));
+        glUniform3fv(uKs, 1, glm::value_ptr(Ks));
+        glUniform1f(uShininess, Shininess);
+        glUniform3fv(uLightDir_vs, 1, glm::value_ptr(glm::mat3(MVMatrix)*LightDir));
+        glUniform3fv(uLightIntensity, 1, glm::value_ptr(LightIntensity));*/
+
+
 
         for(int i = 0; i < world.width(); i++){
             for(int j = 0; j < world.height(); j++){
