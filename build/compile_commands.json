@@ -76,13 +76,18 @@
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2   -std=c++11 -o CMakeFiles/Test_world_draw.dir/world_draw.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/world_draw.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/world_draw.cpp"
+},
+{
+  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
   "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2   -std=c++11 -o CMakeFiles/Test_cube_try_data_display.dir/cube_try_data_display.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/cube_try_data_display.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/cube_try_data_display.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2   -std=c++11 -o CMakeFiles/Test_world_draw.dir/world_draw.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/world_draw.cpp",
-  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/world_draw.cpp"
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2   -std=c++11 -o CMakeFiles/Test_points_controle.dir/points_controle.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/points_controle.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/points_controle.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
@@ -91,13 +96,13 @@
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2   -std=c++11 -o CMakeFiles/Test_scene_cubes.dir/scene_cubes.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/scene_cubes.cpp",
-  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/scene_cubes.cpp"
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2   -std=c++11 -o CMakeFiles/Test_scene_cubes_transparency.dir/scene_cubes_transparency.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/scene_cubes_transparency.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/scene_cubes_transparency.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2   -std=c++11 -o CMakeFiles/Test_scene_cubes_transparency.dir/scene_cubes_transparency.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/scene_cubes_transparency.cpp",
-  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/scene_cubes_transparency.cpp"
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2   -std=c++11 -o CMakeFiles/Test_scene_cubes.dir/scene_cubes.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/scene_cubes.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/scene_cubes.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",

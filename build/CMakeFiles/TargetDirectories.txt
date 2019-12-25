@@ -7,12 +7,13 @@
 /home/louisa/IMAC2/POO/World_IMaker/build/src/CMakeFiles/src_cube_freefly.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/src/CMakeFiles/edit_cache.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/edit_cache.dir
-/home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_cube_try_data_display.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/rebuild_cache.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_world_draw.dir
+/home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_cube_try_data_display.dir
+/home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_points_controle.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_cube_try_display.dir
-/home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_scene_cubes.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_scene_cubes_transparency.dir
+/home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_scene_cubes.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_scene_world.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/doc/CMakeFiles/rebuild_cache.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/doc/CMakeFiles/html.dir

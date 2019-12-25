@@ -35,13 +35,56 @@ int main(int argc, char** argv) {
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
 
 
+    //Shaders
+    std::cout << "load program" << std::endl;
+    FilePath applicationPath(argv[0]);
+    Program program = loadProgram(applicationPath.dirPath() + "shaders/cube.vs.glsl",
+                                  applicationPath.dirPath() + "shaders/cube.fs.glsl");
+    program.use();
+
+
     Scene world(W, L, H);
 
-    Interface interface(argv[0],
-        "cube.fs.glsl",
-        "cube.vs.glsl",
+    Interface interface(program,
         world.cubes()[0][0][0].vertices(),
         world.camera().getViewMatrix());
+
+    GLuint vao, vbo, ibo;
+
+    glGenBuffers(1, &vbo);
+    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+    glBufferData(GL_ARRAY_BUFFER, world.cubes()[0][0][0].vertices().size()*sizeof(glm::vec3), &(world.cubes()[0][0][0].vertices()).front(), GL_STATIC_DRAW);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+    glGenBuffers(1, &ibo);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
+    uint32_t indices[] = {
+            0, 3, 1,
+            0, 2, 3,
+            0, 2, 6,
+            0, 6, 4,
+            0, 4, 5,
+            0, 5, 1,
+            3, 1, 5,
+            3, 5, 7,
+            2, 3, 7,
+            2, 6, 7,
+            4, 7, 6,
+            4, 7, 5
+    };
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, 36 * sizeof(uint32_t), indices, GL_STATIC_DRAW);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+    glGenVertexArrays(1, &vao);
+    glBindVertexArray(vao);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
+
+    const GLuint VERTEX_ATTR_POSITION = 0;
+    glEnableVertexAttribArray(VERTEX_ATTR_POSITION);
+    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+    glVertexAttribPointer(
+            VERTEX_ATTR_POSITION, 3, GL_FLOAT, GL_FALSE, sizeof(glm::vec3), (const GLvoid*)0);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(0);
 
     
     // Application loop:
@@ -129,7 +172,11 @@ int main(int argc, char** argv) {
         }
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        glBindVertexArray(vao); 
         interface.draw(world);
+        glBindVertexArray(0);
+
         windowManager.swapBuffers();
     }
 

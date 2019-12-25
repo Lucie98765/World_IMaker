@@ -33,8 +33,6 @@
 namespace glimac{
 	class Interface{
 		private:
-			Program program;
-
 			GLint uMVPMatrix;
 			GLint uMVMatrix;
 			GLint uNormalMatrix;
@@ -47,22 +45,12 @@ namespace glimac{
 			GLint uEdgeColor;
 			GLint uEdgeMode;
 
-			GLuint vbo;
-			GLuint vao;
-			GLuint ibo;
-
 			float espace;
 
 		public:
-			Interface(std::string path,
-				std::string fragment_shader,
-				std::string vertex_shader,
+			Interface(Program &program,
 				std::vector<glm::vec3> vertices,
 				glm::mat4 viewMatrix);
-
-			~Interface();
-
-			GLuint& get_vao();
 
 			void affect_view(glm::mat4 view, glm::vec3 center, glm::vec3 translate_vector);
 			void affect_uniforms(glm::vec4 fcolor, glm::vec4 ecolor, int edge_mode);

@@ -111,6 +111,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+Test/CMakeFiles/Test_world_draw.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_world_draw.dir/rule
+.PHONY : Test/CMakeFiles/Test_world_draw.dir/rule
+
+# Convenience name for target.
+Test_world_draw: Test/CMakeFiles/Test_world_draw.dir/rule
+
+.PHONY : Test_world_draw
+
+# fast build rule for target.
+Test_world_draw/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_world_draw.dir/build.make Test/CMakeFiles/Test_world_draw.dir/build
+.PHONY : Test_world_draw/fast
+
+# Convenience name for target.
 Test/CMakeFiles/Test_cube_try_data_display.dir/rule:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_cube_try_data_display.dir/rule
 .PHONY : Test/CMakeFiles/Test_cube_try_data_display.dir/rule
@@ -126,19 +141,19 @@ Test_cube_try_data_display/fast:
 .PHONY : Test_cube_try_data_display/fast
 
 # Convenience name for target.
-Test/CMakeFiles/Test_world_draw.dir/rule:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_world_draw.dir/rule
-.PHONY : Test/CMakeFiles/Test_world_draw.dir/rule
+Test/CMakeFiles/Test_points_controle.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_points_controle.dir/rule
+.PHONY : Test/CMakeFiles/Test_points_controle.dir/rule
 
 # Convenience name for target.
-Test_world_draw: Test/CMakeFiles/Test_world_draw.dir/rule
+Test_points_controle: Test/CMakeFiles/Test_points_controle.dir/rule
 
-.PHONY : Test_world_draw
+.PHONY : Test_points_controle
 
 # fast build rule for target.
-Test_world_draw/fast:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_world_draw.dir/build.make Test/CMakeFiles/Test_world_draw.dir/build
-.PHONY : Test_world_draw/fast
+Test_points_controle/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_points_controle.dir/build.make Test/CMakeFiles/Test_points_controle.dir/build
+.PHONY : Test_points_controle/fast
 
 # Convenience name for target.
 Test/CMakeFiles/Test_cube_try_display.dir/rule:
@@ -156,21 +171,6 @@ Test_cube_try_display/fast:
 .PHONY : Test_cube_try_display/fast
 
 # Convenience name for target.
-Test/CMakeFiles/Test_scene_cubes.dir/rule:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_scene_cubes.dir/rule
-.PHONY : Test/CMakeFiles/Test_scene_cubes.dir/rule
-
-# Convenience name for target.
-Test_scene_cubes: Test/CMakeFiles/Test_scene_cubes.dir/rule
-
-.PHONY : Test_scene_cubes
-
-# fast build rule for target.
-Test_scene_cubes/fast:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_cubes.dir/build.make Test/CMakeFiles/Test_scene_cubes.dir/build
-.PHONY : Test_scene_cubes/fast
-
-# Convenience name for target.
 Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule
 .PHONY : Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule
@@ -184,6 +184,21 @@ Test_scene_cubes_transparency: Test/CMakeFiles/Test_scene_cubes_transparency.dir
 Test_scene_cubes_transparency/fast:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/build
 .PHONY : Test_scene_cubes_transparency/fast
+
+# Convenience name for target.
+Test/CMakeFiles/Test_scene_cubes.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_scene_cubes.dir/rule
+.PHONY : Test/CMakeFiles/Test_scene_cubes.dir/rule
+
+# Convenience name for target.
+Test_scene_cubes: Test/CMakeFiles/Test_scene_cubes.dir/rule
+
+.PHONY : Test_scene_cubes
+
+# fast build rule for target.
+Test_scene_cubes/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_cubes.dir/build.make Test/CMakeFiles/Test_scene_cubes.dir/build
+.PHONY : Test_scene_cubes/fast
 
 # Convenience name for target.
 Test/CMakeFiles/Test_scene_world.dir/rule:
@@ -253,6 +268,33 @@ cube_try_display.s: cube_try_display.cpp.s
 cube_try_display.cpp.s:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_cube_try_display.dir/build.make Test/CMakeFiles/Test_cube_try_display.dir/cube_try_display.cpp.s
 .PHONY : cube_try_display.cpp.s
+
+points_controle.o: points_controle.cpp.o
+
+.PHONY : points_controle.o
+
+# target to build an object file
+points_controle.cpp.o:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_points_controle.dir/build.make Test/CMakeFiles/Test_points_controle.dir/points_controle.cpp.o
+.PHONY : points_controle.cpp.o
+
+points_controle.i: points_controle.cpp.i
+
+.PHONY : points_controle.i
+
+# target to preprocess a source file
+points_controle.cpp.i:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_points_controle.dir/build.make Test/CMakeFiles/Test_points_controle.dir/points_controle.cpp.i
+.PHONY : points_controle.cpp.i
+
+points_controle.s: points_controle.cpp.s
+
+.PHONY : points_controle.s
+
+# target to generate assembly for a file
+points_controle.cpp.s:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_points_controle.dir/build.make Test/CMakeFiles/Test_points_controle.dir/points_controle.cpp.s
+.PHONY : points_controle.cpp.s
 
 scene_cubes.o: scene_cubes.cpp.o
 
@@ -369,12 +411,13 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... Test_cube_try_data_display"
 	@echo "... rebuild_cache"
 	@echo "... Test_world_draw"
+	@echo "... Test_cube_try_data_display"
+	@echo "... Test_points_controle"
 	@echo "... Test_cube_try_display"
-	@echo "... Test_scene_cubes"
 	@echo "... Test_scene_cubes_transparency"
+	@echo "... Test_scene_cubes"
 	@echo "... Test_scene_world"
 	@echo "... cube_try_data_display.o"
 	@echo "... cube_try_data_display.i"
@@ -382,6 +425,9 @@ help:
 	@echo "... cube_try_display.o"
 	@echo "... cube_try_display.i"
 	@echo "... cube_try_display.s"
+	@echo "... points_controle.o"
+	@echo "... points_controle.i"
+	@echo "... points_controle.s"
 	@echo "... scene_cubes.o"
 	@echo "... scene_cubes.i"
 	@echo "... scene_cubes.s"

@@ -18,20 +18,18 @@
 #include "glimac/Interface.hpp"
 
 namespace glimac{
-	Interface::Interface(std::string path,
-		std::string fragment_shader,
-		std::string vertex_shader,
+	Interface::Interface(Program &program,
 		std::vector<glm::vec3> vertices,
 		glm::mat4 viewMatrix){
 
 		espace = 1.5f;
 		
-	    //Shaders
-	    std::cout << "load program" << std::endl;
-	    FilePath applicationPath(path);
-	    Program program = loadProgram(applicationPath.dirPath() + "shaders/"+vertex_shader,
-	                                  applicationPath.dirPath() + "shaders/"+fragment_shader);
-	    program.use();
+	    // //Shaders
+	    // std::cout << "load program" << std::endl;
+	    // FilePath applicationPath(path);
+	    // Program program = loadProgram(applicationPath.dirPath() + "shaders/"+vertex_shader,
+	    //                               applicationPath.dirPath() + "shaders/"+fragment_shader);
+	    // program.use();
 
 	    //Uniform Matrix
 	    std::cout << "init uniform matrix" << std::endl;
@@ -51,58 +49,58 @@ namespace glimac{
 	    uEdgeMode = glGetUniformLocation(program.getGLId(), "uEdgeMode");
 	    std::cout << "Location uEdgeMode : " << uEdgeMode << std::endl;
 
-	    //Generation vbo
-	    std::cout << "gen vbo" << std::endl;
-	    glGenBuffers(1, &vbo);
-	    glBindBuffer(GL_ARRAY_BUFFER, vbo); 
+	    // //Generation vbo
+	    // std::cout << "gen vbo" << std::endl;
+	    // glGenBuffers(1, &vbo);
+	    // glBindBuffer(GL_ARRAY_BUFFER, vbo); 
 
-	    glBufferData(GL_ARRAY_BUFFER, vertices.size()*sizeof(glm::vec3), &vertices.front(), GL_STATIC_DRAW);
+	    // glBufferData(GL_ARRAY_BUFFER, vertices.size()*sizeof(glm::vec3), &vertices.front(), GL_STATIC_DRAW);
 
-	    glBindBuffer(GL_ARRAY_BUFFER, 0);
+	    // glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-	    //Creation ibo
-	    std::cout << "gen ibo" << std::endl;
-	    glGenBuffers(1, &ibo);
-	    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
-	    uint32_t indices[] = {
-	            0, 3, 1,
-	            0, 2, 3,
-	            0, 2, 6,
-	            0, 6, 4,
-	            0, 4, 5,
-	            0, 5, 1,
-	            3, 1, 5,
-	            3, 5, 7,
-	            2, 3, 7,
-	            2, 6, 7,
-	            4, 7, 6,
-	            4, 7, 5
-	    };
+	    // //Creation ibo
+	    // std::cout << "gen ibo" << std::endl;
+	    // glGenBuffers(1, &ibo);
+	    // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
+	    // uint32_t indices[] = {
+	    //         0, 3, 1,
+	    //         0, 2, 3,
+	    //         0, 2, 6,
+	    //         0, 6, 4,
+	    //         0, 4, 5,
+	    //         0, 5, 1,
+	    //         3, 1, 5,
+	    //         3, 5, 7,
+	    //         2, 3, 7,
+	    //         2, 6, 7,
+	    //         4, 7, 6,
+	    //         4, 7, 5
+	    // };
 
-	    glBufferData(GL_ELEMENT_ARRAY_BUFFER, 36 * sizeof(uint32_t), indices, GL_STATIC_DRAW);
+	    // glBufferData(GL_ELEMENT_ARRAY_BUFFER, 36 * sizeof(uint32_t), indices, GL_STATIC_DRAW);
 
-	    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-
-
-	    glGenVertexArrays(1, &vao);
-	    glBindVertexArray(vao);
-
-	    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
+	    // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
 
-	    //Attribute
-	    std::cout << "attrib pointer" << std::endl;
-	    const GLuint VERTEX_ATTR_POSITION = 0;
-	    glEnableVertexAttribArray(VERTEX_ATTR_POSITION);
+	    // glGenVertexArrays(1, &vao);
+	    // glBindVertexArray(vao);
 
-	    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+	    // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
 
-	    glVertexAttribPointer(
-	            VERTEX_ATTR_POSITION, 3, GL_FLOAT, GL_FALSE, sizeof(glm::vec3), (const GLvoid*)0);
 
-	    glBindBuffer(GL_ARRAY_BUFFER, 0);
+	    // //Attribute
+	    // std::cout << "attrib pointer" << std::endl;
+	    // const GLuint VERTEX_ATTR_POSITION = 0;
+	    // glEnableVertexAttribArray(VERTEX_ATTR_POSITION);
 
-	    glBindVertexArray(0);
+	    // glBindBuffer(GL_ARRAY_BUFFER, vbo);
+
+	    // glVertexAttribPointer(
+	    //         VERTEX_ATTR_POSITION, 3, GL_FLOAT, GL_FALSE, sizeof(glm::vec3), (const GLvoid*)0);
+
+	    // glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+	    // glBindVertexArray(0);
 
 	    //Transparency
 	    std::cout << "transparency" << std::endl;
@@ -118,14 +116,14 @@ namespace glimac{
 	    NormalMatrix = glm::transpose(glm::inverse(MVMatrix));
 	}
 
-	Interface::~Interface(){
-		glDeleteBuffers(1, &vbo);
-	    glDeleteVertexArrays(1, &vao);
-	}
+	// Interface::~Interface(){
+	// 	glDeleteBuffers(1, &vbo);
+	//     glDeleteVertexArrays(1, &vao);
+	// }
 
-	GLuint& Interface::get_vao(){
-		return vao;
-	}
+	// GLuint& Interface::get_vao(){
+	// 	return vao;
+	// }
 
 	void Interface::affect_view(glm::mat4 view, glm::vec3 center, glm::vec3 translate_vector){
 
@@ -151,13 +149,11 @@ namespace glimac{
 	}
 
 	void Interface::draw(Scene &world){
-		glBindVertexArray(vao); 
-
         for(int i = 0; i < world.width(); i++){
             for(int j = 0; j < world.height(); j++){
                 for(int k = 0; k < world.length(); k++){
                     if(world.cubes()[i][j][k].is_visible()){
-                        std::cout << "DRAW visible " << i << ", " << j << ", " << k <<std::endl;
+                        //std::cout << "DRAW visible " << i << ", " << j << ", " << k <<std::endl;
                         this->affect_view(world.camera().getViewMatrix(),glm::vec3(world.width()/2, world.height()/2, world.length()/2), glm::vec3(i,j,k));
                         this->affect_uniforms(world.cubes()[i][j][k].face_color(),world.cubes()[i][j][k].edge_color(), 0);                        
                         glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
@@ -171,7 +167,7 @@ namespace glimac{
                 for(int k = 0; k < world.length(); k++){
 
                     if(!world.cubes()[i][j][k].is_visible()){
-                        std::cout << "DRAW invisible " << i << ", " << j << ", " << k <<std::endl;
+                        //std::cout << "DRAW invisible " << i << ", " << j << ", " << k <<std::endl;
                         this->affect_view(world.camera().getViewMatrix(),glm::vec3(world.width()/2, world.height()/2, world.length()/2), glm::vec3(i,j,k));
                         this->affect_uniforms(world.cubes()[i][j][k].face_color(),world.cubes()[i][j][k].edge_color(), 0);
 
@@ -186,7 +182,7 @@ namespace glimac{
                 for(int k = 0; k < world.length(); k++){
 
                     if(world.cubes()[i][j][k].is_selected()){
-                        std::cout << "DRAW selected " << i << ", " << j << ", " << k <<std::endl;
+                        //std::cout << "DRAW selected " << i << ", " << j << ", " << k <<std::endl;
                         this->affect_view(world.camera().getViewMatrix(),glm::vec3(world.width()/2, world.height()/2, world.length()/2), glm::vec3(i,j,k));
                         this->affect_uniforms(world.cubes()[i][j][k].face_color(),world.cubes()[i][j][k].edge_color(), 1);
 
@@ -197,6 +193,5 @@ namespace glimac{
             }
         }
         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-        glBindVertexArray(0);
 	}
 }
