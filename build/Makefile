@@ -150,6 +150,19 @@ Test_world_draw/fast:
 .PHONY : Test_world_draw/fast
 
 #=============================================================================
+# Target rules for targets named Test_points_control_3D
+
+# Build rule for target.
+Test_points_control_3D: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_points_control_3D
+.PHONY : Test_points_control_3D
+
+# fast build rule for target.
+Test_points_control_3D/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_points_control_3D.dir/build.make Test/CMakeFiles/Test_points_control_3D.dir/build
+.PHONY : Test_points_control_3D/fast
+
+#=============================================================================
 # Target rules for targets named Test_cube_try_data_display
 
 # Build rule for target.
@@ -163,17 +176,30 @@ Test_cube_try_data_display/fast:
 .PHONY : Test_cube_try_data_display/fast
 
 #=============================================================================
-# Target rules for targets named Test_points_controle
+# Target rules for targets named Test_points_control_1D
 
 # Build rule for target.
-Test_points_controle: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Test_points_controle
-.PHONY : Test_points_controle
+Test_points_control_1D: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_points_control_1D
+.PHONY : Test_points_control_1D
 
 # fast build rule for target.
-Test_points_controle/fast:
-	$(MAKE) -f Test/CMakeFiles/Test_points_controle.dir/build.make Test/CMakeFiles/Test_points_controle.dir/build
-.PHONY : Test_points_controle/fast
+Test_points_control_1D/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_points_control_1D.dir/build.make Test/CMakeFiles/Test_points_control_1D.dir/build
+.PHONY : Test_points_control_1D/fast
+
+#=============================================================================
+# Target rules for targets named Test_scene_world
+
+# Build rule for target.
+Test_scene_world: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_scene_world
+.PHONY : Test_scene_world
+
+# fast build rule for target.
+Test_scene_world/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_scene_world.dir/build.make Test/CMakeFiles/Test_scene_world.dir/build
+.PHONY : Test_scene_world/fast
 
 #=============================================================================
 # Target rules for targets named Test_cube_try_display
@@ -189,19 +215,6 @@ Test_cube_try_display/fast:
 .PHONY : Test_cube_try_display/fast
 
 #=============================================================================
-# Target rules for targets named Test_scene_cubes_transparency
-
-# Build rule for target.
-Test_scene_cubes_transparency: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Test_scene_cubes_transparency
-.PHONY : Test_scene_cubes_transparency
-
-# fast build rule for target.
-Test_scene_cubes_transparency/fast:
-	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/build
-.PHONY : Test_scene_cubes_transparency/fast
-
-#=============================================================================
 # Target rules for targets named Test_scene_cubes
 
 # Build rule for target.
@@ -215,17 +228,17 @@ Test_scene_cubes/fast:
 .PHONY : Test_scene_cubes/fast
 
 #=============================================================================
-# Target rules for targets named Test_scene_world
+# Target rules for targets named Test_scene_cubes_transparency
 
 # Build rule for target.
-Test_scene_world: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Test_scene_world
-.PHONY : Test_scene_world
+Test_scene_cubes_transparency: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_scene_cubes_transparency
+.PHONY : Test_scene_cubes_transparency
 
 # fast build rule for target.
-Test_scene_world/fast:
-	$(MAKE) -f Test/CMakeFiles/Test_scene_world.dir/build.make Test/CMakeFiles/Test_scene_world.dir/build
-.PHONY : Test_scene_world/fast
+Test_scene_cubes_transparency/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/build
+.PHONY : Test_scene_cubes_transparency/fast
 
 #=============================================================================
 # Target rules for targets named html
@@ -251,12 +264,13 @@ help:
 	@echo "... glimac"
 	@echo "... src_cube_freefly"
 	@echo "... Test_world_draw"
+	@echo "... Test_points_control_3D"
 	@echo "... Test_cube_try_data_display"
-	@echo "... Test_points_controle"
-	@echo "... Test_cube_try_display"
-	@echo "... Test_scene_cubes_transparency"
-	@echo "... Test_scene_cubes"
+	@echo "... Test_points_control_1D"
 	@echo "... Test_scene_world"
+	@echo "... Test_cube_try_display"
+	@echo "... Test_scene_cubes"
+	@echo "... Test_scene_cubes_transparency"
 	@echo "... html"
 .PHONY : help
 
