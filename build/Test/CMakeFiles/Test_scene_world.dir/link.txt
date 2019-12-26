@@ -1,1 +1,1 @@
-/usr/bin/c++   -Wall -g -O2  -rdynamic CMakeFiles/Test_scene_world.dir/scene_world.cpp.o  -o Test_scene_world ../glimac/libglimac.a -lSDL2 -lGL -lGLU -lGLEW 
+/usr/bin/c++   -Wall -g -O2 -I /usr/include/eigen3  -rdynamic CMakeFiles/Test_scene_world.dir/scene_world.cpp.o  -o Test_scene_world ../glimac/libglimac.a -lSDL2 -lGL -lGLU -lGLEW 

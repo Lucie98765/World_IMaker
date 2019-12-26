@@ -12,10 +12,11 @@
 /home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_points_control_3D.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_cube_try_data_display.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_points_control_1D.dir
+/home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_procedural_generation.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_scene_world.dir
+/home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_scene_cubes_transparency.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_cube_try_display.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_scene_cubes.dir
-/home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_scene_cubes_transparency.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/doc/CMakeFiles/rebuild_cache.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/doc/CMakeFiles/html.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/doc/CMakeFiles/edit_cache.dir

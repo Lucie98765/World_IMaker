@@ -90,6 +90,32 @@ Shader.hpp
 FilePath.hpp
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/FilePath.hpp
 
+/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/RBF.hpp
+iostream
+-
+Eigen/Dense
+-
+ctime
+-
+cassert
+-
+cstdlib
+-
+vector
+-
+random
+-
+chrono
+-
+functional
+-
+cmath
+-
+algorithm
+-
+glimac/glm.hpp
+-
+
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/SDLWindowManager.hpp
 cstdint
 -
@@ -219,6 +245,10 @@ glimac/Program.hpp
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/glimac/Program.hpp
 stdexcept
 -
+
+/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/RBF.cpp
+glimac/RBF.hpp
+/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/glimac/RBF.hpp
 
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/SDLWindowManager.cpp
 glimac/SDLWindowManager.hpp

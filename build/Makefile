@@ -189,6 +189,19 @@ Test_points_control_1D/fast:
 .PHONY : Test_points_control_1D/fast
 
 #=============================================================================
+# Target rules for targets named Test_procedural_generation
+
+# Build rule for target.
+Test_procedural_generation: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_procedural_generation
+.PHONY : Test_procedural_generation
+
+# fast build rule for target.
+Test_procedural_generation/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_procedural_generation.dir/build.make Test/CMakeFiles/Test_procedural_generation.dir/build
+.PHONY : Test_procedural_generation/fast
+
+#=============================================================================
 # Target rules for targets named Test_scene_world
 
 # Build rule for target.
@@ -200,6 +213,19 @@ Test_scene_world: cmake_check_build_system
 Test_scene_world/fast:
 	$(MAKE) -f Test/CMakeFiles/Test_scene_world.dir/build.make Test/CMakeFiles/Test_scene_world.dir/build
 .PHONY : Test_scene_world/fast
+
+#=============================================================================
+# Target rules for targets named Test_scene_cubes_transparency
+
+# Build rule for target.
+Test_scene_cubes_transparency: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_scene_cubes_transparency
+.PHONY : Test_scene_cubes_transparency
+
+# fast build rule for target.
+Test_scene_cubes_transparency/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/build
+.PHONY : Test_scene_cubes_transparency/fast
 
 #=============================================================================
 # Target rules for targets named Test_cube_try_display
@@ -228,19 +254,6 @@ Test_scene_cubes/fast:
 .PHONY : Test_scene_cubes/fast
 
 #=============================================================================
-# Target rules for targets named Test_scene_cubes_transparency
-
-# Build rule for target.
-Test_scene_cubes_transparency: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Test_scene_cubes_transparency
-.PHONY : Test_scene_cubes_transparency
-
-# fast build rule for target.
-Test_scene_cubes_transparency/fast:
-	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/build
-.PHONY : Test_scene_cubes_transparency/fast
-
-#=============================================================================
 # Target rules for targets named html
 
 # Build rule for target.
@@ -267,10 +280,11 @@ help:
 	@echo "... Test_points_control_3D"
 	@echo "... Test_cube_try_data_display"
 	@echo "... Test_points_control_1D"
+	@echo "... Test_procedural_generation"
 	@echo "... Test_scene_world"
+	@echo "... Test_scene_cubes_transparency"
 	@echo "... Test_cube_try_display"
 	@echo "... Test_scene_cubes"
-	@echo "... Test_scene_cubes_transparency"
 	@echo "... html"
 .PHONY : help
 

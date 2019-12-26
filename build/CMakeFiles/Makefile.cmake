@@ -67,9 +67,10 @@ set(CMAKE_DEPEND_INFO_FILES
   "Test/CMakeFiles/Test_points_control_3D.dir/DependInfo.cmake"
   "Test/CMakeFiles/Test_cube_try_data_display.dir/DependInfo.cmake"
   "Test/CMakeFiles/Test_points_control_1D.dir/DependInfo.cmake"
+  "Test/CMakeFiles/Test_procedural_generation.dir/DependInfo.cmake"
   "Test/CMakeFiles/Test_scene_world.dir/DependInfo.cmake"
+  "Test/CMakeFiles/Test_scene_cubes_transparency.dir/DependInfo.cmake"
   "Test/CMakeFiles/Test_cube_try_display.dir/DependInfo.cmake"
   "Test/CMakeFiles/Test_scene_cubes.dir/DependInfo.cmake"
-  "Test/CMakeFiles/Test_scene_cubes_transparency.dir/DependInfo.cmake"
   "doc/CMakeFiles/html.dir/DependInfo.cmake"
   )

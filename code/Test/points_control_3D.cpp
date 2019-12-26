@@ -114,7 +114,7 @@ int main(int argc, char** argv){
 	float pivot = std::accumulate( g_p.begin(), g_p.end(), 0.f )/ g_p.size();
 	std::cout << "Valeur moyenne = " << pivot << std::endl;
  	for(int i = 0; i < NB_POINTS; i++){
-		if(EPSILON < abs(g_p[i]-pivot))
+		if(EPSILON >= abs(g_p[i]-pivot))
 				std::cout << "\tAffichage du point " << i << std::endl;
 	}
 

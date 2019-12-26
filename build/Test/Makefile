@@ -171,6 +171,21 @@ Test_points_control_1D/fast:
 .PHONY : Test_points_control_1D/fast
 
 # Convenience name for target.
+Test/CMakeFiles/Test_procedural_generation.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_procedural_generation.dir/rule
+.PHONY : Test/CMakeFiles/Test_procedural_generation.dir/rule
+
+# Convenience name for target.
+Test_procedural_generation: Test/CMakeFiles/Test_procedural_generation.dir/rule
+
+.PHONY : Test_procedural_generation
+
+# fast build rule for target.
+Test_procedural_generation/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_procedural_generation.dir/build.make Test/CMakeFiles/Test_procedural_generation.dir/build
+.PHONY : Test_procedural_generation/fast
+
+# Convenience name for target.
 Test/CMakeFiles/Test_scene_world.dir/rule:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_scene_world.dir/rule
 .PHONY : Test/CMakeFiles/Test_scene_world.dir/rule
@@ -184,6 +199,21 @@ Test_scene_world: Test/CMakeFiles/Test_scene_world.dir/rule
 Test_scene_world/fast:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_world.dir/build.make Test/CMakeFiles/Test_scene_world.dir/build
 .PHONY : Test_scene_world/fast
+
+# Convenience name for target.
+Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule
+.PHONY : Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule
+
+# Convenience name for target.
+Test_scene_cubes_transparency: Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule
+
+.PHONY : Test_scene_cubes_transparency
+
+# fast build rule for target.
+Test_scene_cubes_transparency/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/build
+.PHONY : Test_scene_cubes_transparency/fast
 
 # Convenience name for target.
 Test/CMakeFiles/Test_cube_try_display.dir/rule:
@@ -214,21 +244,6 @@ Test_scene_cubes: Test/CMakeFiles/Test_scene_cubes.dir/rule
 Test_scene_cubes/fast:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_cubes.dir/build.make Test/CMakeFiles/Test_scene_cubes.dir/build
 .PHONY : Test_scene_cubes/fast
-
-# Convenience name for target.
-Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule
-.PHONY : Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule
-
-# Convenience name for target.
-Test_scene_cubes_transparency: Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule
-
-.PHONY : Test_scene_cubes_transparency
-
-# fast build rule for target.
-Test_scene_cubes_transparency/fast:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/build
-.PHONY : Test_scene_cubes_transparency/fast
 
 cube_try_data_display.o: cube_try_data_display.cpp.o
 
@@ -337,6 +352,33 @@ points_control_3D.s: points_control_3D.cpp.s
 points_control_3D.cpp.s:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_points_control_3D.dir/build.make Test/CMakeFiles/Test_points_control_3D.dir/points_control_3D.cpp.s
 .PHONY : points_control_3D.cpp.s
+
+procedural_generation.o: procedural_generation.cpp.o
+
+.PHONY : procedural_generation.o
+
+# target to build an object file
+procedural_generation.cpp.o:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_procedural_generation.dir/build.make Test/CMakeFiles/Test_procedural_generation.dir/procedural_generation.cpp.o
+.PHONY : procedural_generation.cpp.o
+
+procedural_generation.i: procedural_generation.cpp.i
+
+.PHONY : procedural_generation.i
+
+# target to preprocess a source file
+procedural_generation.cpp.i:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_procedural_generation.dir/build.make Test/CMakeFiles/Test_procedural_generation.dir/procedural_generation.cpp.i
+.PHONY : procedural_generation.cpp.i
+
+procedural_generation.s: procedural_generation.cpp.s
+
+.PHONY : procedural_generation.s
+
+# target to generate assembly for a file
+procedural_generation.cpp.s:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_procedural_generation.dir/build.make Test/CMakeFiles/Test_procedural_generation.dir/procedural_generation.cpp.s
+.PHONY : procedural_generation.cpp.s
 
 scene_cubes.o: scene_cubes.cpp.o
 
@@ -458,10 +500,11 @@ help:
 	@echo "... Test_points_control_3D"
 	@echo "... Test_cube_try_data_display"
 	@echo "... Test_points_control_1D"
+	@echo "... Test_procedural_generation"
 	@echo "... Test_scene_world"
+	@echo "... Test_scene_cubes_transparency"
 	@echo "... Test_cube_try_display"
 	@echo "... Test_scene_cubes"
-	@echo "... Test_scene_cubes_transparency"
 	@echo "... cube_try_data_display.o"
 	@echo "... cube_try_data_display.i"
 	@echo "... cube_try_data_display.s"
@@ -474,6 +517,9 @@ help:
 	@echo "... points_control_3D.o"
 	@echo "... points_control_3D.i"
 	@echo "... points_control_3D.s"
+	@echo "... procedural_generation.o"
+	@echo "... procedural_generation.i"
+	@echo "... procedural_generation.s"
 	@echo "... scene_cubes.o"
 	@echo "... scene_cubes.i"
 	@echo "... scene_cubes.s"

@@ -341,6 +341,33 @@ src/Program.cpp.s:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Program.cpp.s
 .PHONY : src/Program.cpp.s
 
+src/RBF.o: src/RBF.cpp.o
+
+.PHONY : src/RBF.o
+
+# target to build an object file
+src/RBF.cpp.o:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/RBF.cpp.o
+.PHONY : src/RBF.cpp.o
+
+src/RBF.i: src/RBF.cpp.i
+
+.PHONY : src/RBF.i
+
+# target to preprocess a source file
+src/RBF.cpp.i:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/RBF.cpp.i
+.PHONY : src/RBF.cpp.i
+
+src/RBF.s: src/RBF.cpp.s
+
+.PHONY : src/RBF.s
+
+# target to generate assembly for a file
+src/RBF.cpp.s:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/RBF.cpp.s
+.PHONY : src/RBF.cpp.s
+
 src/SDLWindowManager.o: src/SDLWindowManager.cpp.o
 
 .PHONY : src/SDLWindowManager.o
@@ -536,6 +563,9 @@ help:
 	@echo "... src/Program.o"
 	@echo "... src/Program.i"
 	@echo "... src/Program.s"
+	@echo "... src/RBF.o"
+	@echo "... src/RBF.i"
+	@echo "... src/RBF.s"
 	@echo "... src/SDLWindowManager.o"
 	@echo "... src/SDLWindowManager.i"
 	@echo "... src/SDLWindowManager.s"
