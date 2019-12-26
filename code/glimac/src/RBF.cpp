@@ -20,6 +20,33 @@ VectorXd LU(const MatrixXd &A, const VectorXd &b){
 
 namespace glimac{
 
+
+
+	RBF::RBF(std::vector<glm::vec3> points, std::vector<glm::vec3> points_ctrl, std::function<float (glm::vec3 x, glm::vec3 y)> func):pts_ctrl(points_ctrl.size()),values_ctrl(points_ctrl.size()){
+
+		pts_ctrl = points_ctrl;
+
+		//generation values_ctrl
+		unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+		std::default_random_engine defaultGenerator(seed);
+
+		float mean = 3.0;
+		float stdev = 1.5;
+		std::normal_distribution<float> normalDistribution(mean,stdev);
+		int i = 0;
+		while(i < values_ctrl.size()){
+			float value = normalDistribution(defaultGenerator);
+			//avoid wrong values (< -1, > 1 or nan)
+			if(-1 <= value && value <= 1 && value == value){
+				values_ctrl(i) = value;
+				i++;
+			}
+		}
+
+		//RBF chosen
+		phi = func;
+	}
+
 	RBF::RBF(std::vector<glm::vec3> points, int nb_points_ctrl, std::function<float (glm::vec3 x, glm::vec3 y)> func):pts_ctrl(nb_points_ctrl),values_ctrl(nb_points_ctrl){
 
 		//generation pts_ctrl
@@ -32,7 +59,7 @@ namespace glimac{
 		
 		for(int i = 0; i < nb_points_ctrl; i++)
 			pts_ctrl[i] = points[shuffled_pts[i]];
-		
+
 		//generation values_ctrl
 		float mean = 3.0;
 		float stdev = 1.5;
@@ -40,8 +67,8 @@ namespace glimac{
 		int i = 0;
 		while(i < values_ctrl.size()){
 			float value = normalDistribution(defaultGenerator);
-			//avoid wrong values (< 0, > 1 or nan)
-			if(0 <= value && value <= 1 && value == value){
+			//avoid wrong values (< -1, > 1 or nan)
+			if(-1 <= value && value <= 1 && value == value){
 				values_ctrl(i) = value;
 				i++;
 			}

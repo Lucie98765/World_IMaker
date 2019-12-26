@@ -84,7 +84,7 @@ glimac/preinstall:
 glimac/CMakeFiles/glimac.dir/all:
 	$(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/depend
 	$(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34 "Built target glimac"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36 "Built target glimac"
 .PHONY : glimac/CMakeFiles/glimac.dir/all
 
 # Include target in all.
@@ -139,7 +139,7 @@ src/preinstall:
 src/CMakeFiles/src_cube_freefly.dir/all: glimac/CMakeFiles/glimac.dir/all
 	$(MAKE) -f src/CMakeFiles/src_cube_freefly.dir/build.make src/CMakeFiles/src_cube_freefly.dir/depend
 	$(MAKE) -f src/CMakeFiles/src_cube_freefly.dir/build.make src/CMakeFiles/src_cube_freefly.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=35,36 "Built target src_cube_freefly"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=37,38 "Built target src_cube_freefly"
 .PHONY : src/CMakeFiles/src_cube_freefly.dir/all
 
 # Include target in all.
@@ -174,27 +174,29 @@ clean: src/CMakeFiles/src_cube_freefly.dir/clean
 
 # Convenience name for "all" pass in the directory.
 Test/all: Test/CMakeFiles/Test_world_draw.dir/all
-Test/all: Test/CMakeFiles/Test_points_control_3D.dir/all
-Test/all: Test/CMakeFiles/Test_cube_try_data_display.dir/all
-Test/all: Test/CMakeFiles/Test_points_control_1D.dir/all
-Test/all: Test/CMakeFiles/Test_procedural_generation.dir/all
 Test/all: Test/CMakeFiles/Test_scene_world.dir/all
 Test/all: Test/CMakeFiles/Test_scene_cubes_transparency.dir/all
-Test/all: Test/CMakeFiles/Test_cube_try_display.dir/all
 Test/all: Test/CMakeFiles/Test_scene_cubes.dir/all
+Test/all: Test/CMakeFiles/Test_cube_try_display.dir/all
+Test/all: Test/CMakeFiles/Test_points_control_3D.dir/all
+Test/all: Test/CMakeFiles/Test_points_control_1D.dir/all
+Test/all: Test/CMakeFiles/Test_procedural_generation.dir/all
+Test/all: Test/CMakeFiles/Test_cube_try_data_display.dir/all
+Test/all: Test/CMakeFiles/Test_procedural_generation_v2.dir/all
 
 .PHONY : Test/all
 
 # Convenience name for "clean" pass in the directory.
 Test/clean: Test/CMakeFiles/Test_world_draw.dir/clean
-Test/clean: Test/CMakeFiles/Test_points_control_3D.dir/clean
-Test/clean: Test/CMakeFiles/Test_cube_try_data_display.dir/clean
-Test/clean: Test/CMakeFiles/Test_points_control_1D.dir/clean
-Test/clean: Test/CMakeFiles/Test_procedural_generation.dir/clean
 Test/clean: Test/CMakeFiles/Test_scene_world.dir/clean
 Test/clean: Test/CMakeFiles/Test_scene_cubes_transparency.dir/clean
-Test/clean: Test/CMakeFiles/Test_cube_try_display.dir/clean
 Test/clean: Test/CMakeFiles/Test_scene_cubes.dir/clean
+Test/clean: Test/CMakeFiles/Test_cube_try_display.dir/clean
+Test/clean: Test/CMakeFiles/Test_points_control_3D.dir/clean
+Test/clean: Test/CMakeFiles/Test_points_control_1D.dir/clean
+Test/clean: Test/CMakeFiles/Test_procedural_generation.dir/clean
+Test/clean: Test/CMakeFiles/Test_cube_try_data_display.dir/clean
+Test/clean: Test/CMakeFiles/Test_procedural_generation_v2.dir/clean
 
 .PHONY : Test/clean
 
@@ -210,7 +212,7 @@ Test/preinstall:
 Test/CMakeFiles/Test_world_draw.dir/all: glimac/CMakeFiles/glimac.dir/all
 	$(MAKE) -f Test/CMakeFiles/Test_world_draw.dir/build.make Test/CMakeFiles/Test_world_draw.dir/depend
 	$(MAKE) -f Test/CMakeFiles/Test_world_draw.dir/build.make Test/CMakeFiles/Test_world_draw.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=17,18 "Built target Test_world_draw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=19,20 "Built target Test_world_draw"
 .PHONY : Test/CMakeFiles/Test_world_draw.dir/all
 
 # Include target in all.
@@ -237,6 +239,154 @@ Test/CMakeFiles/Test_world_draw.dir/clean:
 
 # clean rule for target.
 clean: Test/CMakeFiles/Test_world_draw.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target Test/CMakeFiles/Test_scene_world.dir
+
+# All Build rule for target.
+Test/CMakeFiles/Test_scene_world.dir/all: glimac/CMakeFiles/glimac.dir/all
+	$(MAKE) -f Test/CMakeFiles/Test_scene_world.dir/build.make Test/CMakeFiles/Test_scene_world.dir/depend
+	$(MAKE) -f Test/CMakeFiles/Test_scene_world.dir/build.make Test/CMakeFiles/Test_scene_world.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=17,18 "Built target Test_scene_world"
+.PHONY : Test/CMakeFiles/Test_scene_world.dir/all
+
+# Include target in all.
+all: Test/CMakeFiles/Test_scene_world.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+Test/CMakeFiles/Test_scene_world.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles 18
+	$(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_scene_world.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles 0
+.PHONY : Test/CMakeFiles/Test_scene_world.dir/rule
+
+# Convenience name for target.
+Test_scene_world: Test/CMakeFiles/Test_scene_world.dir/rule
+
+.PHONY : Test_scene_world
+
+# clean rule for target.
+Test/CMakeFiles/Test_scene_world.dir/clean:
+	$(MAKE) -f Test/CMakeFiles/Test_scene_world.dir/build.make Test/CMakeFiles/Test_scene_world.dir/clean
+.PHONY : Test/CMakeFiles/Test_scene_world.dir/clean
+
+# clean rule for target.
+clean: Test/CMakeFiles/Test_scene_world.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target Test/CMakeFiles/Test_scene_cubes_transparency.dir
+
+# All Build rule for target.
+Test/CMakeFiles/Test_scene_cubes_transparency.dir/all: glimac/CMakeFiles/glimac.dir/all
+	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/depend
+	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=15,16 "Built target Test_scene_cubes_transparency"
+.PHONY : Test/CMakeFiles/Test_scene_cubes_transparency.dir/all
+
+# Include target in all.
+all: Test/CMakeFiles/Test_scene_cubes_transparency.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles 18
+	$(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_scene_cubes_transparency.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles 0
+.PHONY : Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule
+
+# Convenience name for target.
+Test_scene_cubes_transparency: Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule
+
+.PHONY : Test_scene_cubes_transparency
+
+# clean rule for target.
+Test/CMakeFiles/Test_scene_cubes_transparency.dir/clean:
+	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/clean
+.PHONY : Test/CMakeFiles/Test_scene_cubes_transparency.dir/clean
+
+# clean rule for target.
+clean: Test/CMakeFiles/Test_scene_cubes_transparency.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target Test/CMakeFiles/Test_scene_cubes.dir
+
+# All Build rule for target.
+Test/CMakeFiles/Test_scene_cubes.dir/all: glimac/CMakeFiles/glimac.dir/all
+	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes.dir/build.make Test/CMakeFiles/Test_scene_cubes.dir/depend
+	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes.dir/build.make Test/CMakeFiles/Test_scene_cubes.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=13,14 "Built target Test_scene_cubes"
+.PHONY : Test/CMakeFiles/Test_scene_cubes.dir/all
+
+# Include target in all.
+all: Test/CMakeFiles/Test_scene_cubes.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+Test/CMakeFiles/Test_scene_cubes.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles 18
+	$(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_scene_cubes.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles 0
+.PHONY : Test/CMakeFiles/Test_scene_cubes.dir/rule
+
+# Convenience name for target.
+Test_scene_cubes: Test/CMakeFiles/Test_scene_cubes.dir/rule
+
+.PHONY : Test_scene_cubes
+
+# clean rule for target.
+Test/CMakeFiles/Test_scene_cubes.dir/clean:
+	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes.dir/build.make Test/CMakeFiles/Test_scene_cubes.dir/clean
+.PHONY : Test/CMakeFiles/Test_scene_cubes.dir/clean
+
+# clean rule for target.
+clean: Test/CMakeFiles/Test_scene_cubes.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target Test/CMakeFiles/Test_cube_try_display.dir
+
+# All Build rule for target.
+Test/CMakeFiles/Test_cube_try_display.dir/all: glimac/CMakeFiles/glimac.dir/all
+	$(MAKE) -f Test/CMakeFiles/Test_cube_try_display.dir/build.make Test/CMakeFiles/Test_cube_try_display.dir/depend
+	$(MAKE) -f Test/CMakeFiles/Test_cube_try_display.dir/build.make Test/CMakeFiles/Test_cube_try_display.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=3,4 "Built target Test_cube_try_display"
+.PHONY : Test/CMakeFiles/Test_cube_try_display.dir/all
+
+# Include target in all.
+all: Test/CMakeFiles/Test_cube_try_display.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+Test/CMakeFiles/Test_cube_try_display.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles 18
+	$(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_cube_try_display.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles 0
+.PHONY : Test/CMakeFiles/Test_cube_try_display.dir/rule
+
+# Convenience name for target.
+Test_cube_try_display: Test/CMakeFiles/Test_cube_try_display.dir/rule
+
+.PHONY : Test_cube_try_display
+
+# clean rule for target.
+Test/CMakeFiles/Test_cube_try_display.dir/clean:
+	$(MAKE) -f Test/CMakeFiles/Test_cube_try_display.dir/build.make Test/CMakeFiles/Test_cube_try_display.dir/clean
+.PHONY : Test/CMakeFiles/Test_cube_try_display.dir/clean
+
+# clean rule for target.
+clean: Test/CMakeFiles/Test_cube_try_display.dir/clean
 
 .PHONY : clean
 
@@ -274,43 +424,6 @@ Test/CMakeFiles/Test_points_control_3D.dir/clean:
 
 # clean rule for target.
 clean: Test/CMakeFiles/Test_points_control_3D.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target Test/CMakeFiles/Test_cube_try_data_display.dir
-
-# All Build rule for target.
-Test/CMakeFiles/Test_cube_try_data_display.dir/all: glimac/CMakeFiles/glimac.dir/all
-	$(MAKE) -f Test/CMakeFiles/Test_cube_try_data_display.dir/build.make Test/CMakeFiles/Test_cube_try_data_display.dir/depend
-	$(MAKE) -f Test/CMakeFiles/Test_cube_try_data_display.dir/build.make Test/CMakeFiles/Test_cube_try_data_display.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=1,2 "Built target Test_cube_try_data_display"
-.PHONY : Test/CMakeFiles/Test_cube_try_data_display.dir/all
-
-# Include target in all.
-all: Test/CMakeFiles/Test_cube_try_data_display.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-Test/CMakeFiles/Test_cube_try_data_display.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles 18
-	$(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_cube_try_data_display.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles 0
-.PHONY : Test/CMakeFiles/Test_cube_try_data_display.dir/rule
-
-# Convenience name for target.
-Test_cube_try_data_display: Test/CMakeFiles/Test_cube_try_data_display.dir/rule
-
-.PHONY : Test_cube_try_data_display
-
-# clean rule for target.
-Test/CMakeFiles/Test_cube_try_data_display.dir/clean:
-	$(MAKE) -f Test/CMakeFiles/Test_cube_try_data_display.dir/build.make Test/CMakeFiles/Test_cube_try_data_display.dir/clean
-.PHONY : Test/CMakeFiles/Test_cube_try_data_display.dir/clean
-
-# clean rule for target.
-clean: Test/CMakeFiles/Test_cube_try_data_display.dir/clean
 
 .PHONY : clean
 
@@ -389,150 +502,76 @@ clean: Test/CMakeFiles/Test_procedural_generation.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target Test/CMakeFiles/Test_scene_world.dir
+# Target rules for target Test/CMakeFiles/Test_cube_try_data_display.dir
 
 # All Build rule for target.
-Test/CMakeFiles/Test_scene_world.dir/all: glimac/CMakeFiles/glimac.dir/all
-	$(MAKE) -f Test/CMakeFiles/Test_scene_world.dir/build.make Test/CMakeFiles/Test_scene_world.dir/depend
-	$(MAKE) -f Test/CMakeFiles/Test_scene_world.dir/build.make Test/CMakeFiles/Test_scene_world.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=15,16 "Built target Test_scene_world"
-.PHONY : Test/CMakeFiles/Test_scene_world.dir/all
+Test/CMakeFiles/Test_cube_try_data_display.dir/all: glimac/CMakeFiles/glimac.dir/all
+	$(MAKE) -f Test/CMakeFiles/Test_cube_try_data_display.dir/build.make Test/CMakeFiles/Test_cube_try_data_display.dir/depend
+	$(MAKE) -f Test/CMakeFiles/Test_cube_try_data_display.dir/build.make Test/CMakeFiles/Test_cube_try_data_display.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=1,2 "Built target Test_cube_try_data_display"
+.PHONY : Test/CMakeFiles/Test_cube_try_data_display.dir/all
 
 # Include target in all.
-all: Test/CMakeFiles/Test_scene_world.dir/all
+all: Test/CMakeFiles/Test_cube_try_data_display.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-Test/CMakeFiles/Test_scene_world.dir/rule: cmake_check_build_system
+Test/CMakeFiles/Test_cube_try_data_display.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles 18
-	$(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_scene_world.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_cube_try_data_display.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles 0
-.PHONY : Test/CMakeFiles/Test_scene_world.dir/rule
+.PHONY : Test/CMakeFiles/Test_cube_try_data_display.dir/rule
 
 # Convenience name for target.
-Test_scene_world: Test/CMakeFiles/Test_scene_world.dir/rule
+Test_cube_try_data_display: Test/CMakeFiles/Test_cube_try_data_display.dir/rule
 
-.PHONY : Test_scene_world
-
-# clean rule for target.
-Test/CMakeFiles/Test_scene_world.dir/clean:
-	$(MAKE) -f Test/CMakeFiles/Test_scene_world.dir/build.make Test/CMakeFiles/Test_scene_world.dir/clean
-.PHONY : Test/CMakeFiles/Test_scene_world.dir/clean
+.PHONY : Test_cube_try_data_display
 
 # clean rule for target.
-clean: Test/CMakeFiles/Test_scene_world.dir/clean
+Test/CMakeFiles/Test_cube_try_data_display.dir/clean:
+	$(MAKE) -f Test/CMakeFiles/Test_cube_try_data_display.dir/build.make Test/CMakeFiles/Test_cube_try_data_display.dir/clean
+.PHONY : Test/CMakeFiles/Test_cube_try_data_display.dir/clean
+
+# clean rule for target.
+clean: Test/CMakeFiles/Test_cube_try_data_display.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target Test/CMakeFiles/Test_scene_cubes_transparency.dir
+# Target rules for target Test/CMakeFiles/Test_procedural_generation_v2.dir
 
 # All Build rule for target.
-Test/CMakeFiles/Test_scene_cubes_transparency.dir/all: glimac/CMakeFiles/glimac.dir/all
-	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/depend
-	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=13,14 "Built target Test_scene_cubes_transparency"
-.PHONY : Test/CMakeFiles/Test_scene_cubes_transparency.dir/all
+Test/CMakeFiles/Test_procedural_generation_v2.dir/all: glimac/CMakeFiles/glimac.dir/all
+	$(MAKE) -f Test/CMakeFiles/Test_procedural_generation_v2.dir/build.make Test/CMakeFiles/Test_procedural_generation_v2.dir/depend
+	$(MAKE) -f Test/CMakeFiles/Test_procedural_generation_v2.dir/build.make Test/CMakeFiles/Test_procedural_generation_v2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=11,12 "Built target Test_procedural_generation_v2"
+.PHONY : Test/CMakeFiles/Test_procedural_generation_v2.dir/all
 
 # Include target in all.
-all: Test/CMakeFiles/Test_scene_cubes_transparency.dir/all
+all: Test/CMakeFiles/Test_procedural_generation_v2.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule: cmake_check_build_system
+Test/CMakeFiles/Test_procedural_generation_v2.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles 18
-	$(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_scene_cubes_transparency.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_procedural_generation_v2.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles 0
-.PHONY : Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule
+.PHONY : Test/CMakeFiles/Test_procedural_generation_v2.dir/rule
 
 # Convenience name for target.
-Test_scene_cubes_transparency: Test/CMakeFiles/Test_scene_cubes_transparency.dir/rule
+Test_procedural_generation_v2: Test/CMakeFiles/Test_procedural_generation_v2.dir/rule
 
-.PHONY : Test_scene_cubes_transparency
-
-# clean rule for target.
-Test/CMakeFiles/Test_scene_cubes_transparency.dir/clean:
-	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/clean
-.PHONY : Test/CMakeFiles/Test_scene_cubes_transparency.dir/clean
+.PHONY : Test_procedural_generation_v2
 
 # clean rule for target.
-clean: Test/CMakeFiles/Test_scene_cubes_transparency.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target Test/CMakeFiles/Test_cube_try_display.dir
-
-# All Build rule for target.
-Test/CMakeFiles/Test_cube_try_display.dir/all: glimac/CMakeFiles/glimac.dir/all
-	$(MAKE) -f Test/CMakeFiles/Test_cube_try_display.dir/build.make Test/CMakeFiles/Test_cube_try_display.dir/depend
-	$(MAKE) -f Test/CMakeFiles/Test_cube_try_display.dir/build.make Test/CMakeFiles/Test_cube_try_display.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=3,4 "Built target Test_cube_try_display"
-.PHONY : Test/CMakeFiles/Test_cube_try_display.dir/all
-
-# Include target in all.
-all: Test/CMakeFiles/Test_cube_try_display.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-Test/CMakeFiles/Test_cube_try_display.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles 18
-	$(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_cube_try_display.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles 0
-.PHONY : Test/CMakeFiles/Test_cube_try_display.dir/rule
-
-# Convenience name for target.
-Test_cube_try_display: Test/CMakeFiles/Test_cube_try_display.dir/rule
-
-.PHONY : Test_cube_try_display
+Test/CMakeFiles/Test_procedural_generation_v2.dir/clean:
+	$(MAKE) -f Test/CMakeFiles/Test_procedural_generation_v2.dir/build.make Test/CMakeFiles/Test_procedural_generation_v2.dir/clean
+.PHONY : Test/CMakeFiles/Test_procedural_generation_v2.dir/clean
 
 # clean rule for target.
-Test/CMakeFiles/Test_cube_try_display.dir/clean:
-	$(MAKE) -f Test/CMakeFiles/Test_cube_try_display.dir/build.make Test/CMakeFiles/Test_cube_try_display.dir/clean
-.PHONY : Test/CMakeFiles/Test_cube_try_display.dir/clean
-
-# clean rule for target.
-clean: Test/CMakeFiles/Test_cube_try_display.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target Test/CMakeFiles/Test_scene_cubes.dir
-
-# All Build rule for target.
-Test/CMakeFiles/Test_scene_cubes.dir/all: glimac/CMakeFiles/glimac.dir/all
-	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes.dir/build.make Test/CMakeFiles/Test_scene_cubes.dir/depend
-	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes.dir/build.make Test/CMakeFiles/Test_scene_cubes.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=11,12 "Built target Test_scene_cubes"
-.PHONY : Test/CMakeFiles/Test_scene_cubes.dir/all
-
-# Include target in all.
-all: Test/CMakeFiles/Test_scene_cubes.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-Test/CMakeFiles/Test_scene_cubes.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles 18
-	$(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_scene_cubes.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles 0
-.PHONY : Test/CMakeFiles/Test_scene_cubes.dir/rule
-
-# Convenience name for target.
-Test_scene_cubes: Test/CMakeFiles/Test_scene_cubes.dir/rule
-
-.PHONY : Test_scene_cubes
-
-# clean rule for target.
-Test/CMakeFiles/Test_scene_cubes.dir/clean:
-	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes.dir/build.make Test/CMakeFiles/Test_scene_cubes.dir/clean
-.PHONY : Test/CMakeFiles/Test_scene_cubes.dir/clean
-
-# clean rule for target.
-clean: Test/CMakeFiles/Test_scene_cubes.dir/clean
+clean: Test/CMakeFiles/Test_procedural_generation_v2.dir/clean
 
 .PHONY : clean
 

@@ -150,6 +150,58 @@ Test_world_draw/fast:
 .PHONY : Test_world_draw/fast
 
 #=============================================================================
+# Target rules for targets named Test_scene_world
+
+# Build rule for target.
+Test_scene_world: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_scene_world
+.PHONY : Test_scene_world
+
+# fast build rule for target.
+Test_scene_world/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_scene_world.dir/build.make Test/CMakeFiles/Test_scene_world.dir/build
+.PHONY : Test_scene_world/fast
+
+#=============================================================================
+# Target rules for targets named Test_scene_cubes_transparency
+
+# Build rule for target.
+Test_scene_cubes_transparency: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_scene_cubes_transparency
+.PHONY : Test_scene_cubes_transparency
+
+# fast build rule for target.
+Test_scene_cubes_transparency/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/build
+.PHONY : Test_scene_cubes_transparency/fast
+
+#=============================================================================
+# Target rules for targets named Test_scene_cubes
+
+# Build rule for target.
+Test_scene_cubes: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_scene_cubes
+.PHONY : Test_scene_cubes
+
+# fast build rule for target.
+Test_scene_cubes/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes.dir/build.make Test/CMakeFiles/Test_scene_cubes.dir/build
+.PHONY : Test_scene_cubes/fast
+
+#=============================================================================
+# Target rules for targets named Test_cube_try_display
+
+# Build rule for target.
+Test_cube_try_display: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_cube_try_display
+.PHONY : Test_cube_try_display
+
+# fast build rule for target.
+Test_cube_try_display/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_cube_try_display.dir/build.make Test/CMakeFiles/Test_cube_try_display.dir/build
+.PHONY : Test_cube_try_display/fast
+
+#=============================================================================
 # Target rules for targets named Test_points_control_3D
 
 # Build rule for target.
@@ -161,19 +213,6 @@ Test_points_control_3D: cmake_check_build_system
 Test_points_control_3D/fast:
 	$(MAKE) -f Test/CMakeFiles/Test_points_control_3D.dir/build.make Test/CMakeFiles/Test_points_control_3D.dir/build
 .PHONY : Test_points_control_3D/fast
-
-#=============================================================================
-# Target rules for targets named Test_cube_try_data_display
-
-# Build rule for target.
-Test_cube_try_data_display: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Test_cube_try_data_display
-.PHONY : Test_cube_try_data_display
-
-# fast build rule for target.
-Test_cube_try_data_display/fast:
-	$(MAKE) -f Test/CMakeFiles/Test_cube_try_data_display.dir/build.make Test/CMakeFiles/Test_cube_try_data_display.dir/build
-.PHONY : Test_cube_try_data_display/fast
 
 #=============================================================================
 # Target rules for targets named Test_points_control_1D
@@ -202,56 +241,30 @@ Test_procedural_generation/fast:
 .PHONY : Test_procedural_generation/fast
 
 #=============================================================================
-# Target rules for targets named Test_scene_world
+# Target rules for targets named Test_cube_try_data_display
 
 # Build rule for target.
-Test_scene_world: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Test_scene_world
-.PHONY : Test_scene_world
+Test_cube_try_data_display: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_cube_try_data_display
+.PHONY : Test_cube_try_data_display
 
 # fast build rule for target.
-Test_scene_world/fast:
-	$(MAKE) -f Test/CMakeFiles/Test_scene_world.dir/build.make Test/CMakeFiles/Test_scene_world.dir/build
-.PHONY : Test_scene_world/fast
+Test_cube_try_data_display/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_cube_try_data_display.dir/build.make Test/CMakeFiles/Test_cube_try_data_display.dir/build
+.PHONY : Test_cube_try_data_display/fast
 
 #=============================================================================
-# Target rules for targets named Test_scene_cubes_transparency
+# Target rules for targets named Test_procedural_generation_v2
 
 # Build rule for target.
-Test_scene_cubes_transparency: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Test_scene_cubes_transparency
-.PHONY : Test_scene_cubes_transparency
+Test_procedural_generation_v2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_procedural_generation_v2
+.PHONY : Test_procedural_generation_v2
 
 # fast build rule for target.
-Test_scene_cubes_transparency/fast:
-	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes_transparency.dir/build.make Test/CMakeFiles/Test_scene_cubes_transparency.dir/build
-.PHONY : Test_scene_cubes_transparency/fast
-
-#=============================================================================
-# Target rules for targets named Test_cube_try_display
-
-# Build rule for target.
-Test_cube_try_display: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Test_cube_try_display
-.PHONY : Test_cube_try_display
-
-# fast build rule for target.
-Test_cube_try_display/fast:
-	$(MAKE) -f Test/CMakeFiles/Test_cube_try_display.dir/build.make Test/CMakeFiles/Test_cube_try_display.dir/build
-.PHONY : Test_cube_try_display/fast
-
-#=============================================================================
-# Target rules for targets named Test_scene_cubes
-
-# Build rule for target.
-Test_scene_cubes: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Test_scene_cubes
-.PHONY : Test_scene_cubes
-
-# fast build rule for target.
-Test_scene_cubes/fast:
-	$(MAKE) -f Test/CMakeFiles/Test_scene_cubes.dir/build.make Test/CMakeFiles/Test_scene_cubes.dir/build
-.PHONY : Test_scene_cubes/fast
+Test_procedural_generation_v2/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_procedural_generation_v2.dir/build.make Test/CMakeFiles/Test_procedural_generation_v2.dir/build
+.PHONY : Test_procedural_generation_v2/fast
 
 #=============================================================================
 # Target rules for targets named html
@@ -277,14 +290,15 @@ help:
 	@echo "... glimac"
 	@echo "... src_cube_freefly"
 	@echo "... Test_world_draw"
-	@echo "... Test_points_control_3D"
-	@echo "... Test_cube_try_data_display"
-	@echo "... Test_points_control_1D"
-	@echo "... Test_procedural_generation"
 	@echo "... Test_scene_world"
 	@echo "... Test_scene_cubes_transparency"
-	@echo "... Test_cube_try_display"
 	@echo "... Test_scene_cubes"
+	@echo "... Test_cube_try_display"
+	@echo "... Test_points_control_3D"
+	@echo "... Test_points_control_1D"
+	@echo "... Test_procedural_generation"
+	@echo "... Test_cube_try_data_display"
+	@echo "... Test_procedural_generation_v2"
 	@echo "... html"
 .PHONY : help
 

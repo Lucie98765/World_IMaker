@@ -76,13 +76,13 @@ int main(int argc, char** argv){
 	} std::cout << std::endl;
 
 	VectorXd u(NB_PTS_CTRL);
-	float mean = 3.0;
-	float stdev = 1.5;
+	float mean = 1.0;
+	float stdev = 0.5;
 	std::normal_distribution<float> normalDistribution(mean,stdev);
 	int i = 0;
 	while(i < u.size()){
 		float value = normalDistribution(defaultGenerator);
-		if(0 <= value && value <= 1 && value == value){
+		if(-5 <= value && value <= 5 && value == value){
 			u(i) = value;
 			i++;
 		}
@@ -114,8 +114,10 @@ int main(int argc, char** argv){
 	float pivot = std::accumulate( g_p.begin(), g_p.end(), 0.f )/ g_p.size();
 	std::cout << "Valeur moyenne = " << pivot << std::endl;
  	for(int i = 0; i < NB_POINTS; i++){
-		if(EPSILON >= abs(g_p[i]-pivot))
-				std::cout << "\tAffichage du point " << i << std::endl;
+		// if(EPSILON >= abs(g_p[i]-pivot))
+		// 		std::cout << "\tAffichage du point " << i << std::endl;
+		if(0 < g_p[i])
+			std::cout << "\tAffichage du point " << i << std::endl;
 	}
 
 
