@@ -201,6 +201,51 @@ Test_points_control_3D/fast:
 .PHONY : Test_points_control_3D/fast
 
 # Convenience name for target.
+Test/CMakeFiles/Test_procedural_generation_v2.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_procedural_generation_v2.dir/rule
+.PHONY : Test/CMakeFiles/Test_procedural_generation_v2.dir/rule
+
+# Convenience name for target.
+Test_procedural_generation_v2: Test/CMakeFiles/Test_procedural_generation_v2.dir/rule
+
+.PHONY : Test_procedural_generation_v2
+
+# fast build rule for target.
+Test_procedural_generation_v2/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_procedural_generation_v2.dir/build.make Test/CMakeFiles/Test_procedural_generation_v2.dir/build
+.PHONY : Test_procedural_generation_v2/fast
+
+# Convenience name for target.
+Test/CMakeFiles/Test_cube_try_data_display.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_cube_try_data_display.dir/rule
+.PHONY : Test/CMakeFiles/Test_cube_try_data_display.dir/rule
+
+# Convenience name for target.
+Test_cube_try_data_display: Test/CMakeFiles/Test_cube_try_data_display.dir/rule
+
+.PHONY : Test_cube_try_data_display
+
+# fast build rule for target.
+Test_cube_try_data_display/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_cube_try_data_display.dir/build.make Test/CMakeFiles/Test_cube_try_data_display.dir/build
+.PHONY : Test_cube_try_data_display/fast
+
+# Convenience name for target.
+Test/CMakeFiles/Test_gen_conf.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_gen_conf.dir/rule
+.PHONY : Test/CMakeFiles/Test_gen_conf.dir/rule
+
+# Convenience name for target.
+Test_gen_conf: Test/CMakeFiles/Test_gen_conf.dir/rule
+
+.PHONY : Test_gen_conf
+
+# fast build rule for target.
+Test_gen_conf/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_gen_conf.dir/build.make Test/CMakeFiles/Test_gen_conf.dir/build
+.PHONY : Test_gen_conf/fast
+
+# Convenience name for target.
 Test/CMakeFiles/Test_points_control_1D.dir/rule:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_points_control_1D.dir/rule
 .PHONY : Test/CMakeFiles/Test_points_control_1D.dir/rule
@@ -229,36 +274,6 @@ Test_procedural_generation: Test/CMakeFiles/Test_procedural_generation.dir/rule
 Test_procedural_generation/fast:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_procedural_generation.dir/build.make Test/CMakeFiles/Test_procedural_generation.dir/build
 .PHONY : Test_procedural_generation/fast
-
-# Convenience name for target.
-Test/CMakeFiles/Test_cube_try_data_display.dir/rule:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_cube_try_data_display.dir/rule
-.PHONY : Test/CMakeFiles/Test_cube_try_data_display.dir/rule
-
-# Convenience name for target.
-Test_cube_try_data_display: Test/CMakeFiles/Test_cube_try_data_display.dir/rule
-
-.PHONY : Test_cube_try_data_display
-
-# fast build rule for target.
-Test_cube_try_data_display/fast:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_cube_try_data_display.dir/build.make Test/CMakeFiles/Test_cube_try_data_display.dir/build
-.PHONY : Test_cube_try_data_display/fast
-
-# Convenience name for target.
-Test/CMakeFiles/Test_procedural_generation_v2.dir/rule:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_procedural_generation_v2.dir/rule
-.PHONY : Test/CMakeFiles/Test_procedural_generation_v2.dir/rule
-
-# Convenience name for target.
-Test_procedural_generation_v2: Test/CMakeFiles/Test_procedural_generation_v2.dir/rule
-
-.PHONY : Test_procedural_generation_v2
-
-# fast build rule for target.
-Test_procedural_generation_v2/fast:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_procedural_generation_v2.dir/build.make Test/CMakeFiles/Test_procedural_generation_v2.dir/build
-.PHONY : Test_procedural_generation_v2/fast
 
 cube_try_data_display.o: cube_try_data_display.cpp.o
 
@@ -313,6 +328,33 @@ cube_try_display.s: cube_try_display.cpp.s
 cube_try_display.cpp.s:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_cube_try_display.dir/build.make Test/CMakeFiles/Test_cube_try_display.dir/cube_try_display.cpp.s
 .PHONY : cube_try_display.cpp.s
+
+gen_conf.o: gen_conf.cpp.o
+
+.PHONY : gen_conf.o
+
+# target to build an object file
+gen_conf.cpp.o:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_gen_conf.dir/build.make Test/CMakeFiles/Test_gen_conf.dir/gen_conf.cpp.o
+.PHONY : gen_conf.cpp.o
+
+gen_conf.i: gen_conf.cpp.i
+
+.PHONY : gen_conf.i
+
+# target to preprocess a source file
+gen_conf.cpp.i:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_gen_conf.dir/build.make Test/CMakeFiles/Test_gen_conf.dir/gen_conf.cpp.i
+.PHONY : gen_conf.cpp.i
+
+gen_conf.s: gen_conf.cpp.s
+
+.PHONY : gen_conf.s
+
+# target to generate assembly for a file
+gen_conf.cpp.s:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_gen_conf.dir/build.make Test/CMakeFiles/Test_gen_conf.dir/gen_conf.cpp.s
+.PHONY : gen_conf.cpp.s
 
 points_control_1D.o: points_control_1D.cpp.o
 
@@ -544,16 +586,20 @@ help:
 	@echo "... Test_scene_cubes"
 	@echo "... Test_cube_try_display"
 	@echo "... Test_points_control_3D"
+	@echo "... Test_procedural_generation_v2"
+	@echo "... Test_cube_try_data_display"
+	@echo "... Test_gen_conf"
 	@echo "... Test_points_control_1D"
 	@echo "... Test_procedural_generation"
-	@echo "... Test_cube_try_data_display"
-	@echo "... Test_procedural_generation_v2"
 	@echo "... cube_try_data_display.o"
 	@echo "... cube_try_data_display.i"
 	@echo "... cube_try_data_display.s"
 	@echo "... cube_try_display.o"
 	@echo "... cube_try_display.i"
 	@echo "... cube_try_display.s"
+	@echo "... gen_conf.o"
+	@echo "... gen_conf.i"
+	@echo "... gen_conf.s"
 	@echo "... points_control_1D.o"
 	@echo "... points_control_1D.i"
 	@echo "... points_control_1D.s"

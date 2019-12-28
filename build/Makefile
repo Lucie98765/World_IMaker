@@ -215,6 +215,45 @@ Test_points_control_3D/fast:
 .PHONY : Test_points_control_3D/fast
 
 #=============================================================================
+# Target rules for targets named Test_procedural_generation_v2
+
+# Build rule for target.
+Test_procedural_generation_v2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_procedural_generation_v2
+.PHONY : Test_procedural_generation_v2
+
+# fast build rule for target.
+Test_procedural_generation_v2/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_procedural_generation_v2.dir/build.make Test/CMakeFiles/Test_procedural_generation_v2.dir/build
+.PHONY : Test_procedural_generation_v2/fast
+
+#=============================================================================
+# Target rules for targets named Test_cube_try_data_display
+
+# Build rule for target.
+Test_cube_try_data_display: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_cube_try_data_display
+.PHONY : Test_cube_try_data_display
+
+# fast build rule for target.
+Test_cube_try_data_display/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_cube_try_data_display.dir/build.make Test/CMakeFiles/Test_cube_try_data_display.dir/build
+.PHONY : Test_cube_try_data_display/fast
+
+#=============================================================================
+# Target rules for targets named Test_gen_conf
+
+# Build rule for target.
+Test_gen_conf: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_gen_conf
+.PHONY : Test_gen_conf
+
+# fast build rule for target.
+Test_gen_conf/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_gen_conf.dir/build.make Test/CMakeFiles/Test_gen_conf.dir/build
+.PHONY : Test_gen_conf/fast
+
+#=============================================================================
 # Target rules for targets named Test_points_control_1D
 
 # Build rule for target.
@@ -239,32 +278,6 @@ Test_procedural_generation: cmake_check_build_system
 Test_procedural_generation/fast:
 	$(MAKE) -f Test/CMakeFiles/Test_procedural_generation.dir/build.make Test/CMakeFiles/Test_procedural_generation.dir/build
 .PHONY : Test_procedural_generation/fast
-
-#=============================================================================
-# Target rules for targets named Test_cube_try_data_display
-
-# Build rule for target.
-Test_cube_try_data_display: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Test_cube_try_data_display
-.PHONY : Test_cube_try_data_display
-
-# fast build rule for target.
-Test_cube_try_data_display/fast:
-	$(MAKE) -f Test/CMakeFiles/Test_cube_try_data_display.dir/build.make Test/CMakeFiles/Test_cube_try_data_display.dir/build
-.PHONY : Test_cube_try_data_display/fast
-
-#=============================================================================
-# Target rules for targets named Test_procedural_generation_v2
-
-# Build rule for target.
-Test_procedural_generation_v2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Test_procedural_generation_v2
-.PHONY : Test_procedural_generation_v2
-
-# fast build rule for target.
-Test_procedural_generation_v2/fast:
-	$(MAKE) -f Test/CMakeFiles/Test_procedural_generation_v2.dir/build.make Test/CMakeFiles/Test_procedural_generation_v2.dir/build
-.PHONY : Test_procedural_generation_v2/fast
 
 #=============================================================================
 # Target rules for targets named html
@@ -295,10 +308,11 @@ help:
 	@echo "... Test_scene_cubes"
 	@echo "... Test_cube_try_display"
 	@echo "... Test_points_control_3D"
+	@echo "... Test_procedural_generation_v2"
+	@echo "... Test_cube_try_data_display"
+	@echo "... Test_gen_conf"
 	@echo "... Test_points_control_1D"
 	@echo "... Test_procedural_generation"
-	@echo "... Test_cube_try_data_display"
-	@echo "... Test_procedural_generation_v2"
 	@echo "... html"
 .PHONY : help
 
