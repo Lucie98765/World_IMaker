@@ -22,7 +22,7 @@ namespace glimac{
 
 
 
-	RBF::RBF(std::vector<glm::vec3> points, std::vector<glm::vec3> points_ctrl, std::function<float (glm::vec3 x, glm::vec3 y)> func):pts_ctrl(points_ctrl.size()),values_ctrl(points_ctrl.size()){
+	void RBF::build(std::vector<glm::vec3> points, std::vector<glm::vec3> points_ctrl, std::function<float (glm::vec3 x, glm::vec3 y)> func){
 
 		pts_ctrl = points_ctrl;
 
@@ -47,7 +47,7 @@ namespace glimac{
 		phi = func;
 	}
 
-	RBF::RBF(std::vector<glm::vec3> points, int nb_points_ctrl, std::function<float (glm::vec3 x, glm::vec3 y)> func):pts_ctrl(nb_points_ctrl),values_ctrl(nb_points_ctrl){
+	void RBF::build(std::vector<glm::vec3> points, int nb_points_ctrl, std::function<float (glm::vec3 x, glm::vec3 y)> func){
 
 		//generation pts_ctrl
 		unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();

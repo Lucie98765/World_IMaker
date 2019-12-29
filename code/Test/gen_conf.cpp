@@ -19,129 +19,12 @@
 
 using namespace glimac;
 
-#define W 3
-#define L 3
-#define H 3
-
-
 
 int main(int argc, char** argv) {
-    // CONFIG INIT
-    std::cout << "Do you want to generate a scene ? [y|n] ";
-    std::string reponse;
-    std::cin >> reponse;
-
-    if(0 == reponse.compare("y")){
-        std::cout << "\nPlease select a config file" << std::endl;
-        std::string confpath;
-        std::cin >> confpath;
-
-        std::ifstream confFile(confpath);
-        int count;
-        confFile >> count;
-        confFile.ignore(1, '\n');
-
-        std::string line;
-
-        std::getline(confFile, line);
-        std::ifstream linestream(line);
-
-        std::string w, h, l, phi, display, nb_pts_ctrl;
-        std::getline(linestream, w);
-        std::getline(linestream, h);
-        std::getline(linestream, l);
-        std::getline(linestream, phi);
-        std::getline(linestream, display);
-        std::getline(linestream, nb_pts_ctrl);
-
-        Scene world(std::stoi(w),std::stoi(l),std::stoi(h));
-
-        std::function<float (glm::vec3 x, glm::vec3 y)> func;
-
-        std::function<float (glm::vec3 x, glm::vec3 y)> exp_phi = [](glm::vec3 x, glm::vec3 y){
-            return exp(0.001*abs(glm::distance(x,y))*abs(glm::distance(x,y)));};
-        std::function<float (glm::vec3 x, glm::vec3 y)> lin_phi = [](glm::vec3 x, glm::vec3 y){
-            return 0.001*abs(glm::distance(x,y))*abs(glm::distance(x,y));};
-        std::function<float (glm::vec3 x, glm::vec3 y)> sqrt_phi = [](glm::vec3 x, glm::vec3 y){
-            return sqrt(1+pow(0.001*abs(glm::distance(x,y))*abs(glm::distance(x,y)),2));};
-        std::function<float (glm::vec3 x, glm::vec3 y)> rat_phi = [](glm::vec3 x, glm::vec3 y){
-            return 1/(1+pow(0.001*abs(glm::distance(x,y))*abs(glm::distance(x,y)),2));};
-
-        if(0 == phi.compare("exp"))
-            func = exp_phi;
-        if(0 == phi.compare("lin"))
-            func = lin_phi;
-        if(0 == phi.compare("sqrt"))
-            func = sqrt_phi;
-        if(0 == phi.compare("rat"))
-            func = rat_phi;
-
-        std::vector<glm::vec3> cube_matrix(world.width()*world.height()*world.length());
-        for(uint i = 0; i < world.width(); i++)
-            for(uint j = 0; j < world.width(); j++)
-                for(uint k = 0; k < world.width(); k++)
-                    cube_matrix[i*k*k+j*k+k] = glm::vec3(i,j,k);
-
-// RBF CONSTRUCTOR ??? POUR DEUX POSSIBLES
-        RBF rbf;
-        if(count == 5){
-            RBF rbf_nb(cube_matrix, 
-                    std::stoi(nb_pts_ctrl), 
-                    func);
-            rbf = rbf_nb;
-        }
-        else{
-            std::string pt_ctrl;
-            std::vector<glm::vec3> list_pts_ctrl(stoi(nb_pts_ctrl));
-            size_t pos = 0;
-            std::string delim = ",";
-            std::string x, y, z;
-            for(int i = 5; i <= count; i++){
-                std::getline(linestream, pt_ctrl);
-                x = pt_ctrl.substr(0,pos);
-                pt_ctrl.erase(0, pos + delim.length());
-                y = pt_ctrl.substr(0,pos);
-                pt_ctrl.erase(0, pos + delim.length());
-                z = pt_ctrl.substr(0,pos);
-
-                list_pts_ctrl.push_back(glm::vec3(std::stoi(x),std::stoi(y),std::stoi(z)));
-            }
-            RBF rbf_pts(cube_matrix, list_pts_ctrl, func);
-            rbf = rbf_pts;
-        }
-        std::vector<float> g_p(cube_matrix.size());
-        for(size_t i = 0; i < g_p.size(); i++)
-            g_p[i] = rbf.g(cube_matrix[i]);
-
-        std::function<bool (glm::vec3, float)> predicate;
-        float pivot;
-
-        if(0 == display.compare("moy")){
-            predicate = [rbf](glm::vec3 p, float pivot) mutable {
-                                return 0.001 >= abs(rbf.g(p) - pivot);
-                            };
-            pivot = std::accumulate(g_p.begin(), g_p.end(), 0.f)/g_p.size();
-        }
-
-        else{
-            predicate = [rbf](glm::vec3 p, float pivot) mutable {
-                        return rbf.g(p) >= pivot;
-            };
-            pivot = stoi(display);
-        }
-
-        for(uint i = 0; i < world.width(); i++){
-            for(uint j = 0; j < world.height(); j++){
-                for(uint k = 0; k < world.length(); k++){
-                    world.cubes()[i][j][k].visible(
-                        rbf.is_displayable(cube_matrix[i*k*k+j*k+k], 
-                            pivot, predicate));
-                }
-            }
-        }        
+    if(4 != argc){
+        std::cerr << "usage " << argv[0] << " width height depth" << std::endl;
+        return EXIT_FAILURE;
     }
-
-
     // Initialize SDL and open a window
     SDLWindowManager windowManager(WINDOW_WIDTH, WINDOW_HEIGHT, "Dessin de cube please");
 
@@ -161,39 +44,40 @@ int main(int argc, char** argv) {
                                   applicationPath.dirPath() + "shaders/cube.fs.glsl");
     program.use();
 
-    GLint location_uMVPMatrix = glGetUniformLocation(program.getGLId(), "uMVPMatrix");
-    std::cout << "Location uMVPMatrix : " << location_uMVPMatrix << std::endl;
+    //Uniforms
+        GLint location_uMVPMatrix = glGetUniformLocation(program.getGLId(), "uMVPMatrix");
+        std::cout << "Location uMVPMatrix : " << location_uMVPMatrix << std::endl;
 
-    GLint location_uMVMatrix = glGetUniformLocation(program.getGLId(), "uMVMatrix");
-    std::cout << "Location uMVMatrix : " << location_uMVMatrix << std::endl;
+        GLint location_uMVMatrix = glGetUniformLocation(program.getGLId(), "uMVMatrix");
+        std::cout << "Location uMVMatrix : " << location_uMVMatrix << std::endl;
 
-    GLint location_uNormalMatrix = glGetUniformLocation(program.getGLId(), "uNormalMatrix");
-    std::cout << "Location uNormalMatrix : " << location_uNormalMatrix << std::endl;
+        GLint location_uNormalMatrix = glGetUniformLocation(program.getGLId(), "uNormalMatrix");
+        std::cout << "Location uNormalMatrix : " << location_uNormalMatrix << std::endl;
 
 
-    GLint location_uFaceColor = glGetUniformLocation(program.getGLId(), "uFaceColor");
-    std::cout << "Location uFaceColor : " << location_uFaceColor << std::endl;
-    GLint location_uEdgeColor = glGetUniformLocation(program.getGLId(), "uEdgeColor");
-    std::cout << "Location uEdgeColor : " << location_uEdgeColor << std::endl;
-    GLint location_uEdgeMode = glGetUniformLocation(program.getGLId(), "uEdgeMode");
-    std::cout << "Location uEdgeMode : " << location_uEdgeMode << std::endl;
+        GLint location_uFaceColor = glGetUniformLocation(program.getGLId(), "uFaceColor");
+        std::cout << "Location uFaceColor : " << location_uFaceColor << std::endl;
+        GLint location_uEdgeColor = glGetUniformLocation(program.getGLId(), "uEdgeColor");
+        std::cout << "Location uEdgeColor : " << location_uEdgeColor << std::endl;
+        GLint location_uEdgeMode = glGetUniformLocation(program.getGLId(), "uEdgeMode");
+        std::cout << "Location uEdgeMode : " << location_uEdgeMode << std::endl;
 
 
     //Directionnal light :
-    GLint uKd = glGetUniformLocation(program.getGLId(), "uKd");
-    std::cout << "Location uKd : " << uKd << std::endl;
-    GLint uKs = glGetUniformLocation(program.getGLId(), "uKs");
-    std::cout << "Location uKs : " << uKs << std::endl;
-    GLint uShininess = glGetUniformLocation(program.getGLId(), "uShininess");
-    std::cout << "Location uShininess : " << uShininess << std::endl;
-    GLint uLightDir_vs = glGetUniformLocation(program.getGLId(), "uLightDir_vs");
-    std::cout << "Location uLightDir_vs : " << uLightDir_vs << std::endl;
-    GLint uLightIntensity = glGetUniformLocation(program.getGLId(), "uLightIntensity");
-    std::cout << "Location uLightIntensity : " << uLightIntensity << std::endl;
+        GLint uKd = glGetUniformLocation(program.getGLId(), "uKd");
+        std::cout << "Location uKd : " << uKd << std::endl;
+        GLint uKs = glGetUniformLocation(program.getGLId(), "uKs");
+        std::cout << "Location uKs : " << uKs << std::endl;
+        GLint uShininess = glGetUniformLocation(program.getGLId(), "uShininess");
+        std::cout << "Location uShininess : " << uShininess << std::endl;
+        GLint uLightDir_vs = glGetUniformLocation(program.getGLId(), "uLightDir_vs");
+        std::cout << "Location uLightDir_vs : " << uLightDir_vs << std::endl;
+        GLint uLightIntensity = glGetUniformLocation(program.getGLId(), "uLightIntensity");
+        std::cout << "Location uLightIntensity : " << uLightIntensity << std::endl;
 
 
-    Scene world(W, L, H);
-
+    Scene world(std::stoi(argv[1]),std::stoi(argv[2]),std::stoi(argv[3]));
+    
     GLuint vbo, vao;
 
     glGenBuffers(1, &vbo);
@@ -278,46 +162,160 @@ int main(int argc, char** argv) {
     glm::mat4 MVMatrix = glm::translate(glm::mat4(1),glm::vec3(0.f,0.f,-5.f));
     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(MVMatrix));
 
-    float espace = 1.5f;
+    // CONFIG INIT
+    std::cout << "Do you want to generate a scene ? [y|n] ";
+    std::string reponse;
+    std::cin >> reponse;
 
-    std::vector<glm::vec3> cube_matrix(world.width()*world.height()*world.length());
-    for(uint i = 0; i < world.width(); i++)
-        for(uint j = 0; j < world.width(); j++)
-            for(uint k = 0; k < world.width(); k++)
-                cube_matrix[i*k*k+j*k+k] = glm::vec3(i,j,k);
 
-    std::vector<glm::vec3> pts_ctrl = {
-        glm::vec3(world.width()/2,world.height()/2,world.length()/2),
-        glm::vec3((world.width()/2)-1,(world.height()/2)-1,(world.length()/2)-1),
-        glm::vec3((world.width()/2)+1,(world.height()/2)+1,(world.length()/2)+1)};
+    if(0 == reponse.compare("y")){
+        std::cout << "\nPlease select a config file" << std::endl;
+        std::string config;
+        std::cin >> config;
 
-    RBF rbf(cube_matrix, 
-            pts_ctrl, 
-            [](glm::vec3 x, glm::vec3 y){
-                return exp(0.001*abs(glm::distance(x,y))*abs(glm::distance(x,y)));}
-            );
+        std::ifstream confFile("/home/louisa/IMAC2/POO/World_IMaker/code/Test/"+config);
+        if(!confFile.is_open())
+            std::cerr << "Couldn't open config file" << std::endl;
+        else
+            std::cout << config << " opened successfuly" << std::endl;
+        std::string w, h, l, phi, display, nb_pts_ctrl;
 
-    std::vector<float> g_p(cube_matrix.size());
-    for(size_t i = 0; i < g_p.size(); i++)
-        g_p[i] = rbf.g(cube_matrix[i]);
+        std::getline(confFile, w); 
+        std::getline(confFile, h); 
+        std::getline(confFile, l); 
+        std::getline(confFile, phi);
+        std::getline(confFile, display);
+        std::getline(confFile, nb_pts_ctrl);
 
-    float pivot = std::accumulate(g_p.begin(), g_p.end(), 0.f)/g_p.size();
+        //init scene
+        world.width(std::stoi(w));
+        world.height(std::stoi(h));
+        world.length(std::stoi(l));
 
-    for(uint i = 0; i < world.width(); i++){
-        for(uint j = 0; j < world.height(); j++){
-            for(uint k = 0; k < world.length(); k++){
-                world.cubes()[i][j][k].visible(
-                    rbf.is_displayable(cube_matrix[i*k*k+j*k+k], 
-                        pivot, 
-                        [rbf](glm::vec3 p, float pivot) mutable {
-                            return 0.001 >= abs(rbf.g(p) - pivot);
-                        }
-                    )
-                );
+        //affect phi func
+        std::function<float (glm::vec3 x, glm::vec3 y)> func;
+
+        std::function<float (glm::vec3 x, glm::vec3 y)> exp_phi = [](glm::vec3 x, glm::vec3 y){
+            return exp(0.001*abs(glm::distance(x,y))*abs(glm::distance(x,y)));};
+        std::function<float (glm::vec3 x, glm::vec3 y)> lin_phi = [](glm::vec3 x, glm::vec3 y){
+            return 0.001*abs(glm::distance(x,y))*abs(glm::distance(x,y));};
+        std::function<float (glm::vec3 x, glm::vec3 y)> sqrt_phi = [](glm::vec3 x, glm::vec3 y){
+            return sqrt(1+pow(0.001*abs(glm::distance(x,y))*abs(glm::distance(x,y)),2));};
+        std::function<float (glm::vec3 x, glm::vec3 y)> rat_phi = [](glm::vec3 x, glm::vec3 y){
+            return 1/(1+pow(0.001*abs(glm::distance(x,y))*abs(glm::distance(x,y)),2));};
+
+        if(0 == phi.compare("exp"))
+            func = exp_phi;
+        if(0 == phi.compare("lin"))
+            func = lin_phi;
+        if(0 == phi.compare("sqrt"))
+            func = sqrt_phi;
+        if(0 == phi.compare("rat"))
+            func = rat_phi;
+
+        // Cube matrix
+        std::vector<glm::vec3> cube_matrix(world.width()*world.height()*world.length());
+        for(uint i = 0; i < world.width(); i++)
+            for(uint j = 0; j < world.width(); j++)
+                for(uint k = 0; k < world.width(); k++)
+                    cube_matrix[i*k*k+j*k+k] = glm::vec3(i,j,k);
+
+        // init RBF
+        RBF rbf(std::stoi(nb_pts_ctrl));
+        int i = 0;
+        std::string pt_ctrl;
+        std::vector<glm::vec3> list_pts_ctrl(stoi(nb_pts_ctrl));
+        int x, y, z;
+
+
+        //Case control points given
+        for(; std::getline(confFile, pt_ctrl); i++){
+            std::stringstream ss(pt_ctrl);
+            std::string token;
+            while(std::getline(ss, token, ' ')){
+                x = std::stoi(token);
+                std::getline(ss, token, ' ');
+                
+                y = std::stoi(token);
+                std::getline(ss, token, ' ');
+                
+                z = std::stoi(token);
+
+                list_pts_ctrl[i] = (glm::vec3(x,y,z));  
+            }
+
+
+        }
+        if(0 < i)
+            rbf.build(cube_matrix, list_pts_ctrl, func);
+
+        //Case nb control points given
+        else
+            rbf.build(cube_matrix, std::stoi(nb_pts_ctrl), func);
+        
+        //Calculation interpolated values
+        std::vector<float> g_p(cube_matrix.size());
+        for(size_t i = 0; i < g_p.size(); i++)
+            g_p[i] = rbf.g(cube_matrix[i]);
+
+        //Affect display condition
+        std::function<bool (glm::vec3, float)> predicate;
+        float pivot;
+
+        if(0 == display.compare("moy")){
+            predicate = [rbf](glm::vec3 p, float pivot) mutable {
+                                return 0.001 >= abs(rbf.g(p) - pivot);
+                            };
+            pivot = std::accumulate(g_p.begin(), g_p.end(), 0.f)/g_p.size();
+        }
+
+        else{
+            predicate = [rbf](glm::vec3 p, float pivot) mutable {
+                        return rbf.g(p) >= pivot;
+            };
+            pivot = stoi(display);
+        }
+
+        //Update visibility of cubes
+        for(uint i = 0; i < world.width(); i++){
+            for(uint j = 0; j < world.height(); j++){
+                for(uint k = 0; k < world.length(); k++){
+                    world.cubes()[i][j][k].visible(
+                        rbf.is_displayable(cube_matrix[i*k*k+j*k+k], 
+                            pivot, predicate));
+
+                    // if(world.cubes()[i][j][k].is_visible())
+                    //     std::cout << "\t";
+                    // std::cout << "update display (" << i << ", " << j << ", " << k << ") ===> " << world.cubes()[i][j][k].is_visible() << std::endl;
+                }
+            }
+        }        
+    }
+
+
+    std::cout << std::endl;
+    std::cout << "World " << world.width() << "x" << world.height() << "x"<< world.length() << std::endl;
+    Cube cube0 = world.cubes()[0][0][0];
+    std::cout << "Cubes vertices (" << cube0.vertices().size() << ")" << std::endl;
+    for(int i = 0; i < cube0.vertices().size(); i++)
+        std::cout <<(cube0.vertices())[i] << std::endl;
+
+    for(int i = 0; i < world.width(); i++){
+        for(int j = 0; j < world.height(); j++){
+            for(int k = 0; k < world.length(); k++){
+                if((world.cubes()[i][j][k]).is_visible())
+                    std::cout << "\t";
+                std::cout << "Cube (" << i << ", " << j << ", " << k<< ") is visible ? "<< (world.cubes()[i][j][k]).is_visible() << std::endl;
+                std::cout << "Cube (" << i << ", " << j << ", " << k<< ") is selected ? "<< (world.cubes()[i][j][k]).is_selected() << std::endl;
             }
         }
     }
+
+    std::cout << "Cursor " << world.cursor() << std::endl;
+    std::cout << "Camera \n" << world.camera().getViewMatrix() << std::endl;
    
+    float espace = 1.f;
+
     // Application loop:
     bool done = false;
     while(!done) {
@@ -429,9 +427,9 @@ int main(int argc, char** argv) {
             for(uint j = 0; j < world.height(); j++){
                 for(uint k = 0; k < world.length(); k++){
                     if(world.cubes()[i][j][k].is_visible()){
-                        //std::cout << "DRAW visible " << i << ", " << j << ", " << k <<std::endl;
+                        // std::cout << "DRAW visible " << i << ", " << j << ", " << k <<std::endl;
                         MVMatrix = world.camera().getViewMatrix();
-                        MVMatrix = glm::translate(MVMatrix,glm::vec3(-W/2, -H/2, -L/2));
+                        MVMatrix = glm::translate(MVMatrix,glm::vec3(-world.width()/2, -world.height()/2, -world.length()/2));
                         MVMatrix = glm::translate(MVMatrix,glm::vec3(-0.5f+espace*i,-0.5f+espace*j,-0.5f+espace*k));
 
                         glUniformMatrix4fv(location_uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * MVMatrix));
@@ -450,12 +448,11 @@ int main(int argc, char** argv) {
         for(uint i = 0; i < world.width(); i++){
             for(uint j = 0; j < world.height(); j++){
                 for(uint k = 0; k < world.length(); k++){
-
                     if(!world.cubes()[i][j][k].is_visible()){
                         // std::cout << "DRAW invisible " << i << ", " << j << ", " << k <<std::endl;
 
                         MVMatrix = world.camera().getViewMatrix();
-                        MVMatrix = glm::translate(MVMatrix,glm::vec3(-W/2, -H/2, -L/2));
+                        MVMatrix = glm::translate(MVMatrix,glm::vec3(-world.width()/2, -world.height()/2, -world.length()/2));
                         MVMatrix = glm::translate(MVMatrix,glm::vec3(-0.5f+espace*i,-0.5f+espace*j,-0.5f+espace*k));
 
                         glUniformMatrix4fv(location_uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * MVMatrix));
@@ -474,14 +471,13 @@ int main(int argc, char** argv) {
         for(uint i = 0; i < world.width(); i++){
             for(uint j = 0; j < world.height(); j++){
                 for(uint k = 0; k < world.length(); k++){
-
                     if(world.cubes()[i][j][k].is_selected()){
                         // std::cout << "DRAW selected " << i << ", " << j << ", " << k <<std::endl;
 
                         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
                         glUniform1i(location_uEdgeMode, 1);
                         MVMatrix = world.camera().getViewMatrix();
-                        MVMatrix = glm::translate(MVMatrix,glm::vec3(-W/2, -H/2, -L/2));
+                        MVMatrix = glm::translate(MVMatrix,glm::vec3(-world.width()/2, -world.height()/2, -world.length()/2));
                         MVMatrix = glm::translate(MVMatrix,glm::vec3(-0.5f+espace*i,-0.5f+espace*j,-0.5f+espace*k));
 
                         glUniformMatrix4fv(location_uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * MVMatrix));
@@ -498,9 +494,6 @@ int main(int argc, char** argv) {
             }
         }
         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-
-        //done = true;
-
 
                  
 

@@ -44,9 +44,10 @@ namespace glimac{
 
 
 		public:
-			RBF(std::vector<glm::vec3> points, int nb_points_ctrl, std::function<float (glm::vec3 x, glm::vec3 y)> func);
+			RBF(int nb_points_ctrl):pts_ctrl(nb_points_ctrl),values_ctrl(nb_points_ctrl){};
+			void build(std::vector<glm::vec3> points, int nb_points_ctrl, std::function<float (glm::vec3 x, glm::vec3 y)> func);
 
-			RBF(std::vector<glm::vec3> points, std::vector<glm::vec3> points_ctrl, std::function<float (glm::vec3 x, glm::vec3 y)> func);
+			void build(std::vector<glm::vec3> points, std::vector<glm::vec3> points_ctrl, std::function<float (glm::vec3 x, glm::vec3 y)> func);
 
 
 			float g(glm::vec3 point);

@@ -167,7 +167,8 @@ int main(int argc, char** argv) {
             for(uint k = 0; k < world.width(); k++)
                 cube_matrix[i*k*k+j*k+k] = glm::vec3(i,j,k);
 
-    RBF rbf(cube_matrix, 
+    RBF rbf(sqrt(cube_matrix.size()));
+    rbf.build(cube_matrix, 
             sqrt(cube_matrix.size()), 
             [](glm::vec3 x, glm::vec3 y){
                 return exp(0.001*abs(glm::distance(x,y))*abs(glm::distance(x,y)));}

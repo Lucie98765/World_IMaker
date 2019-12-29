@@ -42,7 +42,7 @@ class Scene
 		glm::vec3 m_cursor;
 
 	public:
-		Scene(uint w = 3, uint h = 3, uint l = 3);
+		Scene(uint w = 1, uint h = 1, uint l = 1);
 
 		void width(uint const w);
 		void height(uint const h);

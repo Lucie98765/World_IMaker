@@ -15,9 +15,9 @@
 #define WINDOW_WIDTH 800
 #define WINDOW_HEIGHT 800
 
-#define W 3
-#define L 3
-#define H 3
+#define W 4
+#define L 4
+#define H 4
 
 using namespace glimac;
 
@@ -159,7 +159,7 @@ int main(int argc, char** argv) {
     glm::mat4 MVMatrix = glm::translate(glm::mat4(1),glm::vec3(0.f,0.f,-5.f));
     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(MVMatrix));
 
-    float espace = 1.5f;
+    float espace = 1.f;
 
     std::vector<glm::vec3> cube_matrix(world.width()*world.height()*world.length());
     for(uint i = 0; i < world.width(); i++)
@@ -172,7 +172,8 @@ int main(int argc, char** argv) {
         glm::vec3((world.width()/2)-1,(world.height()/2)-1,(world.length()/2)-1),
         glm::vec3((world.width()/2)+1,(world.height()/2)+1,(world.length()/2)+1)};
 
-    RBF rbf(cube_matrix, 
+    RBF rbf(pts_ctrl.size());
+    rbf.build(cube_matrix, 
             pts_ctrl, 
             [](glm::vec3 x, glm::vec3 y){
                 return exp(0.001*abs(glm::distance(x,y))*abs(glm::distance(x,y)));}
