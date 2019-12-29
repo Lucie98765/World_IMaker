@@ -75,8 +75,11 @@ int main(int argc, char** argv) {
         GLint uLightIntensity = glGetUniformLocation(program.getGLId(), "uLightIntensity");
         std::cout << "Location uLightIntensity : " << uLightIntensity << std::endl;
 
+    const int W = std::stoi(argv[1]);
+    const int H = std::stoi(argv[2]);
+    const int L = std::stoi(argv[3]);
 
-    Scene world(std::stoi(argv[1]),std::stoi(argv[2]),std::stoi(argv[3]));
+    Scene world(W, H, L);
     
     GLuint vbo, vao;
 
@@ -292,27 +295,27 @@ int main(int argc, char** argv) {
         }        
     }
 
+    // Test data
+        // std::cout << std::endl;
+        // std::cout << "World " << world.width() << "x" << world.height() << "x"<< world.length() << std::endl;
+        // Cube cube0 = world.cubes()[0][0][0];
+        // std::cout << "Cubes vertices (" << cube0.vertices().size() << ")" << std::endl;
+        // for(int i = 0; i < cube0.vertices().size(); i++)
+        //     std::cout <<(cube0.vertices())[i] << std::endl;
 
-    std::cout << std::endl;
-    std::cout << "World " << world.width() << "x" << world.height() << "x"<< world.length() << std::endl;
-    Cube cube0 = world.cubes()[0][0][0];
-    std::cout << "Cubes vertices (" << cube0.vertices().size() << ")" << std::endl;
-    for(int i = 0; i < cube0.vertices().size(); i++)
-        std::cout <<(cube0.vertices())[i] << std::endl;
+        // for(int i = 0; i < world.width(); i++){
+        //     for(int j = 0; j < world.height(); j++){
+        //         for(int k = 0; k < world.length(); k++){
+        //             if((world.cubes()[i][j][k]).is_visible())
+        //                 std::cout << "\t";
+        //             std::cout << "Cube (" << i << ", " << j << ", " << k<< ") is visible ? "<< (world.cubes()[i][j][k]).is_visible() << std::endl;
+        //             std::cout << "Cube (" << i << ", " << j << ", " << k<< ") is selected ? "<< (world.cubes()[i][j][k]).is_selected() << std::endl;
+        //         }
+        //     }
+        // }
 
-    for(int i = 0; i < world.width(); i++){
-        for(int j = 0; j < world.height(); j++){
-            for(int k = 0; k < world.length(); k++){
-                if((world.cubes()[i][j][k]).is_visible())
-                    std::cout << "\t";
-                std::cout << "Cube (" << i << ", " << j << ", " << k<< ") is visible ? "<< (world.cubes()[i][j][k]).is_visible() << std::endl;
-                std::cout << "Cube (" << i << ", " << j << ", " << k<< ") is selected ? "<< (world.cubes()[i][j][k]).is_selected() << std::endl;
-            }
-        }
-    }
-
-    std::cout << "Cursor " << world.cursor() << std::endl;
-    std::cout << "Camera \n" << world.camera().getViewMatrix() << std::endl;
+        // std::cout << "Cursor " << world.cursor() << std::endl;
+        // std::cout << "Camera \n" << world.camera().getViewMatrix() << std::endl;
    
     float espace = 1.f;
 
@@ -429,7 +432,7 @@ int main(int argc, char** argv) {
                     if(world.cubes()[i][j][k].is_visible()){
                         // std::cout << "DRAW visible " << i << ", " << j << ", " << k <<std::endl;
                         MVMatrix = world.camera().getViewMatrix();
-                        MVMatrix = glm::translate(MVMatrix,glm::vec3(-world.width()/2, -world.height()/2, -world.length()/2));
+                        MVMatrix = glm::translate(MVMatrix,glm::vec3(-W/2, -H/2, -L/2));
                         MVMatrix = glm::translate(MVMatrix,glm::vec3(-0.5f+espace*i,-0.5f+espace*j,-0.5f+espace*k));
 
                         glUniformMatrix4fv(location_uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * MVMatrix));
@@ -452,7 +455,7 @@ int main(int argc, char** argv) {
                         // std::cout << "DRAW invisible " << i << ", " << j << ", " << k <<std::endl;
 
                         MVMatrix = world.camera().getViewMatrix();
-                        MVMatrix = glm::translate(MVMatrix,glm::vec3(-world.width()/2, -world.height()/2, -world.length()/2));
+                        MVMatrix = glm::translate(MVMatrix,glm::vec3(-W/2, -H/2, -L/2));
                         MVMatrix = glm::translate(MVMatrix,glm::vec3(-0.5f+espace*i,-0.5f+espace*j,-0.5f+espace*k));
 
                         glUniformMatrix4fv(location_uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * MVMatrix));
@@ -477,7 +480,7 @@ int main(int argc, char** argv) {
                         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
                         glUniform1i(location_uEdgeMode, 1);
                         MVMatrix = world.camera().getViewMatrix();
-                        MVMatrix = glm::translate(MVMatrix,glm::vec3(-world.width()/2, -world.height()/2, -world.length()/2));
+                        MVMatrix = glm::translate(MVMatrix,glm::vec3(-W/2, -H/2, -L/2));
                         MVMatrix = glm::translate(MVMatrix,glm::vec3(-0.5f+espace*i,-0.5f+espace*j,-0.5f+espace*k));
 
                         glUniformMatrix4fv(location_uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * MVMatrix));

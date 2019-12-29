@@ -261,6 +261,21 @@ Test_points_control_1D/fast:
 .PHONY : Test_points_control_1D/fast
 
 # Convenience name for target.
+Test/CMakeFiles/Test_test_main.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_test_main.dir/rule
+.PHONY : Test/CMakeFiles/Test_test_main.dir/rule
+
+# Convenience name for target.
+Test_test_main: Test/CMakeFiles/Test_test_main.dir/rule
+
+.PHONY : Test_test_main
+
+# fast build rule for target.
+Test_test_main/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_test_main.dir/build.make Test/CMakeFiles/Test_test_main.dir/build
+.PHONY : Test_test_main/fast
+
+# Convenience name for target.
 Test/CMakeFiles/Test_procedural_generation.dir/rule:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_procedural_generation.dir/rule
 .PHONY : Test/CMakeFiles/Test_procedural_generation.dir/rule
@@ -545,6 +560,33 @@ scene_world.cpp.s:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_scene_world.dir/build.make Test/CMakeFiles/Test_scene_world.dir/scene_world.cpp.s
 .PHONY : scene_world.cpp.s
 
+test_main.o: test_main.cpp.o
+
+.PHONY : test_main.o
+
+# target to build an object file
+test_main.cpp.o:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_test_main.dir/build.make Test/CMakeFiles/Test_test_main.dir/test_main.cpp.o
+.PHONY : test_main.cpp.o
+
+test_main.i: test_main.cpp.i
+
+.PHONY : test_main.i
+
+# target to preprocess a source file
+test_main.cpp.i:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_test_main.dir/build.make Test/CMakeFiles/Test_test_main.dir/test_main.cpp.i
+.PHONY : test_main.cpp.i
+
+test_main.s: test_main.cpp.s
+
+.PHONY : test_main.s
+
+# target to generate assembly for a file
+test_main.cpp.s:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_test_main.dir/build.make Test/CMakeFiles/Test_test_main.dir/test_main.cpp.s
+.PHONY : test_main.cpp.s
+
 world_draw.o: world_draw.cpp.o
 
 .PHONY : world_draw.o
@@ -590,6 +632,7 @@ help:
 	@echo "... Test_cube_try_data_display"
 	@echo "... Test_gen_conf"
 	@echo "... Test_points_control_1D"
+	@echo "... Test_test_main"
 	@echo "... Test_procedural_generation"
 	@echo "... cube_try_data_display.o"
 	@echo "... cube_try_data_display.i"
@@ -621,6 +664,9 @@ help:
 	@echo "... scene_world.o"
 	@echo "... scene_world.i"
 	@echo "... scene_world.s"
+	@echo "... test_main.o"
+	@echo "... test_main.i"
+	@echo "... test_main.s"
 	@echo "... world_draw.o"
 	@echo "... world_draw.i"
 	@echo "... world_draw.s"
