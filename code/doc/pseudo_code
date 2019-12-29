@@ -7,8 +7,16 @@ Init curseur au centre (0, 0, 0)
 // Génération textures
 Boucle principale:
 	switch(action):
-		//génération aléatoire:
-		//	BLAHBLAH
+		génération aléatoire:
+			pour chaque cube choisi aléatoirement/par l'utilisateur:
+				val_cube = val aléatoire entre 0 et 1
+			prochaines valeurs des cubes calculées tq:
+				phi(d) = une rbf (linéaire ou gaussienne ou quadratique inverse ...)
+				omega_i calculé tq phi*omega = val (Eigen matrix solve)
+				val_cube = Somme sur i allant de 0 à nb_cubes_choisis-1 de omega_i * phi(dist(cube, ieme cube choisi))
+			pour tous les cubes de la scène:
+				si val_cube > val_pivot:
+					afficher cube
 		//chargement scène:
 		//	choisir chemin et nom
 		//	si valide:

@@ -1,11 +1,11 @@
 ///
-/// \file Scene.hpp
-/// \brief header classe Scene
+/// \file Scene.cpp
+/// \brief source classe Scene
 /// \author CHIKAR LESBATS
 /// \version 0.1
 /// \date 19 dec 2019
 ///
-/// Code sourve de la classe Scene
+/// Code source de la classe Scene
 ///
 ///
 
@@ -18,18 +18,24 @@
 
 namespace glimac{
 
-	Scene::Scene(uint w, uint h, uint l):m_width(w),m_height(h),m_length(l),m_camera(),m_cubes(w, std::vector<std::vector<Cube>>(h, std::vector<Cube>(l))),m_cursor(w/2,h/2,l/2){
+	Scene::Scene(uint w, uint h, uint l):m_width(w),m_height(h),m_length(l),m_camera(),m_cubes(w, std::vector<std::vector<Cube>>(h, std::vector<Cube>(l))),m_cursor((w-1)/2,(h-1)/2,(l-1)/2){
 		m_cubes[m_cursor[0]][m_cursor[1]][m_cursor[2]].selected(true);
 	}
 
 
 	void Scene::width(uint const w){
+		m_cubes.resize(w);
 		m_width = w;
 	}
 	void Scene::height(uint const h){
+		for(uint i = 0; i < m_width; i++)
+			m_cubes[i].resize(h);
 		m_height = h;
 	}
 	void Scene::length(uint const l){
+		for(uint i = 0; i < m_width; i++)
+			for(uint j = 0; j < m_height; j++)
+				m_cubes[i][j].resize(l);
 		m_length = l;
 	}
 
