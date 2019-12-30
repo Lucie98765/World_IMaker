@@ -15,18 +15,33 @@
 
 namespace glimac{
 
-	Cube::Cube():m_is_visible(false), m_is_selected(false),m_vertices(8){
+	Cube::Cube():m_is_visible(false), m_is_selected(false),m_vertices_position(8){
 		m_face_color = glm::vec4(0, 1, 0, 0);
 		m_edge_color = glm::vec4(1, 0, 0, 0);
 
-		m_vertices[0] = (glm::vec3(-0.5, -0.5, -0.5));
-        m_vertices[1] = (glm::vec3(0.5, -0.5, -0.5));
-        m_vertices[2] = (glm::vec3(-0.5, 0.5, -0.5));
-        m_vertices[3] = (glm::vec3(0.5, 0.5, -0.5));
-        m_vertices[4] = (glm::vec3(-0.5, -0.5, 0.5));
-        m_vertices[5] = (glm::vec3(0.5, -0.5, 0.5));
-        m_vertices[6] = (glm::vec3(-0.5, 0.5, 0.5));
-        m_vertices[7] = (glm::vec3(0.5, 0.5, 0.5));
+		m_vertices_position[0] = (glm::vec3(-0.5, -0.5, -0.5));
+        m_vertices_position[1] = (glm::vec3(0.5, -0.5, -0.5));
+        m_vertices_position[2] = (glm::vec3(-0.5, 0.5, -0.5));
+        m_vertices_position[3] = (glm::vec3(0.5, 0.5, -0.5));
+        m_vertices_position[4] = (glm::vec3(-0.5, -0.5, 0.5));
+        m_vertices_position[5] = (glm::vec3(0.5, -0.5, 0.5));
+        m_vertices_position[6] = (glm::vec3(-0.5, 0.5, 0.5));
+        m_vertices_position[7] = (glm::vec3(0.5, 0.5, 0.5));
+
+        for(uint i = 0; i <= 8; ++i) {
+            ShapeVertex vertex;
+
+            vertex.texCoords.x = 0;
+            vertex.texCoords.y = 0; //Pas de gestion des textures pour l'instant
+
+            vertex.position.x = m_vertices_position[i].x;
+            vertex.position.y = m_vertices_position[i].y;
+            vertex.position.z = m_vertices_position[i].z;
+
+            vertex.normal = vertex.position;
+
+            m_vertices.push_back(vertex);
+        }
 	}
 
 	//SET
@@ -57,7 +72,7 @@ namespace glimac{
 
 	//GET
 	std::vector<glm::vec3> Cube::vertices() {
-		return m_vertices;
+		return m_vertices_position;
 	}
 	glm::vec4 Cube::face_color() {
 		return m_face_color;

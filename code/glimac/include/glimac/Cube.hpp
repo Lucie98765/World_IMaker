@@ -25,7 +25,11 @@ class Cube
 		///
 		/// position des sommets
 		///
-		std::vector<glm::vec3> m_vertices;
+		std::vector<glm::vec3> m_vertices_position;
+        ///
+        /// position des sommets, normales aux sommets et coordonnées de texture
+        ///
+        std::vector<ShapeVertex> m_vertices;
 		///
 		/// couleur des faces
 		///

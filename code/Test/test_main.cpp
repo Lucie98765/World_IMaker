@@ -143,7 +143,7 @@ int main(int argc, char** argv) {
         return EXIT_FAILURE;
     }
     // Initialize SDL and open a window
-    SDLWindowManager windowManager(WINDOW_WIDTH, WINDOW_HEIGHT, "Dessin de cube please");
+    SDLWindowManager windowManager(WINDOW_WIDTH, WINDOW_HEIGHT, "World IMaker");
 
     // Initialize glew for OpenGL3+ support
     GLenum glewInitError = glewInit();
@@ -179,8 +179,7 @@ int main(int argc, char** argv) {
         GLint location_uEdgeMode = glGetUniformLocation(program.getGLId(), "uEdgeMode");
         std::cout << "Location uEdgeMode : " << location_uEdgeMode << std::endl;
 
-
-    //Directionnal light :
+    //Directionnal light
         GLint uKd = glGetUniformLocation(program.getGLId(), "uKd");
         std::cout << "Location uKd : " << uKd << std::endl;
         GLint uKs = glGetUniformLocation(program.getGLId(), "uKs");
@@ -191,6 +190,7 @@ int main(int argc, char** argv) {
         std::cout << "Location uLightDir_vs : " << uLightDir_vs << std::endl;
         GLint uLightIntensity = glGetUniformLocation(program.getGLId(), "uLightIntensity");
         std::cout << "Location uLightIntensity : " << uLightIntensity << std::endl;
+
 
     const int W = std::stoi(argv[1]);
     const int H = std::stoi(argv[2]);
@@ -258,7 +258,15 @@ int main(int argc, char** argv) {
             GL_FLOAT, /* Type d'une composante */
             GL_FALSE, /* Pas de normalisation */
             sizeof(glm::vec3), /* Taille en octet d'un vertex complet entre chaque attribut position */
-            (const GLvoid*)0 /* OpenGL doit utiliser le VBO attaché à GL_ARRAY_BUFFER et commencer à l'offset 0 */
+            (const GLvoid*) offsetof(ShapeVertex, position) 
+    );
+    glVertexAttribPointer(
+            VERTEX_ATTR_NORMAL, /* Indice attribut */
+            3, /* Nombre de composantes */
+            GL_FLOAT, /* Type d'une composante */
+            GL_FALSE, /* Pas de normalisation */
+            sizeof(glm::vec3), /* Taille en octet d'un vertex complet entre chaque attribut position */
+            (const GLvoid*) offsetof(ShapeVertex, normal) 
     );
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -389,7 +397,8 @@ int main(int argc, char** argv) {
 
         glUniform1ui(location_uEdgeMode, 0);
 
-        /*Envoi des variables uniformes au shader */
+         //Directionnal light
+        //Sending the uniform variables to the sahder
         glm::vec4 lightDir4 =  glm::vec4(1.0f, 1.0f, 1.0f, 0.0f);
         lightDir4 = lightDir4 * world.camera().getViewMatrix();
         glm::vec3 lightDir = glm::vec3(lightDir4.x, lightDir4.y, lightDir4.z);
@@ -399,6 +408,9 @@ int main(int argc, char** argv) {
         glUniform1f(uShininess,0.5f);
         glUniform3fv(uLightDir_vs, 1, glm::value_ptr(lightDir));
         glUniform3fv(uLightIntensity, 1, glm::value_ptr(glm::vec3(0.3f, 0.3f, 0.3f)));
+
+        Uniform3fv(uLightIntensity, 1, glm::value_ptr(glm::vec3(0.3f, 0.3f, 0.3f)));
+
 
 
         for(uint i = 0; i < world.width(); i++){
