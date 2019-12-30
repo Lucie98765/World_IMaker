@@ -249,6 +249,8 @@ int main(int argc, char** argv) {
 
     const GLuint VERTEX_ATTR_POSITION = 0;
     glEnableVertexAttribArray(VERTEX_ATTR_POSITION);
+    const GLuint VERTEX_ATTR_NORMAL = 1;
+    glEnableVertexAttribArray(VERTEX_ATTR_NORMAL);
 
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
@@ -409,7 +411,7 @@ int main(int argc, char** argv) {
         glUniform3fv(uLightDir_vs, 1, glm::value_ptr(lightDir));
         glUniform3fv(uLightIntensity, 1, glm::value_ptr(glm::vec3(0.3f, 0.3f, 0.3f)));
 
-        Uniform3fv(uLightIntensity, 1, glm::value_ptr(glm::vec3(0.3f, 0.3f, 0.3f)));
+        glUniform3fv(uLightIntensity, 1, glm::value_ptr(glm::vec3(0.3f, 0.3f, 0.3f)));
 
 
 
