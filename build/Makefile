@@ -267,19 +267,6 @@ Test_points_control_1D/fast:
 .PHONY : Test_points_control_1D/fast
 
 #=============================================================================
-# Target rules for targets named Test_test_main
-
-# Build rule for target.
-Test_test_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Test_test_main
-.PHONY : Test_test_main
-
-# fast build rule for target.
-Test_test_main/fast:
-	$(MAKE) -f Test/CMakeFiles/Test_test_main.dir/build.make Test/CMakeFiles/Test_test_main.dir/build
-.PHONY : Test_test_main/fast
-
-#=============================================================================
 # Target rules for targets named Test_procedural_generation
 
 # Build rule for target.
@@ -325,7 +312,6 @@ help:
 	@echo "... Test_cube_try_data_display"
 	@echo "... Test_gen_conf"
 	@echo "... Test_points_control_1D"
-	@echo "... Test_test_main"
 	@echo "... Test_procedural_generation"
 	@echo "... html"
 .PHONY : help
