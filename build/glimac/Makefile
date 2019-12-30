@@ -287,6 +287,33 @@ src/Imagev2.cpp.s:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.s
 .PHONY : src/Imagev2.cpp.s
 
+src/Interface.o: src/Interface.cpp.o
+
+.PHONY : src/Interface.o
+
+# target to build an object file
+src/Interface.cpp.o:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o
+.PHONY : src/Interface.cpp.o
+
+src/Interface.i: src/Interface.cpp.i
+
+.PHONY : src/Interface.i
+
+# target to preprocess a source file
+src/Interface.cpp.i:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Interface.cpp.i
+.PHONY : src/Interface.cpp.i
+
+src/Interface.s: src/Interface.cpp.s
+
+.PHONY : src/Interface.s
+
+# target to generate assembly for a file
+src/Interface.cpp.s:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Interface.cpp.s
+.PHONY : src/Interface.cpp.s
+
 src/Program.o: src/Program.cpp.o
 
 .PHONY : src/Program.o
@@ -313,6 +340,33 @@ src/Program.s: src/Program.cpp.s
 src/Program.cpp.s:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Program.cpp.s
 .PHONY : src/Program.cpp.s
+
+src/RBF.o: src/RBF.cpp.o
+
+.PHONY : src/RBF.o
+
+# target to build an object file
+src/RBF.cpp.o:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/RBF.cpp.o
+.PHONY : src/RBF.cpp.o
+
+src/RBF.i: src/RBF.cpp.i
+
+.PHONY : src/RBF.i
+
+# target to preprocess a source file
+src/RBF.cpp.i:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/RBF.cpp.i
+.PHONY : src/RBF.cpp.i
+
+src/RBF.s: src/RBF.cpp.s
+
+.PHONY : src/RBF.s
+
+# target to generate assembly for a file
+src/RBF.cpp.s:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/RBF.cpp.s
+.PHONY : src/RBF.cpp.s
 
 src/SDLWindowManager.o: src/SDLWindowManager.cpp.o
 
@@ -503,9 +557,15 @@ help:
 	@echo "... src/Imagev2.o"
 	@echo "... src/Imagev2.i"
 	@echo "... src/Imagev2.s"
+	@echo "... src/Interface.o"
+	@echo "... src/Interface.i"
+	@echo "... src/Interface.s"
 	@echo "... src/Program.o"
 	@echo "... src/Program.i"
 	@echo "... src/Program.s"
+	@echo "... src/RBF.o"
+	@echo "... src/RBF.i"
+	@echo "... src/RBF.s"
 	@echo "... src/SDLWindowManager.o"
 	@echo "... src/SDLWindowManager.i"
 	@echo "... src/SDLWindowManager.s"

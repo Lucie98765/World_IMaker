@@ -15,21 +15,30 @@
 
 namespace glimac{
 
-	Cube::Cube():m_is_visible(false), m_is_selected(false){
-		m_face_color = glm::vec4(0, 1, 0, 1);
-		m_edge_color = glm::vec4(0, 0, 1, 1);
+	Cube::Cube():m_is_visible(false), m_is_selected(false),m_vertices(8){
+		m_face_color = glm::vec4(0, 1, 0, 0);
+		m_edge_color = glm::vec4(1, 0, 0, 0);
+
+		m_vertices[0] = (glm::vec3(-0.5, -0.5, -0.5));
+        m_vertices[1] = (glm::vec3(0.5, -0.5, -0.5));
+        m_vertices[2] = (glm::vec3(-0.5, 0.5, -0.5));
+        m_vertices[3] = (glm::vec3(0.5, 0.5, -0.5));
+        m_vertices[4] = (glm::vec3(-0.5, -0.5, 0.5));
+        m_vertices[5] = (glm::vec3(0.5, -0.5, 0.5));
+        m_vertices[6] = (glm::vec3(-0.5, 0.5, 0.5));
+        m_vertices[7] = (glm::vec3(0.5, 0.5, 0.5));
 	}
 
 	//SET
-	void Cube::face_color(glm::vec4 const color){
+	void Cube::face_color(glm::vec4 color){
 		m_face_color = color;
 	}
 
-	void Cube::edge_color(glm::vec4 const color){
+	void Cube::edge_color(glm::vec4 color){
 		m_edge_color = color;
 	}
 
-	void Cube::visible(bool const state){
+	void Cube::visible(bool state){
 		m_is_visible = state;
 		if(m_is_visible)
 			this->face_color(glm::vec4(0, 1, 0, 1));
@@ -37,7 +46,7 @@ namespace glimac{
 			this->face_color(glm::vec4(0, 1, 0, 0));
 	}
 
-	void Cube::selected(bool const state){
+	void Cube::selected(bool state){
 		m_is_selected = state;
 		if(m_is_selected)
 			this->edge_color(glm::vec4(1, 0, 0, 1));
@@ -47,16 +56,19 @@ namespace glimac{
 
 
 	//GET
-	glm::vec4 Cube::face_color() const {
+	std::vector<glm::vec3> Cube::vertices() {
+		return m_vertices;
+	}
+	glm::vec4 Cube::face_color() {
 		return m_face_color;
 	}
-	glm::vec4 Cube::edge_color() const {
+	glm::vec4 Cube::edge_color() {
 		return m_edge_color;
 	}
-	bool Cube::is_visible() const {
+	bool Cube::is_visible() {
 		return m_is_visible;
 	}
-	bool Cube::is_selected() const {
+	bool Cube::is_selected() {
 		return m_is_selected;
 	}
 }

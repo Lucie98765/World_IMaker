@@ -1,92 +1,142 @@
 [
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/glimac",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include    -std=c++11 -o CMakeFiles/glimac.dir/src/Cone.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Cone.cpp",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/glimac.dir/src/Cone.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Cone.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Cone.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/glimac",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include    -std=c++11 -o CMakeFiles/glimac.dir/src/Cube.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Cube.cpp",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/glimac.dir/src/Cube.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Cube.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Cube.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/glimac",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include    -std=c++11 -o CMakeFiles/glimac.dir/src/FreeFlyCamera.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/FreeFlyCamera.cpp",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/glimac.dir/src/FreeFlyCamera.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/FreeFlyCamera.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/FreeFlyCamera.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/glimac",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include    -std=c++11 -o CMakeFiles/glimac.dir/src/Geometry.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Geometry.cpp",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/glimac.dir/src/Geometry.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Geometry.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Geometry.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/glimac",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include    -std=c++11 -o CMakeFiles/glimac.dir/src/Image.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Image.cpp",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/glimac.dir/src/Image.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Image.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Image.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/glimac",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include    -std=c++11 -o CMakeFiles/glimac.dir/src/Imagev2.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Imagev2.cpp",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/glimac.dir/src/Imagev2.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Imagev2.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Imagev2.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/glimac",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include    -std=c++11 -o CMakeFiles/glimac.dir/src/Program.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Program.cpp",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/glimac.dir/src/Interface.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Interface.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Interface.cpp"
+},
+{
+  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/glimac",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/glimac.dir/src/Program.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Program.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Program.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/glimac",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include    -std=c++11 -o CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/SDLWindowManager.cpp",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/glimac.dir/src/RBF.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/RBF.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/RBF.cpp"
+},
+{
+  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/glimac",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/SDLWindowManager.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/SDLWindowManager.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/glimac",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include    -std=c++11 -o CMakeFiles/glimac.dir/src/Scene.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Scene.cpp",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/glimac.dir/src/Scene.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Scene.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Scene.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/glimac",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include    -std=c++11 -o CMakeFiles/glimac.dir/src/Shader.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Shader.cpp",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/glimac.dir/src/Shader.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Shader.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Shader.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/glimac",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include    -std=c++11 -o CMakeFiles/glimac.dir/src/Sphere.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Sphere.cpp",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/glimac.dir/src/Sphere.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Sphere.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Sphere.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/glimac",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include    -std=c++11 -o CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/TrackballCamera.cpp",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/TrackballCamera.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/TrackballCamera.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/glimac",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include    -std=c++11 -o CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/tiny_obj_loader.cpp",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/tiny_obj_loader.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/tiny_obj_loader.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/src",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3    -std=c++11 -o CMakeFiles/src_cube_freefly.dir/cube_freefly.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/src/cube_freefly.cpp",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/src_cube_freefly.dir/cube_freefly.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/src/cube_freefly.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/src/cube_freefly.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3    -std=c++11 -o CMakeFiles/Test_scene_cubes_transparency.dir/scene_cubes_transparency.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/scene_cubes_transparency.cpp",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/Test_world_draw.dir/world_draw.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/world_draw.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/world_draw.cpp"
+},
+{
+  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/Test_scene_world.dir/scene_world.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/scene_world.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/scene_world.cpp"
+},
+{
+  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/Test_scene_cubes_transparency.dir/scene_cubes_transparency.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/scene_cubes_transparency.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/scene_cubes_transparency.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3    -std=c++11 -o CMakeFiles/Test_scene_cubes.dir/scene_cubes.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/scene_cubes.cpp",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/Test_scene_cubes.dir/scene_cubes.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/scene_cubes.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/scene_cubes.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3    -std=c++11 -o CMakeFiles/Test_cube_try_data_display.dir/cube_try_data_display.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/cube_try_data_display.cpp",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/Test_cube_try_display.dir/cube_try_display.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/cube_try_display.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/cube_try_display.cpp"
+},
+{
+  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/Test_points_control_3D.dir/points_control_3D.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/points_control_3D.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/points_control_3D.cpp"
+},
+{
+  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/Test_procedural_generation_v2.dir/procedural_generation_v2.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/procedural_generation_v2.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/procedural_generation_v2.cpp"
+},
+{
+  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/Test_cube_try_data_display.dir/cube_try_data_display.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/cube_try_data_display.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/cube_try_data_display.cpp"
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3    -std=c++11 -o CMakeFiles/Test_cube_try_display.dir/cube_try_display.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/cube_try_display.cpp",
-  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/cube_try_display.cpp"
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/Test_gen_conf.dir/gen_conf.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/gen_conf.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/gen_conf.cpp"
+},
+{
+  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/Test_points_control_1D.dir/points_control_1D.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/points_control_1D.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/points_control_1D.cpp"
+},
+{
+  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/Test_test_main.dir/test_main.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/test_main.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/test_main.cpp"
+},
+{
+  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/Test_procedural_generation.dir/procedural_generation.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/procedural_generation.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/procedural_generation.cpp"
 }
 ]
