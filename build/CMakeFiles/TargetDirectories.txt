@@ -18,7 +18,6 @@
 /home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_cube_try_data_display.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_gen_conf.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_points_control_1D.dir
-/home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_test_main.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/Test/CMakeFiles/Test_procedural_generation.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/doc/CMakeFiles/rebuild_cache.dir
 /home/louisa/IMAC2/POO/World_IMaker/build/doc/CMakeFiles/html.dir
