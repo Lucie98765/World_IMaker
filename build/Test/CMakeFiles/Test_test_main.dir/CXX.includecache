@@ -23,6 +23,10 @@ cstddef
 -
 glimac/Image.hpp
 -
+fstream
+-
+math.h
+-
 glimac/Cube.hpp
 -
 glimac/TrackballCamera.hpp

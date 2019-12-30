@@ -73,6 +73,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "Test/CMakeFiles/Test_cube_try_data_display.dir/DependInfo.cmake"
   "Test/CMakeFiles/Test_gen_conf.dir/DependInfo.cmake"
   "Test/CMakeFiles/Test_points_control_1D.dir/DependInfo.cmake"
+  "Test/CMakeFiles/Test_test_main.dir/DependInfo.cmake"
   "Test/CMakeFiles/Test_procedural_generation.dir/DependInfo.cmake"
   "doc/CMakeFiles/html.dir/DependInfo.cmake"
   )
