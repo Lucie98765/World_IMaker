@@ -310,10 +310,11 @@ int main(int argc, char** argv) {
 
     // Application loop:
     bool done = false;
+    bool grabbing = false;
+    glm::vec3 origin;
     while(!done) {
         // Event loop:
         SDL_Event e;
-        SDL_Event e2;
         while(windowManager.pollEvent(e)) {
             if(e.type == SDL_QUIT) {
                 done = true; // Leave the loop after this iteration
@@ -328,11 +329,7 @@ int main(int argc, char** argv) {
                 world.camera().rotateLeft(e.motion.yrel);
                 world.camera().rotateUp(e.motion.xrel); 
             }
-
-            if( e.type == SDL_KEYDOWN){
-                std::cout << e.key.keysym.sym << std::endl;
-                bool cancel = false;
-                glm::vec3 origin = world.cursor();
+            if( e.type == SDL_KEYDOWN){                
                 switch (e.key.keysym.sym){
                     case SDLK_1 :
                         std::cout<<"Create a new cube" << std::endl;
@@ -371,100 +368,68 @@ int main(int argc, char** argv) {
                         world.change_color(glm::vec4(1, 0, 1, 1));
                         break;
                     case SDLK_LEFT : world.move_cursor(LEFT);
+                        if(grabbing){ 
+                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,1,0,1));
+                            world.cubes()[origin.x][origin.y][origin.z].selected(true);
+                        }
                         break;
                     case SDLK_RIGHT : world.move_cursor(RIGHT);
+                        if(grabbing){
+                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,1,0,1));
+                            world.cubes()[origin.x][origin.y][origin.z].selected(true);
+                        }
                         break;
                     case SDLK_UP : world.move_cursor(UP);
+                        if(grabbing){
+                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,1,0,1));
+                            world.cubes()[origin.x][origin.y][origin.z].selected(true);
+                        }
                         break;
                     case SDLK_DOWN : world.move_cursor(DOWN);
+                        if(grabbing){
+                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,1,0,1));
+                            world.cubes()[origin.x][origin.y][origin.z].selected(true);
+                        }
                         break;
                     //case SDLK_KP_PLUS :
                     case SDLK_p : world.move_cursor(FORWARD);
+                        if(grabbing){
+                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,1,0,1));
+                            world.cubes()[origin.x][origin.y][origin.z].selected(true);
+                        }
                         break;
                     //case SDLK_KP_MINUS :
                     case SDLK_m : world.move_cursor(BACKWARD);
+                        if(grabbing){
+                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,1,0,1));
+                            world.cubes()[origin.x][origin.y][origin.z].selected(true);
+                        }
                         break;
                     case SDLK_ESCAPE :
-                        done = true;
+                        if(grabbing) grabbing = false;
+                        else done = true;
                         break;
-                    case SDLK_g : std::cout << "Grab" << std::endl;
-                        if(!world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].is_visible()){
+                    case SDLK_g : std::cout << "Grabbing" << std::endl;
+                        origin = world.cursor();
+                        if(!world.cubes()[origin.x][origin.y][origin.z].is_visible())
                             std::cerr << "Can't grab nothing" << std::endl;
+                        else grabbing = true;
+                            break;
+                    case SDLK_SPACE: 
+                        if(!grabbing)
+                            break;
+                        if(world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].is_visible()){
+                            std::cerr << "Occupied" << std::endl;
                             break;
                         }
-                        while(!cancel){
-                            while(windowManager.pollEvent(e2)) {
-                                if(e2.type == SDL_QUIT) {
-                                    cancel = true;
-                                    done = true;
-                                }
-
-                                if(e2.type == SDL_MOUSEWHEEL)
-                                {
-                                    world.camera().moveFront(e2.wheel.y);
-                                }
-
-                                if(e2.type == SDL_MOUSEMOTION && (e2.motion.state & SDL_BUTTON_LEFT)){
-                                    world.camera().rotateLeft(e2.motion.yrel);
-                                    world.camera().rotateUp(e2.motion.xrel); 
-                                }
-                                if( e2.type == SDL_KEYDOWN){
-                                    switch (e2.key.keysym.sym){
-                                        case SDLK_ESCAPE:
-                                            std::cout << "Grab canceled" << std::endl;
-                                            cancel = true;
-                                            break;
-                                        case SDLK_LEFT : std::cout << "LEFT" << std::endl;
-                                            world.move_cursor(LEFT);
-                                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,1,0,1));
-                                            world.cubes()[origin.x][origin.y][origin.z].selected(true);
-                                            break;
-                                        case SDLK_RIGHT : std::cout << "RIGHT" << std::endl;
-                                            world.move_cursor(RIGHT);
-                                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,1,0,1));
-                                            world.cubes()[origin.x][origin.y][origin.z].selected(true);
-                                            break;
-                                        case SDLK_UP : std::cout << "UP" << std::endl;
-                                            world.move_cursor(UP);
-                                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,1,0,1));
-                                            world.cubes()[origin.x][origin.y][origin.z].selected(true);
-                                            break;
-                                        case SDLK_DOWN : std::cout << "DOWN" << std::endl;                                            
-                                            world.move_cursor(DOWN);
-                                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,1,0,1));
-                                            world.cubes()[origin.x][origin.y][origin.z].selected(true);
-                                            break;
-                                        //case SDLK_KP_PLUS :
-                                        case SDLK_p :  std::cout << "FORWARD" << std::endl;                                            
-                                            world.move_cursor(FORWARD);
-                                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,1,0,1));
-                                            world.cubes()[origin.x][origin.y][origin.z].selected(true);
-                                            break;
-                                        //case SDLK_KP_MINUS :
-                                        case SDLK_m :  std::cout << "BACKWARD" << std::endl;                                            
-                                            world.move_cursor(BACKWARD);
-                                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,1,0,1));
-                                            world.cubes()[origin.x][origin.y][origin.z].selected(true);
-                                            break;
-                                        case SDLK_SPACE: std::cout << "\tConfirmed" << std::endl;
-                                            if(world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].is_visible()){
-                                                std::cerr << "Occupied" << std::endl;
-                                                break;
-                                            }
-                                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].visible(true);
-                                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].face_color(world.cubes()[origin.x][origin.y][origin.z].face_color());
-                                            world.cubes()[origin.x][origin.y][origin.z].visible(false);
-                                            world.cubes()[origin.x][origin.y][origin.z].selected(false);
-                                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(1,0,0,1));
-                                            cancel = true;
-                                            break;
-                                        default : std::cout << "To cancel grabbing press ESCAPE" << std::endl;
-                                            break;
-                                    }
-                                }
-                            }
-                        }
+                        world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].visible(true);
+                        world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].face_color(world.cubes()[origin.x][origin.y][origin.z].face_color());
+                        world.cubes()[origin.x][origin.y][origin.z].visible(false);
+                        world.cubes()[origin.x][origin.y][origin.z].selected(false);
+                        world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(1,0,0,1));
+                        grabbing = false;
                         break;
+                                    
                     default :
                         std::cout << "This command doesn't exist." << std::endl;
                         break;
