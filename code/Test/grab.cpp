@@ -369,44 +369,48 @@ int main(int argc, char** argv) {
                         break;
                     case SDLK_LEFT : world.move_cursor(LEFT);
                         if(grabbing){ 
-                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,1,0,1));
+                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,0,1,1));
                             world.cubes()[origin.x][origin.y][origin.z].selected(true);
                         }
                         break;
                     case SDLK_RIGHT : world.move_cursor(RIGHT);
                         if(grabbing){
-                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,1,0,1));
+                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,0,1,1));
                             world.cubes()[origin.x][origin.y][origin.z].selected(true);
                         }
                         break;
                     case SDLK_UP : world.move_cursor(UP);
                         if(grabbing){
-                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,1,0,1));
+                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,0,1,1));
                             world.cubes()[origin.x][origin.y][origin.z].selected(true);
                         }
                         break;
                     case SDLK_DOWN : world.move_cursor(DOWN);
                         if(grabbing){
-                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,1,0,1));
+                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,0,1,1));
                             world.cubes()[origin.x][origin.y][origin.z].selected(true);
                         }
                         break;
                     //case SDLK_KP_PLUS :
                     case SDLK_p : world.move_cursor(FORWARD);
                         if(grabbing){
-                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,1,0,1));
+                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,0,1,1));
                             world.cubes()[origin.x][origin.y][origin.z].selected(true);
                         }
                         break;
                     //case SDLK_KP_MINUS :
                     case SDLK_m : world.move_cursor(BACKWARD);
                         if(grabbing){
-                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,1,0,1));
+                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(0,0,1,1));
                             world.cubes()[origin.x][origin.y][origin.z].selected(true);
                         }
                         break;
                     case SDLK_ESCAPE :
-                        if(grabbing) grabbing = false;
+                        if(grabbing){
+                            world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(1,0,0,1));
+                            world.cubes()[origin.x][origin.y][origin.z].selected(false);
+                            grabbing = false;
+                        } 
                         else done = true;
                         break;
                     case SDLK_g : std::cout << "Grabbing" << std::endl;
