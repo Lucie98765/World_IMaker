@@ -89,13 +89,13 @@ Boucle principale:
 				Cubes(dest).visible();
 				Cubes(dest).color(origin.color())
 				Cubes(origin).invisible();
-		ajouter lumière:
-			if !current.is_empty():
-				error(occupied)
-			else:
-				add_light(current, type)
-		supprimer lumière:
-			if !current.is_empty():
-				error(occupied)
-			else:
-				remove_light(current)
+		//ajouter lumière:
+		//	if !current.is_empty():
+		//		error(occupied)
+		//	else:
+		//		add_light(current, type)
+		//supprimer lumière:
+		//	if !current.is_empty():
+		//		error(occupied)
+		//	else:
+		//		remove_light(current)
