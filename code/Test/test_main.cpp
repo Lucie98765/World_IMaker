@@ -128,6 +128,10 @@ void gen_proc(Scene& world){
     for(uint i = 0; i < world.width(); i++){
         for(uint j = 0; j < world.height(); j++){
             for(uint k = 0; k < world.length(); k++){
+                if(i == world.width()/2 && j == world.height()/2 && k == world.length()/2)
+                    world.cubes()[i][j][k].selected(true);
+                else
+                    world.cubes()[i][j][k].selected(false);
                 world.cubes()[i][j][k].visible(
                     rbf.is_displayable(cube_matrix[i*k*k+j*k+k], 
                         pivot, predicate));

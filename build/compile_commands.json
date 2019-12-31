@@ -86,6 +86,16 @@
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/Test_test_main.dir/test_main.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/test_main.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/test_main.cpp"
+},
+{
+  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/Test_procedural_generation.dir/procedural_generation.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/procedural_generation.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/procedural_generation.cpp"
+},
+{
+  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
   "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/Test_scene_world.dir/scene_world.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/scene_world.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/scene_world.cpp"
 },
@@ -126,17 +136,12 @@
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/Test_grab.dir/grab.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/grab.cpp",
+  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/grab.cpp"
+},
+{
+  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
   "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/Test_points_control_1D.dir/points_control_1D.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/points_control_1D.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/points_control_1D.cpp"
-},
-{
-  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/Test_test_main.dir/test_main.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/test_main.cpp",
-  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/test_main.cpp"
-},
-{
-  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/Test",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include -I/usr/include/eigen3   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/Test_procedural_generation.dir/procedural_generation.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/Test/procedural_generation.cpp",
-  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/Test/procedural_generation.cpp"
 }
 ]
