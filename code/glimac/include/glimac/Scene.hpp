@@ -64,6 +64,8 @@ class Scene
 		void move_cursor(int direction);
 		void change_color(glm::vec4 color);
 
+		void load();
+
 };
 
 }

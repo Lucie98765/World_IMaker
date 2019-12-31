@@ -126,6 +126,36 @@ Test_world_draw/fast:
 .PHONY : Test_world_draw/fast
 
 # Convenience name for target.
+Test/CMakeFiles/Test_test_main.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_test_main.dir/rule
+.PHONY : Test/CMakeFiles/Test_test_main.dir/rule
+
+# Convenience name for target.
+Test_test_main: Test/CMakeFiles/Test_test_main.dir/rule
+
+.PHONY : Test_test_main
+
+# fast build rule for target.
+Test_test_main/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_test_main.dir/build.make Test/CMakeFiles/Test_test_main.dir/build
+.PHONY : Test_test_main/fast
+
+# Convenience name for target.
+Test/CMakeFiles/Test_procedural_generation.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_procedural_generation.dir/rule
+.PHONY : Test/CMakeFiles/Test_procedural_generation.dir/rule
+
+# Convenience name for target.
+Test_procedural_generation: Test/CMakeFiles/Test_procedural_generation.dir/rule
+
+.PHONY : Test_procedural_generation
+
+# fast build rule for target.
+Test_procedural_generation/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_procedural_generation.dir/build.make Test/CMakeFiles/Test_procedural_generation.dir/build
+.PHONY : Test_procedural_generation/fast
+
+# Convenience name for target.
 Test/CMakeFiles/Test_scene_world.dir/rule:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_scene_world.dir/rule
 .PHONY : Test/CMakeFiles/Test_scene_world.dir/rule
@@ -246,6 +276,21 @@ Test_gen_conf/fast:
 .PHONY : Test_gen_conf/fast
 
 # Convenience name for target.
+Test/CMakeFiles/Test_grab.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_grab.dir/rule
+.PHONY : Test/CMakeFiles/Test_grab.dir/rule
+
+# Convenience name for target.
+Test_grab: Test/CMakeFiles/Test_grab.dir/rule
+
+.PHONY : Test_grab
+
+# fast build rule for target.
+Test_grab/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_grab.dir/build.make Test/CMakeFiles/Test_grab.dir/build
+.PHONY : Test_grab/fast
+
+# Convenience name for target.
 Test/CMakeFiles/Test_points_control_1D.dir/rule:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_points_control_1D.dir/rule
 .PHONY : Test/CMakeFiles/Test_points_control_1D.dir/rule
@@ -259,36 +304,6 @@ Test_points_control_1D: Test/CMakeFiles/Test_points_control_1D.dir/rule
 Test_points_control_1D/fast:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_points_control_1D.dir/build.make Test/CMakeFiles/Test_points_control_1D.dir/build
 .PHONY : Test_points_control_1D/fast
-
-# Convenience name for target.
-Test/CMakeFiles/Test_test_main.dir/rule:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_test_main.dir/rule
-.PHONY : Test/CMakeFiles/Test_test_main.dir/rule
-
-# Convenience name for target.
-Test_test_main: Test/CMakeFiles/Test_test_main.dir/rule
-
-.PHONY : Test_test_main
-
-# fast build rule for target.
-Test_test_main/fast:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_test_main.dir/build.make Test/CMakeFiles/Test_test_main.dir/build
-.PHONY : Test_test_main/fast
-
-# Convenience name for target.
-Test/CMakeFiles/Test_procedural_generation.dir/rule:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_procedural_generation.dir/rule
-.PHONY : Test/CMakeFiles/Test_procedural_generation.dir/rule
-
-# Convenience name for target.
-Test_procedural_generation: Test/CMakeFiles/Test_procedural_generation.dir/rule
-
-.PHONY : Test_procedural_generation
-
-# fast build rule for target.
-Test_procedural_generation/fast:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_procedural_generation.dir/build.make Test/CMakeFiles/Test_procedural_generation.dir/build
-.PHONY : Test_procedural_generation/fast
 
 cube_try_data_display.o: cube_try_data_display.cpp.o
 
@@ -370,6 +385,33 @@ gen_conf.s: gen_conf.cpp.s
 gen_conf.cpp.s:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_gen_conf.dir/build.make Test/CMakeFiles/Test_gen_conf.dir/gen_conf.cpp.s
 .PHONY : gen_conf.cpp.s
+
+grab.o: grab.cpp.o
+
+.PHONY : grab.o
+
+# target to build an object file
+grab.cpp.o:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_grab.dir/build.make Test/CMakeFiles/Test_grab.dir/grab.cpp.o
+.PHONY : grab.cpp.o
+
+grab.i: grab.cpp.i
+
+.PHONY : grab.i
+
+# target to preprocess a source file
+grab.cpp.i:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_grab.dir/build.make Test/CMakeFiles/Test_grab.dir/grab.cpp.i
+.PHONY : grab.cpp.i
+
+grab.s: grab.cpp.s
+
+.PHONY : grab.s
+
+# target to generate assembly for a file
+grab.cpp.s:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_grab.dir/build.make Test/CMakeFiles/Test_grab.dir/grab.cpp.s
+.PHONY : grab.cpp.s
 
 points_control_1D.o: points_control_1D.cpp.o
 
@@ -623,6 +665,8 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Test_world_draw"
+	@echo "... Test_test_main"
+	@echo "... Test_procedural_generation"
 	@echo "... Test_scene_world"
 	@echo "... Test_scene_cubes_transparency"
 	@echo "... Test_scene_cubes"
@@ -631,9 +675,8 @@ help:
 	@echo "... Test_procedural_generation_v2"
 	@echo "... Test_cube_try_data_display"
 	@echo "... Test_gen_conf"
+	@echo "... Test_grab"
 	@echo "... Test_points_control_1D"
-	@echo "... Test_test_main"
-	@echo "... Test_procedural_generation"
 	@echo "... cube_try_data_display.o"
 	@echo "... cube_try_data_display.i"
 	@echo "... cube_try_data_display.s"
@@ -643,6 +686,9 @@ help:
 	@echo "... gen_conf.o"
 	@echo "... gen_conf.i"
 	@echo "... gen_conf.s"
+	@echo "... grab.o"
+	@echo "... grab.i"
+	@echo "... grab.s"
 	@echo "... points_control_1D.o"
 	@echo "... points_control_1D.i"
 	@echo "... points_control_1D.s"

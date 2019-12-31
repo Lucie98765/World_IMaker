@@ -128,6 +128,10 @@ void gen_proc(Scene& world){
     for(uint i = 0; i < world.width(); i++){
         for(uint j = 0; j < world.height(); j++){
             for(uint k = 0; k < world.length(); k++){
+                if(i == world.width()/2 && j == world.height()/2 && k == world.length()/2)
+                    world.cubes()[i][j][k].selected(true);
+                else
+                    world.cubes()[i][j][k].selected(false);
                 world.cubes()[i][j][k].visible(
                     rbf.is_displayable(cube_matrix[i*k*k+j*k+k], 
                         pivot, predicate));
@@ -249,6 +253,8 @@ int main(int argc, char** argv) {
 
     const GLuint VERTEX_ATTR_POSITION = 0;
     glEnableVertexAttribArray(VERTEX_ATTR_POSITION);
+    const GLuint VERTEX_ATTR_NORMAL = 1;
+    glEnableVertexAttribArray(VERTEX_ATTR_NORMAL);
 
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
@@ -409,7 +415,7 @@ int main(int argc, char** argv) {
         glUniform3fv(uLightDir_vs, 1, glm::value_ptr(lightDir));
         glUniform3fv(uLightIntensity, 1, glm::value_ptr(glm::vec3(0.3f, 0.3f, 0.3f)));
 
-        Uniform3fv(uLightIntensity, 1, glm::value_ptr(glm::vec3(0.3f, 0.3f, 0.3f)));
+        glUniform3fv(uLightIntensity, 1, glm::value_ptr(glm::vec3(0.3f, 0.3f, 0.3f)));
 
 
 

@@ -150,6 +150,32 @@ Test_world_draw/fast:
 .PHONY : Test_world_draw/fast
 
 #=============================================================================
+# Target rules for targets named Test_test_main
+
+# Build rule for target.
+Test_test_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_test_main
+.PHONY : Test_test_main
+
+# fast build rule for target.
+Test_test_main/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_test_main.dir/build.make Test/CMakeFiles/Test_test_main.dir/build
+.PHONY : Test_test_main/fast
+
+#=============================================================================
+# Target rules for targets named Test_procedural_generation
+
+# Build rule for target.
+Test_procedural_generation: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_procedural_generation
+.PHONY : Test_procedural_generation
+
+# fast build rule for target.
+Test_procedural_generation/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_procedural_generation.dir/build.make Test/CMakeFiles/Test_procedural_generation.dir/build
+.PHONY : Test_procedural_generation/fast
+
+#=============================================================================
 # Target rules for targets named Test_scene_world
 
 # Build rule for target.
@@ -254,6 +280,19 @@ Test_gen_conf/fast:
 .PHONY : Test_gen_conf/fast
 
 #=============================================================================
+# Target rules for targets named Test_grab
+
+# Build rule for target.
+Test_grab: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_grab
+.PHONY : Test_grab
+
+# fast build rule for target.
+Test_grab/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_grab.dir/build.make Test/CMakeFiles/Test_grab.dir/build
+.PHONY : Test_grab/fast
+
+#=============================================================================
 # Target rules for targets named Test_points_control_1D
 
 # Build rule for target.
@@ -265,32 +304,6 @@ Test_points_control_1D: cmake_check_build_system
 Test_points_control_1D/fast:
 	$(MAKE) -f Test/CMakeFiles/Test_points_control_1D.dir/build.make Test/CMakeFiles/Test_points_control_1D.dir/build
 .PHONY : Test_points_control_1D/fast
-
-#=============================================================================
-# Target rules for targets named Test_test_main
-
-# Build rule for target.
-Test_test_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Test_test_main
-.PHONY : Test_test_main
-
-# fast build rule for target.
-Test_test_main/fast:
-	$(MAKE) -f Test/CMakeFiles/Test_test_main.dir/build.make Test/CMakeFiles/Test_test_main.dir/build
-.PHONY : Test_test_main/fast
-
-#=============================================================================
-# Target rules for targets named Test_procedural_generation
-
-# Build rule for target.
-Test_procedural_generation: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Test_procedural_generation
-.PHONY : Test_procedural_generation
-
-# fast build rule for target.
-Test_procedural_generation/fast:
-	$(MAKE) -f Test/CMakeFiles/Test_procedural_generation.dir/build.make Test/CMakeFiles/Test_procedural_generation.dir/build
-.PHONY : Test_procedural_generation/fast
 
 #=============================================================================
 # Target rules for targets named html
@@ -316,6 +329,8 @@ help:
 	@echo "... glimac"
 	@echo "... src_cube_freefly"
 	@echo "... Test_world_draw"
+	@echo "... Test_test_main"
+	@echo "... Test_procedural_generation"
 	@echo "... Test_scene_world"
 	@echo "... Test_scene_cubes_transparency"
 	@echo "... Test_scene_cubes"
@@ -324,9 +339,8 @@ help:
 	@echo "... Test_procedural_generation_v2"
 	@echo "... Test_cube_try_data_display"
 	@echo "... Test_gen_conf"
+	@echo "... Test_grab"
 	@echo "... Test_points_control_1D"
-	@echo "... Test_test_main"
-	@echo "... Test_procedural_generation"
 	@echo "... html"
 .PHONY : help
 
