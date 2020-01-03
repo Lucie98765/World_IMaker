@@ -63,17 +63,27 @@ int main(int argc, char** argv) {
         std::cout << "Location uEdgeMode : " << location_uEdgeMode << std::endl;
 
 
-    //Directionnal light :
-        GLint uKd = glGetUniformLocation(program.getGLId(), "uKd");
-        std::cout << "Location uKd : " << uKd << std::endl;
-        GLint uKs = glGetUniformLocation(program.getGLId(), "uKs");
-        std::cout << "Location uKs : " << uKs << std::endl;
-        GLint uShininess = glGetUniformLocation(program.getGLId(), "uShininess");
-        std::cout << "Location uShininess : " << uShininess << std::endl;
-        GLint uLightDir_vs = glGetUniformLocation(program.getGLId(), "uLightDir_vs");
-        std::cout << "Location uLightDir_vs : " << uLightDir_vs << std::endl;
-        GLint uLightIntensity = glGetUniformLocation(program.getGLId(), "uLightIntensity");
-        std::cout << "Location uLightIntensity : " << uLightIntensity << std::endl;
+    //Directionnal light
+    GLint uKd = glGetUniformLocation(program.getGLId(), "uKd");
+    std::cout << "Location uKd : " << uKd << std::endl;
+    GLint uKs = glGetUniformLocation(program.getGLId(), "uKs");
+    std::cout << "Location uKs : " << uKs << std::endl;
+    GLint uShininess = glGetUniformLocation(program.getGLId(), "uShininess");
+    std::cout << "Location uShininess : " << uShininess << std::endl;
+    GLint uLightDir_vs = glGetUniformLocation(program.getGLId(), "uLightDir_vs");
+    std::cout << "Location uLightDir_vs : " << uLightDir_vs << std::endl;
+    GLint uLightIntensity = glGetUniformLocation(program.getGLId(), "uLightIntensity");
+    std::cout << "Location uLightIntensity : " << uLightIntensity << std::endl;
+    GLint u_is_dir_light = glGetUniformLocation(program.getGLId(), "u_is_dir_light");
+    std::cout << "Location u_is_dir_light : " << u_is_dir_light << std::endl;
+
+    //Point light
+    GLint uLightPos_vs = glGetUniformLocation(program.getGLId(), "uLightPos_vs");
+    std::cout << "Location uLightPos_vs : " << uLightPos_vs << std::endl;
+    GLint u_is_point_light = glGetUniformLocation(program.getGLId(), "u_is_point_light");
+    std::cout << "Location u_is_point_light : " << u_is_point_light << std::endl;
+
+
 
     const int W = std::stoi(argv[1]);
     const int H = std::stoi(argv[2]);
@@ -132,6 +142,8 @@ int main(int argc, char** argv) {
 
     const GLuint VERTEX_ATTR_POSITION = 0;
     glEnableVertexAttribArray(VERTEX_ATTR_POSITION);
+    const GLuint VERTEX_ATTR_NORMAL = 1;
+    glEnableVertexAttribArray(VERTEX_ATTR_NORMAL);
 
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
@@ -141,17 +153,23 @@ int main(int argc, char** argv) {
             GL_FLOAT, /* Type d'une composante */
             GL_FALSE, /* Pas de normalisation */
             sizeof(glm::vec3), /* Taille en octet d'un vertex complet entre chaque attribut position */
-            (const GLvoid*)0 /* OpenGL doit utiliser le VBO attaché à GL_ARRAY_BUFFER et commencer à l'offset 0 */
+            (const GLvoid*) offsetof(ShapeVertex, position) /* OpenGL doit utiliser le VBO attaché à GL_ARRAY_BUFFER et commencer à l'offset 0 */
+    );
+    glVertexAttribPointer(
+            VERTEX_ATTR_NORMAL, /* Indice attribut */
+            3, /* Nombre de composantes */
+            GL_FLOAT, /* Type d'une composante */
+            GL_FALSE, /* Pas de normalisation */
+            sizeof(glm::vec3), /* Taille en octet d'un vertex complet entre chaque attribut position */
+            (const GLvoid*) offsetof(ShapeVertex, normal) /* OpenGL doit utiliser le VBO attaché à GL_ARRAY_BUFFER et commencer à l'offset 0 */
     );
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
-
     glBindVertexArray(0); //Debinder la VAO
 
 
+
     glEnable(GL_DEPTH_TEST);
-
-
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
@@ -319,6 +337,16 @@ int main(int argc, char** argv) {
    
     float espace = 1.f;
 
+
+
+    //For lights
+    bool dir_light = false;
+    bool point_light = false;
+    float x_light_pos = 1.0f;
+    float y_light_pos = 1.0f;
+    float z_light_pos = 1.0f;
+
+
     // Application loop:
     bool done = false;
     while(!done) {
@@ -392,6 +420,21 @@ int main(int argc, char** argv) {
                     //case SDLK_KP_MINUS :
                     case SDLK_m : world.move_cursor(BACKWARD);
                         break;
+                    case SDLK_s :
+                        std::cout<<"Add sun light" << std::endl;
+                        if(dir_light){
+                            dir_light = false;
+                        } else {
+                            dir_light = true;
+                        }
+                        break;
+                    case SDLK_l :
+                        std::cout<<"Add lamp light" << std::endl;
+                        point_light = true;
+                        x_light_pos = world.cursor().x;
+                        y_light_pos = world.cursor().y;
+                        z_light_pos = world.cursor().z;
+                        break;
                     case SDLK_ESCAPE :
                         done = true;
                         break;
@@ -404,17 +447,12 @@ int main(int argc, char** argv) {
         }
 
         MVMatrix = world.camera().getViewMatrix();
-        // std::cout << "MVMatrix" << std::endl;
-        // std::cout << MVMatrix << std::endl;
+
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-
-        glBindVertexArray(vao); 
-
-        glUniform1ui(location_uEdgeMode, 0);
-
-        /*Envoi des variables uniformes au shader */
+        //Sending uniform variables to the shader
+        //Directionnal light
         glm::vec4 lightDir4 =  glm::vec4(1.0f, 1.0f, 1.0f, 0.0f);
         lightDir4 = lightDir4 * world.camera().getViewMatrix();
         glm::vec3 lightDir = glm::vec3(lightDir4.x, lightDir4.y, lightDir4.z);
@@ -423,8 +461,23 @@ int main(int argc, char** argv) {
         glUniform3fv(uKs, 1, glm::value_ptr(glm::vec3(2.f, 1.f, 0.1f)));
         glUniform1f(uShininess,0.5f);
         glUniform3fv(uLightDir_vs, 1, glm::value_ptr(lightDir));
-        glUniform3fv(uLightIntensity, 1, glm::value_ptr(glm::vec3(0.3f, 0.3f, 0.3f)));
+        glUniform3fv(uLightIntensity, 1, glm::value_ptr(glm::vec3(1.f, 1.f, 1.f)));
+        glUniform1ui(u_is_dir_light, dir_light);
 
+        //Point light
+        glm::vec4 lightPos =  glm::vec4(x_light_pos, y_light_pos, z_light_pos, 0.0f);
+        lightPos = lightPos * world.camera().getViewMatrix();
+        glm::vec3 lightPos_send = glm::vec3(lightPos.x, lightPos.y, lightPos.z);
+        glUniform3fv(uLightPos_vs, 1, glm::value_ptr(lightPos_send));
+        glUniform1ui(u_is_point_light, point_light);
+
+
+
+        glBindVertexArray(vao); 
+
+        glUniform1ui(location_uEdgeMode, 0);
+
+        
 
         for(uint i = 0; i < world.width(); i++){
             for(uint j = 0; j < world.height(); j++){
