@@ -79,7 +79,7 @@ int main(int argc, char** argv) {
         GLint u_is_point_light = glGetUniformLocation(program.getGLId(), "u_is_point_light");
         std::cout << "Location u_is_point_light : " << u_is_point_light << std::endl;
 
-    Scene world(1, 1, 1);
+    Scene world(3,3,3);
     
     GLuint vbo, vao;
 
@@ -211,6 +211,12 @@ int main(int argc, char** argv) {
             for(int i = 0; i < w/2; i++) world.move_cursor(RIGHT);
             for(int i = 0; i < h/2; i++) world.move_cursor(UP);
             for(int i = 0; i < d/2; i++) world.move_cursor(FORWARD);
+            for(uint i = 0; i < world.width(); i++)
+                for(uint j = 0; j < world.length(); j++){
+                    world.cubes()[i][0][j].visible(true);
+                    world.cubes()[i][1][j].visible(true);
+                    world.cubes()[i][2][j].visible(true);
+                }
         }
     }
 

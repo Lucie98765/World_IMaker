@@ -20,6 +20,13 @@ namespace glimac{
 
 	Scene::Scene(uint w, uint h, uint l):m_width(w),m_height(h),m_length(l),m_camera(),m_cubes(w, std::vector<std::vector<Cube>>(h, std::vector<Cube>(l))),m_cursor(w/2,h/2,l/2){
 		m_cubes[m_cursor[0]][m_cursor[1]][m_cursor[2]].selected(true);
+
+		for(uint i = 0; i < m_width; i++)
+			for(uint j = 0; j < m_length; j++){
+				m_cubes[i][0][j].visible(true);
+				m_cubes[i][1][j].visible(true);
+				m_cubes[i][2][j].visible(true);
+			}
 	}
 
 
@@ -34,9 +41,16 @@ namespace glimac{
 	}
 	void Scene::length(uint const l){
 		for(uint i = 0; i < m_width; i++)
-			for(uint j = 0; j < m_height; j++)
+			for(uint j = 0; j < m_height; j++){
 				m_cubes[i][j].resize(l);
+			}
 		m_length = l;
+		for(uint i = 0; i < m_width; i++)
+			for(uint j = 0; j < m_length; j++){
+				m_cubes[i][0][j].visible(true);
+				m_cubes[i][1][j].visible(true);
+				m_cubes[i][2][j].visible(true);
+			}
 	}
 
 
