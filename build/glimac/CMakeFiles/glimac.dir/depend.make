@@ -584,6 +584,7 @@ glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o: /home/louisa/IMAC2/POO/World_I
 glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o: /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/FilePath.hpp
 glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o: /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/Interface.hpp
 glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o: /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/Program.hpp
+glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o: /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/RBF.hpp
 glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o: /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/SDLWindowManager.hpp
 glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o: /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/Scene.hpp
 glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o: /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/Shader.hpp
@@ -967,6 +968,7 @@ glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o: /usr/include/SDL2/begin
 glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o: /usr/include/SDL2/close_code.h
 
 glimac/CMakeFiles/glimac.dir/src/Scene.cpp.o: /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/Cube.hpp
+glimac/CMakeFiles/glimac.dir/src/Scene.cpp.o: /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/RBF.hpp
 glimac/CMakeFiles/glimac.dir/src/Scene.cpp.o: /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/Scene.hpp
 glimac/CMakeFiles/glimac.dir/src/Scene.cpp.o: /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/TrackballCamera.hpp
 glimac/CMakeFiles/glimac.dir/src/Scene.cpp.o: /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/common.hpp

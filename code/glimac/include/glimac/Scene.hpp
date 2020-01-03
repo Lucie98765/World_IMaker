@@ -15,9 +15,12 @@
 #include <glm/glm.hpp>
 #include "common.hpp"
 #include <vector>
+#include <iostream>
+#include <fstream>
 
 #include "glimac/Cube.hpp"
 #include "glimac/TrackballCamera.hpp"
+#include "glimac/RBF.hpp"
 
 
 #define LEFT 0
@@ -64,7 +67,9 @@ class Scene
 		void move_cursor(int direction);
 		void change_color(glm::vec4 color);
 
-		void load();
+		bool load();
+		void save();
+		bool generate();
 
 };
 

@@ -105,10 +105,16 @@ common.hpp
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/common.hpp
 vector
 -
+iostream
+-
+fstream
+-
 glimac/Cube.hpp
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/glimac/Cube.hpp
 glimac/TrackballCamera.hpp
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/glimac/TrackballCamera.hpp
+glimac/RBF.hpp
+/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/glimac/RBF.hpp
 
 /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/Shader.hpp
 GL/glew.h

@@ -19,248 +19,7 @@
 
 using namespace glimac;
 
-void gen_proc(Scene& world){
 
-    std::cout << "\nPlease select a config file" << std::endl;
-    std::string config;
-    std::cin >> config;
-
-    std::ifstream confFile("/home/louisa/IMAC2/POO/World_IMaker/code/Test/"+config);
-    if(!confFile.is_open())
-        std::cerr << "Couldn't open config file" << std::endl;
-    else
-        std::cout << config << " opened successfuly" << std::endl;
-    std::string w, h, l, phi, display, nb_pts_ctrl;
-
-    std::getline(confFile, w); 
-    std::getline(confFile, h); 
-    std::getline(confFile, l); 
-    std::getline(confFile, phi);
-    std::getline(confFile, display);
-    std::getline(confFile, nb_pts_ctrl);
-
-    //init scene
-    world.width(std::stoi(w));
-    world.height(std::stoi(h));
-    world.length(std::stoi(l));
-
-    for(uint i = 0; i < world.width()/2; i++) world.move_cursor(RIGHT);
-    for(uint i = 0; i < world.height()/2; i++) world.move_cursor(UP);
-    for(uint i = 0; i < world.length()/2; i++) world.move_cursor(FORWARD);
-
-    //affect phi func
-    std::function<float (glm::vec3 x, glm::vec3 y)> func;
-
-    std::function<float (glm::vec3 x, glm::vec3 y)> exp_phi = [](glm::vec3 x, glm::vec3 y){
-        return exp(0.001*abs(glm::distance(x,y))*abs(glm::distance(x,y)));};
-    std::function<float (glm::vec3 x, glm::vec3 y)> lin_phi = [](glm::vec3 x, glm::vec3 y){
-        return 0.001*abs(glm::distance(x,y))*abs(glm::distance(x,y));};
-    std::function<float (glm::vec3 x, glm::vec3 y)> sqrt_phi = [](glm::vec3 x, glm::vec3 y){
-        return sqrt(1+pow(0.001*abs(glm::distance(x,y))*abs(glm::distance(x,y)),2));};
-    std::function<float (glm::vec3 x, glm::vec3 y)> rat_phi = [](glm::vec3 x, glm::vec3 y){
-        return 1/(1+pow(0.001*abs(glm::distance(x,y))*abs(glm::distance(x,y)),2));};
-
-    if(0 == phi.compare("exp")) func = exp_phi;
-    if(0 == phi.compare("lin")) func = lin_phi;
-    if(0 == phi.compare("sqrt")) func = sqrt_phi;
-    if(0 == phi.compare("rat")) func = rat_phi;
-
-    // Cube matrix
-    std::vector<glm::vec3> cube_matrix(world.width()*world.height()*world.length());
-    for(uint i = 0; i < world.width(); i++)
-        for(uint j = 0; j < world.width(); j++)
-            for(uint k = 0; k < world.width(); k++)
-                cube_matrix[i*k*k+j*k+k] = glm::vec3(i,j,k);
-
-    // init RBF
-    RBF rbf(std::stoi(nb_pts_ctrl));
-    int i = 0;
-    std::string pt_ctrl;
-    std::vector<glm::vec3> list_pts_ctrl(stoi(nb_pts_ctrl));
-    int x, y, z;
-
-
-    //Case control points given
-    for(; std::getline(confFile, pt_ctrl); i++){
-        std::stringstream ss(pt_ctrl);
-        std::string token;
-        while(std::getline(ss, token, ' ')){
-            x = std::stoi(token);
-            std::getline(ss, token, ' ');
-            
-            y = std::stoi(token);
-            std::getline(ss, token, ' ');
-            
-            z = std::stoi(token);
-
-            list_pts_ctrl[i] = (glm::vec3(x,y,z));  
-        }
-
-
-    }
-    if(0 < i)
-        rbf.build(cube_matrix, list_pts_ctrl, func);
-
-    //Case nb control points given
-    else
-        rbf.build(cube_matrix, std::stoi(nb_pts_ctrl), func);
-    
-    //Calculation interpolated values
-    std::vector<float> g_p(cube_matrix.size());
-    for(size_t i = 0; i < g_p.size(); i++)
-        g_p[i] = rbf.g(cube_matrix[i]);
-
-    //Affect display condition
-    std::function<bool (glm::vec3, float)> predicate;
-    float pivot;
-
-    if(0 == display.compare("moy")){
-        predicate = [rbf](glm::vec3 p, float pivot) mutable {
-                            return 0.001 >= abs(rbf.g(p) - pivot);
-                        };
-        pivot = std::accumulate(g_p.begin(), g_p.end(), 0.f)/g_p.size();
-    }
-
-    else{
-        predicate = [rbf](glm::vec3 p, float pivot) mutable {
-                    return rbf.g(p) >= pivot;
-        };
-        pivot = stoi(display);
-    }
-
-    //Update visibility of cubes
-    for(uint i = 0; i < world.width(); i++){
-        for(uint j = 0; j < world.height(); j++){
-            for(uint k = 0; k < world.length(); k++){
-                if(i == world.width()/2 && j == world.height()/2 && k == world.length()/2)
-                    world.cubes()[i][j][k].selected(true);
-                else
-                    world.cubes()[i][j][k].selected(false);
-                world.cubes()[i][j][k].visible(
-                    rbf.is_displayable(cube_matrix[i*k*k+j*k+k], 
-                        pivot, predicate));
-            }
-        }
-    }
-}
-
-void load_scene(Scene& world){
-    std::cout << "\nPlease select a saving file" << std::endl;
-    std::string saved_path;
-    std::cin >> saved_path;
-
-    std::ifstream savedFile;
-    if(saved_path[0] == '/'){
-        savedFile = std::ifstream(saved_path);
-        if(!savedFile.is_open())
-            std::cerr << "Couldn't open saving file" << std::endl;
-        else
-            std::cout << "Saving opened successfuly" << std::endl;
-    }
-    else{
-        savedFile = std::ifstream("/home/louisa/IMAC2/POO/World_IMaker/code/Test/"+saved_path);
-        if(!savedFile.is_open())
-            std::cerr << "Couldn't open saving file" << std::endl;
-        else
-            std::cout << "Saving opened successfuly" << std::endl;
-    }
-
-    std::string w, h, l, nb_cubes, cube;
-
-    std::getline(savedFile, w);
-    std::getline(savedFile, h);
-    std::getline(savedFile, l);
-    std::getline(savedFile, nb_cubes);
-
-    world.width(std::stoi(w));
-    world.height(std::stoi(h));
-    world.length(std::stoi(l));
-
-    for(uint i = 0; i < world.width()/2; i++) world.move_cursor(RIGHT);
-    for(uint i = 0; i < world.height()/2; i++) world.move_cursor(UP);
-    for(uint i = 0; i < world.length()/2; i++) world.move_cursor(FORWARD);
-
-    if(0 < std::stoi(nb_cubes)){
-        int i,j,k;
-        for(; std::getline(savedFile, cube); i++){
-            std::stringstream ss(cube);
-            std::string token;
-            while(std::getline(ss, token, ' ')){
-                i = std::stoi(token);
-                std::getline(ss, token, ' ');
-                
-                j = std::stoi(token);
-                std::getline(ss, token, ' ');
-                
-                k = std::stoi(token);
-                std::getline(ss, token, ' ');
-
-                world.cubes()[i][j][k].visible(true);
-                if(0 == token.compare("R"))
-                    world.cubes()[i][j][k].face_color(glm::vec4(1,0,0,1));
-                else if(0 == token.compare("G"))
-                    world.cubes()[i][j][k].face_color(glm::vec4(0,1,0,1));
-                else if(0 == token.compare("Y"))
-                    world.cubes()[i][j][k].face_color(glm::vec4(1,1,0,1));
-                else if(0 == token.compare("M"))
-                    world.cubes()[i][j][k].face_color(glm::vec4(1,0,1,1));
-                else if(0 == token.compare("C"))
-                    world.cubes()[i][j][k].face_color(glm::vec4(0,1,1,1));
-            }
-        }
-    }
-    savedFile.close();
-}
-
-void save_scene(Scene& world){
-    std::cout << "Do you want to save the scene [y|n] ? ";
-    std::string reponse;
-    std::cin >> reponse;
-    if(0 == reponse.compare("n"))
-        return;
-    std::cout << "\nPlease enter saving file name (relative or absolute path)" << std::endl;
-    std::string saving_path;
-    std::cin >> saving_path;
-    std::ofstream savingFile;
-    if(saving_path[0] == '/')
-        savingFile = std::ofstream(saving_path);
-    else
-        savingFile = std::ofstream("/home/louisa/IMAC2/POO/World_IMaker/code/Test/"+saving_path);
-    savingFile << world.width() << "\n";
-    savingFile << world.height() << "\n";
-    savingFile << world.length() << "\n";
-
-    int nb_cubes = 0;
-    std::vector<std::pair<glm::vec3, std::string>> cubes;
-    for(uint i = 0; i < world.width(); i++){
-        for(uint j = 0; j < world.height(); j++){
-            for(uint k = 0; k < world.length(); k++){
-                if(world.cubes()[i][j][k].is_visible()){
-                    nb_cubes++;
-                    std::string color;
-                    if(world.cubes()[i][j][k].face_color() == glm::vec4(1,0,0,1))
-                        color = "R";
-                    if(world.cubes()[i][j][k].face_color() == glm::vec4(0,1,0,1))
-                        color = "G";
-                    if(world.cubes()[i][j][k].face_color() == glm::vec4(1,1,0,1))
-                        color = "Y";
-                    if(world.cubes()[i][j][k].face_color() == glm::vec4(1,0,1,1))
-                        color = "M";
-                    if(world.cubes()[i][j][k].face_color() == glm::vec4(0,1,1,1))
-                        color = "C";
-
-                    cubes.push_back(std::pair<glm::vec3,std::string>(glm::vec3(i,j,k), color));
-                }
-            }
-        }
-    }
-
-    savingFile << nb_cubes << "\n";
-
-    for (const auto& [coord, color]: cubes) 
-        savingFile << coord.x << " " << coord.y << " " << coord.z << " "<< color << "\n";
-    savingFile.close();
-}
 
 int main(int argc, char** argv) {
     // Initialize SDL and open a window
@@ -320,12 +79,7 @@ int main(int argc, char** argv) {
         GLint u_is_point_light = glGetUniformLocation(program.getGLId(), "u_is_point_light");
         std::cout << "Location u_is_point_light : " << u_is_point_light << std::endl;
 
-
-    const int W = 1;
-    const int H = 1;
-    const int L = 1;
-
-    Scene world(W, H, L);
+    Scene world(1, 1, 1);
     
     GLuint vbo, vao;
 
@@ -427,14 +181,14 @@ int main(int argc, char** argv) {
     std::cin >> reponse;
 
     if(0 == reponse.compare("y")){
-        load_scene(world);
+        world.load();
     }
     else{
         // CONFIG INIT
         std::cout << "Do you want to generate a scene ? [y|n] ";
         std::cin >> reponse;
         if(0 == reponse.compare("y")){  
-            gen_proc(world);     
+            world.generate();     
         }
         else{
             std::cout << "Please enter scene dimensions (width height depth) : ";
@@ -470,10 +224,14 @@ int main(int argc, char** argv) {
     float y_light_pos = 1.0f;
     float z_light_pos = 1.0f;
 
-    // Application loop:
+    const int W = world.width();
+    const int H = world.height();
+    const int L = world.length();
     bool done = false;
     bool grabbing = false;
     glm::vec3 origin;
+    
+    // Application loop:
     while(!done) {
         // Event loop:
         SDL_Event e;
@@ -493,8 +251,10 @@ int main(int argc, char** argv) {
             }
             if( e.type == SDL_KEYDOWN){                
                 switch (e.key.keysym.sym){
+                    case SDLK_RETURN:
+                        break;
                     case SDLK_ASTERISK:
-                        save_scene(world);
+                        world.save();
                         break;
                     case SDLK_1 :
                         std::cout<<"Create a new cube" << std::endl;
