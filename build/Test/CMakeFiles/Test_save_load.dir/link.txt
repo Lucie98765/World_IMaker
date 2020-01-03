@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -g -O2 -I /usr/include/eigen3  -rdynamic CMakeFiles/Test_save_load.dir/save_load.cpp.o  -o Test_save_load ../glimac/libglimac.a -lSDL2 -lGL -lGLU -lGLEW 

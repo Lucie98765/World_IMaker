@@ -150,6 +150,19 @@ Test_world_draw/fast:
 .PHONY : Test_world_draw/fast
 
 #=============================================================================
+# Target rules for targets named Test_save_load
+
+# Build rule for target.
+Test_save_load: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_save_load
+.PHONY : Test_save_load
+
+# fast build rule for target.
+Test_save_load/fast:
+	$(MAKE) -f Test/CMakeFiles/Test_save_load.dir/build.make Test/CMakeFiles/Test_save_load.dir/build
+.PHONY : Test_save_load/fast
+
+#=============================================================================
 # Target rules for targets named Test_test_main
 
 # Build rule for target.
@@ -329,6 +342,7 @@ help:
 	@echo "... glimac"
 	@echo "... src_cube_freefly"
 	@echo "... Test_world_draw"
+	@echo "... Test_save_load"
 	@echo "... Test_test_main"
 	@echo "... Test_procedural_generation"
 	@echo "... Test_scene_world"

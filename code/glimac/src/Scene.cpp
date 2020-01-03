@@ -18,7 +18,7 @@
 
 namespace glimac{
 
-	Scene::Scene(uint w, uint h, uint l):m_width(w),m_height(h),m_length(l),m_camera(),m_cubes(w, std::vector<std::vector<Cube>>(h, std::vector<Cube>(l))),m_cursor((w-1)/2,(h-1)/2,(l-1)/2){
+	Scene::Scene(uint w, uint h, uint l):m_width(w),m_height(h),m_length(l),m_camera(),m_cubes(w, std::vector<std::vector<Cube>>(h, std::vector<Cube>(l))),m_cursor(w/2,h/2,l/2){
 		m_cubes[m_cursor[0]][m_cursor[1]][m_cursor[2]].selected(true);
 	}
 

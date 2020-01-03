@@ -126,6 +126,21 @@ Test_world_draw/fast:
 .PHONY : Test_world_draw/fast
 
 # Convenience name for target.
+Test/CMakeFiles/Test_save_load.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_save_load.dir/rule
+.PHONY : Test/CMakeFiles/Test_save_load.dir/rule
+
+# Convenience name for target.
+Test_save_load: Test/CMakeFiles/Test_save_load.dir/rule
+
+.PHONY : Test_save_load
+
+# fast build rule for target.
+Test_save_load/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_save_load.dir/build.make Test/CMakeFiles/Test_save_load.dir/build
+.PHONY : Test_save_load/fast
+
+# Convenience name for target.
 Test/CMakeFiles/Test_test_main.dir/rule:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test_test_main.dir/rule
 .PHONY : Test/CMakeFiles/Test_test_main.dir/rule
@@ -521,6 +536,33 @@ procedural_generation_v2.cpp.s:
 	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_procedural_generation_v2.dir/build.make Test/CMakeFiles/Test_procedural_generation_v2.dir/procedural_generation_v2.cpp.s
 .PHONY : procedural_generation_v2.cpp.s
 
+save_load.o: save_load.cpp.o
+
+.PHONY : save_load.o
+
+# target to build an object file
+save_load.cpp.o:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_save_load.dir/build.make Test/CMakeFiles/Test_save_load.dir/save_load.cpp.o
+.PHONY : save_load.cpp.o
+
+save_load.i: save_load.cpp.i
+
+.PHONY : save_load.i
+
+# target to preprocess a source file
+save_load.cpp.i:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_save_load.dir/build.make Test/CMakeFiles/Test_save_load.dir/save_load.cpp.i
+.PHONY : save_load.cpp.i
+
+save_load.s: save_load.cpp.s
+
+.PHONY : save_load.s
+
+# target to generate assembly for a file
+save_load.cpp.s:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f Test/CMakeFiles/Test_save_load.dir/build.make Test/CMakeFiles/Test_save_load.dir/save_load.cpp.s
+.PHONY : save_load.cpp.s
+
 scene_cubes.o: scene_cubes.cpp.o
 
 .PHONY : scene_cubes.o
@@ -665,6 +707,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Test_world_draw"
+	@echo "... Test_save_load"
 	@echo "... Test_test_main"
 	@echo "... Test_procedural_generation"
 	@echo "... Test_scene_world"
@@ -701,6 +744,9 @@ help:
 	@echo "... procedural_generation_v2.o"
 	@echo "... procedural_generation_v2.i"
 	@echo "... procedural_generation_v2.s"
+	@echo "... save_load.o"
+	@echo "... save_load.i"
+	@echo "... save_load.s"
 	@echo "... scene_cubes.o"
 	@echo "... scene_cubes.i"
 	@echo "... scene_cubes.s"

@@ -8,7 +8,7 @@ out vec4 fFragColor;
 
 uniform vec4 uFaceColor;
 uniform vec4 uEdgeColor;
-uniform int uEdgeMode;
+uniform bool uEdgeMode;
 
 //Directionnal light uniform variable
 uniform vec3 uKd;
@@ -24,7 +24,7 @@ uniform bool u_is_point_light; //tells if a point light is placed or not
 
 
 //Directionnal light Blinn Phong
-vec4 blinnPhong(){
+vec4 blinnPhong_dir(){
 	vec3 result;
 	vec3 wi = normalize(uLightDir_vs);
 	vec3 w0 = normalize(-vVertexPosition);
@@ -43,7 +43,7 @@ vec4 blinnPhong(){
 
 
 //Point light Blinn Phong
-vec4 blinnPhong(vec3 light_pos){
+vec4 blinnPhong_point(vec3 light_pos){
 	vec3 result;
 	vec3 wi = normalize(light_pos - vVertexPosition);
 	vec3 w0 = normalize(-vVertexPosition);
@@ -51,7 +51,7 @@ vec4 blinnPhong(vec3 light_pos){
 	vec3 r1 = uKs * pow(dot(halfV, vVertexNormal), uShininess);
 	vec3 r2  = light_pos*(uKd*dot(wi, vVertexNormal));
 	float distance = distance (vVertexPosition, light_pos);
-	result = (uLightIntensity/(distance*distance))*(r1 + r2);
+	result = (uLightIntensity*2/(distance*distance))*(r1 + r2);
 	
 	if(0 != uFaceColor.a && u_is_point_light){
 		return vec4(result, 1);
@@ -75,25 +75,25 @@ void main() {
 		&&
 		((-0.5-e <= y && y <= -0.5+e) || (0.5-e <= y && y <= 0.5+e)))
 	{
-		fFragColor = uEdgeColor + blinnPhong() + blinnPhong(uLightPos_vs);
+		fFragColor = uEdgeColor + blinnPhong_dir() + blinnPhong_point(uLightPos_vs);
 	} else if(((-0.5-e <= x && x <= -0.5+e) || (0.5-e <= x && x <= 0.5+e))
 			&&
 		((-0.5-e <= z && z <= -0.5+e) || (0.5-e <= z && z <= 0.5+e)))
 	{
-		fFragColor = uEdgeColor + blinnPhong() + blinnPhong(uLightPos_vs);
+		fFragColor = uEdgeColor + blinnPhong_dir() + blinnPhong_point(uLightPos_vs);
 
 	} else if(((-0.5-e <= z && z <= -0.5+e) || (0.5-e <= z && z <= 0.5+e))
 			&&
 		((-0.5-e <= y && y <= -0.5+e) || (0.5-e <= y && y <= 0.5+e)))
 	{
-		fFragColor = uEdgeColor + blinnPhong() + blinnPhong(uLightPos_vs);
+		fFragColor = uEdgeColor + blinnPhong_dir() + blinnPhong_point(uLightPos_vs);
 
 	} else {
-		fFragColor = uFaceColor + blinnPhong() + blinnPhong(uLightPos_vs);
+		fFragColor = uFaceColor + blinnPhong_dir() + blinnPhong_point(uLightPos_vs);
 	}
 
 
-	if(0 == uEdgeMode){
+	if(uEdgeMode){
 		fFragColor.a = 0;
 	}
 
