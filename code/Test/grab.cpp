@@ -194,6 +194,14 @@ int main(int argc, char** argv) {
         std::cout << "Location uLightDir_vs : " << uLightDir_vs << std::endl;
         GLint uLightIntensity = glGetUniformLocation(program.getGLId(), "uLightIntensity");
         std::cout << "Location uLightIntensity : " << uLightIntensity << std::endl;
+        GLint u_is_dir_light = glGetUniformLocation(program.getGLId(), "u_is_dir_light");
+        std::cout << "Location u_is_dir_light : " << u_is_dir_light << std::endl;
+
+    //Point light
+        GLint uLightPos_vs = glGetUniformLocation(program.getGLId(), "uLightPos_vs");
+        std::cout << "Location uLightPos_vs : " << uLightPos_vs << std::endl;
+        GLint u_is_point_light = glGetUniformLocation(program.getGLId(), "u_is_point_light");
+        std::cout << "Location u_is_point_light : " << u_is_point_light << std::endl;
 
 
     const int W = std::stoi(argv[1]);
@@ -307,6 +315,13 @@ int main(int argc, char** argv) {
     }
    
     float espace = 1.f;
+
+    //For lights
+    bool dir_light = false;
+    bool point_light = false;
+    float x_light_pos = 1.0f;
+    float y_light_pos = 1.0f;
+    float z_light_pos = 1.0f;
 
     // Application loop:
     bool done = false;
@@ -433,7 +448,25 @@ int main(int argc, char** argv) {
                         world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].edge_color(glm::vec4(1,0,0,1));
                         grabbing = false;
                         break;
-                                    
+                    case SDLK_s :
+                        std::cout<<"Add sun light" << std::endl;
+                        if(dir_light){
+                            dir_light = false;
+                        } else {
+                            dir_light = true;
+                        }
+                        break;
+                    case SDLK_l :
+                        std::cout<<"Add lamp light" << std::endl;
+                        if(world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].is_visible()){
+                            std::cerr << "Occupied" << std::endl;
+                            break;
+                        }
+                        point_light = true;
+                        x_light_pos = world.cursor().x;
+                        y_light_pos = world.cursor().y;
+                        z_light_pos = world.cursor().z;
+                        break;                
                     default :
                         std::cout << "This command doesn't exist." << std::endl;
                         break;
@@ -448,13 +481,8 @@ int main(int argc, char** argv) {
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-
-        glBindVertexArray(vao); 
-
-        glUniform1ui(location_uEdgeMode, 0);
-
-         //Directionnal light
-        //Sending the uniform variables to the sahder
+        //Sending uniform variables to the shader
+        //Directionnal light
         glm::vec4 lightDir4 =  glm::vec4(1.0f, 1.0f, 1.0f, 0.0f);
         lightDir4 = lightDir4 * world.camera().getViewMatrix();
         glm::vec3 lightDir = glm::vec3(lightDir4.x, lightDir4.y, lightDir4.z);
@@ -463,11 +491,20 @@ int main(int argc, char** argv) {
         glUniform3fv(uKs, 1, glm::value_ptr(glm::vec3(2.f, 1.f, 0.1f)));
         glUniform1f(uShininess,0.5f);
         glUniform3fv(uLightDir_vs, 1, glm::value_ptr(lightDir));
-        glUniform3fv(uLightIntensity, 1, glm::value_ptr(glm::vec3(0.3f, 0.3f, 0.3f)));
+        glUniform3fv(uLightIntensity, 1, glm::value_ptr(glm::vec3(.5f, .5f, .5f)));
+        glUniform1ui(u_is_dir_light, dir_light);
 
-        glUniform3fv(uLightIntensity, 1, glm::value_ptr(glm::vec3(0.3f, 0.3f, 0.3f)));
+        //Point light
+        glm::vec4 lightPos =  glm::vec4(x_light_pos, y_light_pos, z_light_pos, 0.0f);
+        lightPos = lightPos * world.camera().getViewMatrix();
+        glm::vec3 lightPos_send = glm::vec3(lightPos.x, lightPos.y, lightPos.z);
+        glUniform3fv(uLightPos_vs, 1, glm::value_ptr(lightPos_send));
+        glUniform1ui(u_is_point_light, point_light);
 
 
+        glBindVertexArray(vao); 
+
+        glUniform1ui(location_uEdgeMode, false);
 
         for(uint i = 0; i < world.width(); i++){
             for(uint j = 0; j < world.height(); j++){
@@ -521,7 +558,7 @@ int main(int argc, char** argv) {
                         // std::cout << "DRAW selected " << i << ", " << j << ", " << k <<std::endl;
 
                         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-                        glUniform1i(location_uEdgeMode, 1);
+                        glUniform1i(location_uEdgeMode, true);
                         MVMatrix = world.camera().getViewMatrix();
                         MVMatrix = glm::translate(MVMatrix,glm::vec3(-W/2, -H/2, -L/2));
                         MVMatrix = glm::translate(MVMatrix,glm::vec3(-0.5f+espace*i,-0.5f+espace*j,-0.5f+espace*k));

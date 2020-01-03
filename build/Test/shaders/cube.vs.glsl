@@ -15,6 +15,7 @@ out vec3 vVertexNormal;
 void main(){
     //Passage en coordonnées homogènes :
     vec4 vertexPosition = vec4(aVertexPosition, 1);
+    vec4 vertexNormal = vec4(aVertexNormal, 0); //car vecteur
 
     //Calcul des valeurs de sortie :
     vVertexPosition = vec3(uMVMatrix * vertexPosition);
@@ -24,8 +25,6 @@ void main(){
 
     vVertexAbsolutePosition = aVertexPosition;
 
-    //Passage de la normale
-    vec4 vertexNormal = vec4(aVertexNormal, 0); //0 car vecteur
     vVertexNormal = vec3(uNormalMatrix * vertexNormal );
 
 }

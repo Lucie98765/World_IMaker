@@ -475,7 +475,7 @@ int main(int argc, char** argv) {
 
         glBindVertexArray(vao); 
 
-        glUniform1ui(location_uEdgeMode, 0);
+        glUniform1ui(location_uEdgeMode, false);
 
         
 
@@ -531,7 +531,7 @@ int main(int argc, char** argv) {
                         // std::cout << "DRAW selected " << i << ", " << j << ", " << k <<std::endl;
 
                         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-                        glUniform1i(location_uEdgeMode, 1);
+                        glUniform1i(location_uEdgeMode, true);
                         MVMatrix = world.camera().getViewMatrix();
                         MVMatrix = glm::translate(MVMatrix,glm::vec3(-W/2, -H/2, -L/2));
                         MVMatrix = glm::translate(MVMatrix,glm::vec3(-0.5f+espace*i,-0.5f+espace*j,-0.5f+espace*k));
