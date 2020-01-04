@@ -91,6 +91,7 @@ namespace glimac{
 		for(size_t i = 0; i < pts_ctrl.size(); i++){
 			res += omega(i)*phi(point, pts_ctrl[i]);
 		}
+		std::cout << res << std::endl;
 		return res;
 	}
 

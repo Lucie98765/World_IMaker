@@ -444,19 +444,20 @@ namespace glimac{
 	        predicate = [rbf](glm::vec3 p, float pivot) mutable {
 	                    return rbf.g(p) >= pivot;
 	        };
-	        pivot = stoi(display);
+	        pivot = stof(display);
 	    }
 
 	    //Update visibility of cubes
 	    for(uint i = 0; i < m_width; i++){
 	        for(uint j = 0; j < m_height; j++){
 	            for(uint k = 0; k < m_length; k++){
+	            	std::cout << glm::vec3(i,j,k) << " value : ";
 	                if(i == m_width/2 && j == m_height/2 && k == m_length/2)
 	                    m_cubes[i][j][k].selected(true);
 	                else
 	                    m_cubes[i][j][k].selected(false);
 	                m_cubes[i][j][k].visible(
-	                    rbf.is_displayable(cube_matrix[i*k*k+j*k+k], 
+	                    rbf.is_displayable(cube_matrix[i*k*j+j*k+k], 
 	                        pivot, predicate));
 	            }
 	        }

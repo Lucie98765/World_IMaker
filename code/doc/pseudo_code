@@ -1,15 +1,16 @@
 Definition classes:
 	Definition cube
 	Definition lumière
+	Definition monde
 Chargement shaders et programmes
-Ajout des cubes et des lumières dans tableaux globaux
+Ajout des cubes et des lumières dans objet monde
 Init curseur au centre (0, 0, 0)
-// Génération textures
+Génération textures
 Boucle principale:
 	switch(action):
 		génération aléatoire:
 			pour chaque cube choisi aléatoirement/par l'utilisateur:
-				val_cube = val aléatoire entre 0 et 1
+				val_cube = val aléatoire entre -1 et 1
 			prochaines valeurs des cubes calculées tq:
 				phi(d) = une rbf (linéaire ou gaussienne ou quadratique inverse ...)
 				omega_i calculé tq phi*omega = val (Eigen matrix solve)
@@ -17,12 +18,12 @@ Boucle principale:
 			pour tous les cubes de la scène:
 				si val_cube > val_pivot:
 					afficher cube
-		//chargement scène:
-		//	choisir chemin et nom
-		//	si valide:
-		//		afficher scène
-		//sauvegarder scène:
-		//	choisir nom (dossier sauvegarde préenregistré)
+		chargement scène:
+			choisir chemin et nom
+			si valide:
+				afficher scène
+		sauvegarder scène:
+			choisir nom (dossier sauvegarde préenregistré)
 		quitter:
 			free mémoire
 		bouger curseur:
@@ -89,13 +90,13 @@ Boucle principale:
 				Cubes(dest).visible();
 				Cubes(dest).color(origin.color())
 				Cubes(origin).invisible();
-		//ajouter lumière:
-		//	if !current.is_empty():
-		//		error(occupied)
-		//	else:
-		//		add_light(current, type)
-		//supprimer lumière:
-		//	if !current.is_empty():
-		//		error(occupied)
-		//	else:
-		//		remove_light(current)
+		ajouter lumière:
+			if !current.is_empty():
+				error(occupied)
+			else:
+				add_light(current, type)
+		supprimer lumière:
+			if !current.is_empty():
+				error(occupied)
+			else:
+				remove_light(current)
