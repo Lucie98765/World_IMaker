@@ -11,7 +11,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.10.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.10.2/CMakeSystem.cmake"
   "/home/louisa/IMAC2/POO/World_IMaker/code/CMakeLists.txt"
-  "/home/louisa/IMAC2/POO/World_IMaker/code/Test/CMakeLists.txt"
   "/home/louisa/IMAC2/POO/World_IMaker/code/doc/CMakeLists.txt"
   "/home/louisa/IMAC2/POO/World_IMaker/code/doc/Doxyfile-html.cmake"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/CMakeLists.txt"
@@ -55,27 +54,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "glimac/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "Test/CMakeFiles/CMakeDirectoryInformation.cmake"
   "doc/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "glimac/CMakeFiles/glimac.dir/DependInfo.cmake"
-  "src/CMakeFiles/src_cube_freefly.dir/DependInfo.cmake"
-  "Test/CMakeFiles/Test_world_draw.dir/DependInfo.cmake"
-  "Test/CMakeFiles/Test_save_load.dir/DependInfo.cmake"
-  "Test/CMakeFiles/Test_test_main.dir/DependInfo.cmake"
-  "Test/CMakeFiles/Test_procedural_generation.dir/DependInfo.cmake"
-  "Test/CMakeFiles/Test_scene_world.dir/DependInfo.cmake"
-  "Test/CMakeFiles/Test_scene_cubes_transparency.dir/DependInfo.cmake"
-  "Test/CMakeFiles/Test_scene_cubes.dir/DependInfo.cmake"
-  "Test/CMakeFiles/Test_cube_try_display.dir/DependInfo.cmake"
-  "Test/CMakeFiles/Test_points_control_3D.dir/DependInfo.cmake"
-  "Test/CMakeFiles/Test_procedural_generation_v2.dir/DependInfo.cmake"
-  "Test/CMakeFiles/Test_cube_try_data_display.dir/DependInfo.cmake"
-  "Test/CMakeFiles/Test_gen_conf.dir/DependInfo.cmake"
-  "Test/CMakeFiles/Test_grab.dir/DependInfo.cmake"
-  "Test/CMakeFiles/Test_points_control_1D.dir/DependInfo.cmake"
+  "src/CMakeFiles/worldimaker.dir/DependInfo.cmake"
   "doc/CMakeFiles/html.dir/DependInfo.cmake"
   )

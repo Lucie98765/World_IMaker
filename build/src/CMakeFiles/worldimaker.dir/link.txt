@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -g -O2 -I /usr/include/eigen3  -rdynamic CMakeFiles/worldimaker.dir/main.cpp.o  -o worldimaker ../glimac/libglimac.a -lSDL2 -lGL -lGLU -lGLEW 

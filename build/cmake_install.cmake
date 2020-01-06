@@ -41,7 +41,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/louisa/IMAC2/POO/World_IMaker/build/glimac/cmake_install.cmake")
   include("/home/louisa/IMAC2/POO/World_IMaker/build/src/cmake_install.cmake")
-  include("/home/louisa/IMAC2/POO/World_IMaker/build/Test/cmake_install.cmake")
   include("/home/louisa/IMAC2/POO/World_IMaker/build/doc/cmake_install.cmake")
 
 endif()

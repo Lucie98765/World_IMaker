@@ -111,46 +111,46 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/src_cube_freefly.dir/rule:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/src_cube_freefly.dir/rule
-.PHONY : src/CMakeFiles/src_cube_freefly.dir/rule
+src/CMakeFiles/worldimaker.dir/rule:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/worldimaker.dir/rule
+.PHONY : src/CMakeFiles/worldimaker.dir/rule
 
 # Convenience name for target.
-src_cube_freefly: src/CMakeFiles/src_cube_freefly.dir/rule
+worldimaker: src/CMakeFiles/worldimaker.dir/rule
 
-.PHONY : src_cube_freefly
+.PHONY : worldimaker
 
 # fast build rule for target.
-src_cube_freefly/fast:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f src/CMakeFiles/src_cube_freefly.dir/build.make src/CMakeFiles/src_cube_freefly.dir/build
-.PHONY : src_cube_freefly/fast
+worldimaker/fast:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f src/CMakeFiles/worldimaker.dir/build.make src/CMakeFiles/worldimaker.dir/build
+.PHONY : worldimaker/fast
 
-cube_freefly.o: cube_freefly.cpp.o
+main.o: main.cpp.o
 
-.PHONY : cube_freefly.o
+.PHONY : main.o
 
 # target to build an object file
-cube_freefly.cpp.o:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f src/CMakeFiles/src_cube_freefly.dir/build.make src/CMakeFiles/src_cube_freefly.dir/cube_freefly.cpp.o
-.PHONY : cube_freefly.cpp.o
+main.cpp.o:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f src/CMakeFiles/worldimaker.dir/build.make src/CMakeFiles/worldimaker.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-cube_freefly.i: cube_freefly.cpp.i
+main.i: main.cpp.i
 
-.PHONY : cube_freefly.i
+.PHONY : main.i
 
 # target to preprocess a source file
-cube_freefly.cpp.i:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f src/CMakeFiles/src_cube_freefly.dir/build.make src/CMakeFiles/src_cube_freefly.dir/cube_freefly.cpp.i
-.PHONY : cube_freefly.cpp.i
+main.cpp.i:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f src/CMakeFiles/worldimaker.dir/build.make src/CMakeFiles/worldimaker.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-cube_freefly.s: cube_freefly.cpp.s
+main.s: main.cpp.s
 
-.PHONY : cube_freefly.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-cube_freefly.cpp.s:
-	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f src/CMakeFiles/src_cube_freefly.dir/build.make src/CMakeFiles/src_cube_freefly.dir/cube_freefly.cpp.s
-.PHONY : cube_freefly.cpp.s
+main.cpp.s:
+	cd /home/louisa/IMAC2/POO/World_IMaker/build && $(MAKE) -f src/CMakeFiles/worldimaker.dir/build.make src/CMakeFiles/worldimaker.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -159,11 +159,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... src_cube_freefly"
+	@echo "... worldimaker"
 	@echo "... edit_cache"
-	@echo "... cube_freefly.o"
-	@echo "... cube_freefly.i"
-	@echo "... cube_freefly.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

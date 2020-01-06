@@ -1,1 +1,0 @@
-/usr/bin/c++   -Wall -g -O2 -I /usr/include/eigen3  -rdynamic CMakeFiles/Test_gen_conf.dir/gen_conf.cpp.o  -o Test_gen_conf ../glimac/libglimac.a -lSDL2 -lGL -lGLU -lGLEW 

@@ -1,1 +1,0 @@
-/usr/bin/c++   -Wall -g -O2  -rdynamic CMakeFiles/Test_points_controle.dir/points_controle.cpp.o  -o Test_points_controle ../glimac/libglimac.a -lSDL2 -lGL -lGLU -lGLEW 
