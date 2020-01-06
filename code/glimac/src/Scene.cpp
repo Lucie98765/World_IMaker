@@ -56,7 +56,7 @@ namespace glimac{
 	TrackballCamera& Scene::camera(){
 		return m_camera;
 	}
-	glm::vec3 Scene::cursor(){
+	glm::vec3 Scene::cursor()const{
 		return m_cursor;
 	}
 
@@ -193,14 +193,7 @@ namespace glimac{
 
 
 	void Scene::save(){
-		std::cout << "Do you want to save the scene [y|n] ? ";
-	    std::string reponse;
-	    std::cin >> reponse;
-
-	    if(0 == reponse.compare("n"))
-	        return;
-
-	    std::cout << "\nPlease enter saving file name (relative or absolute path)" << std::endl;
+		std::cout << "\nPlease enter saving file name (relative or absolute path)" << std::endl;
 	    std::string saving_path;
 	    std::cin >> saving_path;
 	    std::ofstream savingFile;

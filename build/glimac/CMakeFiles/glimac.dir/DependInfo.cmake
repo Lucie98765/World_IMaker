@@ -10,7 +10,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Geometry.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Image.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Image.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Imagev2.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.o"
-  "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Interface.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Program.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/Program.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/RBF.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/RBF.cpp.o"
   "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/SDLWindowManager.cpp" "/home/louisa/IMAC2/POO/World_IMaker/build/glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o"

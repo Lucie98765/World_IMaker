@@ -201,33 +201,9 @@ glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.o.provides: glimac/CMakeFiles/glima
 glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.o.provides.build: glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.o
 
 
-glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
-glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o: /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Interface.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o"
-	cd /home/louisa/IMAC2/POO/World_IMaker/build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Interface.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Interface.cpp
-
-glimac/CMakeFiles/glimac.dir/src/Interface.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Interface.cpp.i"
-	cd /home/louisa/IMAC2/POO/World_IMaker/build/glimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Interface.cpp > CMakeFiles/glimac.dir/src/Interface.cpp.i
-
-glimac/CMakeFiles/glimac.dir/src/Interface.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Interface.cpp.s"
-	cd /home/louisa/IMAC2/POO/World_IMaker/build/glimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Interface.cpp -o CMakeFiles/glimac.dir/src/Interface.cpp.s
-
-glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o.requires:
-
-.PHONY : glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o.requires
-
-glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o.provides: glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o.requires
-	$(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o.provides.build
-.PHONY : glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o.provides
-
-glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o.provides.build: glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o
-
-
 glimac/CMakeFiles/glimac.dir/src/Program.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
 glimac/CMakeFiles/glimac.dir/src/Program.cpp.o: /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Program.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object glimac/CMakeFiles/glimac.dir/src/Program.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object glimac/CMakeFiles/glimac.dir/src/Program.cpp.o"
 	cd /home/louisa/IMAC2/POO/World_IMaker/build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Program.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Program.cpp
 
 glimac/CMakeFiles/glimac.dir/src/Program.cpp.i: cmake_force
@@ -251,7 +227,7 @@ glimac/CMakeFiles/glimac.dir/src/Program.cpp.o.provides.build: glimac/CMakeFiles
 
 glimac/CMakeFiles/glimac.dir/src/RBF.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
 glimac/CMakeFiles/glimac.dir/src/RBF.cpp.o: /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/RBF.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object glimac/CMakeFiles/glimac.dir/src/RBF.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object glimac/CMakeFiles/glimac.dir/src/RBF.cpp.o"
 	cd /home/louisa/IMAC2/POO/World_IMaker/build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/RBF.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/RBF.cpp
 
 glimac/CMakeFiles/glimac.dir/src/RBF.cpp.i: cmake_force
@@ -275,7 +251,7 @@ glimac/CMakeFiles/glimac.dir/src/RBF.cpp.o.provides.build: glimac/CMakeFiles/gli
 
 glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
 glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o: /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/SDLWindowManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o"
 	cd /home/louisa/IMAC2/POO/World_IMaker/build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/SDLWindowManager.cpp
 
 glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.i: cmake_force
@@ -299,7 +275,7 @@ glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o.provides.build: glimac/C
 
 glimac/CMakeFiles/glimac.dir/src/Scene.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
 glimac/CMakeFiles/glimac.dir/src/Scene.cpp.o: /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Scene.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object glimac/CMakeFiles/glimac.dir/src/Scene.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object glimac/CMakeFiles/glimac.dir/src/Scene.cpp.o"
 	cd /home/louisa/IMAC2/POO/World_IMaker/build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Scene.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Scene.cpp
 
 glimac/CMakeFiles/glimac.dir/src/Scene.cpp.i: cmake_force
@@ -323,7 +299,7 @@ glimac/CMakeFiles/glimac.dir/src/Scene.cpp.o.provides.build: glimac/CMakeFiles/g
 
 glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
 glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o: /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o"
 	cd /home/louisa/IMAC2/POO/World_IMaker/build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Shader.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Shader.cpp
 
 glimac/CMakeFiles/glimac.dir/src/Shader.cpp.i: cmake_force
@@ -347,7 +323,7 @@ glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o.provides.build: glimac/CMakeFiles/
 
 glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
 glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o: /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Sphere.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o"
 	cd /home/louisa/IMAC2/POO/World_IMaker/build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Sphere.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Sphere.cpp
 
 glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.i: cmake_force
@@ -371,7 +347,7 @@ glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o.provides.build: glimac/CMakeFiles/
 
 glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
 glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o: /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/TrackballCamera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o"
 	cd /home/louisa/IMAC2/POO/World_IMaker/build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/TrackballCamera.cpp
 
 glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.i: cmake_force
@@ -395,7 +371,7 @@ glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o.provides.build: glimac/CM
 
 glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
 glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o: /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/tiny_obj_loader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o"
 	cd /home/louisa/IMAC2/POO/World_IMaker/build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/tiny_obj_loader.cpp
 
 glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.i: cmake_force
@@ -425,7 +401,6 @@ glimac_OBJECTS = \
 "CMakeFiles/glimac.dir/src/Geometry.cpp.o" \
 "CMakeFiles/glimac.dir/src/Image.cpp.o" \
 "CMakeFiles/glimac.dir/src/Imagev2.cpp.o" \
-"CMakeFiles/glimac.dir/src/Interface.cpp.o" \
 "CMakeFiles/glimac.dir/src/Program.cpp.o" \
 "CMakeFiles/glimac.dir/src/RBF.cpp.o" \
 "CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o" \
@@ -444,7 +419,6 @@ glimac/libglimac.a: glimac/CMakeFiles/glimac.dir/src/FreeFlyCamera.cpp.o
 glimac/libglimac.a: glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o
 glimac/libglimac.a: glimac/CMakeFiles/glimac.dir/src/Image.cpp.o
 glimac/libglimac.a: glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.o
-glimac/libglimac.a: glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o
 glimac/libglimac.a: glimac/CMakeFiles/glimac.dir/src/Program.cpp.o
 glimac/libglimac.a: glimac/CMakeFiles/glimac.dir/src/RBF.cpp.o
 glimac/libglimac.a: glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o
@@ -455,7 +429,7 @@ glimac/libglimac.a: glimac/CMakeFiles/glimac.dir/src/TrackballCamera.cpp.o
 glimac/libglimac.a: glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o
 glimac/libglimac.a: glimac/CMakeFiles/glimac.dir/build.make
 glimac/libglimac.a: glimac/CMakeFiles/glimac.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX static library libglimac.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/louisa/IMAC2/POO/World_IMaker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX static library libglimac.a"
 	cd /home/louisa/IMAC2/POO/World_IMaker/build/glimac && $(CMAKE_COMMAND) -P CMakeFiles/glimac.dir/cmake_clean_target.cmake
 	cd /home/louisa/IMAC2/POO/World_IMaker/build/glimac && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glimac.dir/link.txt --verbose=$(VERBOSE)
 
@@ -470,7 +444,6 @@ glimac/CMakeFiles/glimac.dir/requires: glimac/CMakeFiles/glimac.dir/src/FreeFlyC
 glimac/CMakeFiles/glimac.dir/requires: glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o.requires
 glimac/CMakeFiles/glimac.dir/requires: glimac/CMakeFiles/glimac.dir/src/Image.cpp.o.requires
 glimac/CMakeFiles/glimac.dir/requires: glimac/CMakeFiles/glimac.dir/src/Imagev2.cpp.o.requires
-glimac/CMakeFiles/glimac.dir/requires: glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o.requires
 glimac/CMakeFiles/glimac.dir/requires: glimac/CMakeFiles/glimac.dir/src/Program.cpp.o.requires
 glimac/CMakeFiles/glimac.dir/requires: glimac/CMakeFiles/glimac.dir/src/RBF.cpp.o.requires
 glimac/CMakeFiles/glimac.dir/requires: glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o.requires

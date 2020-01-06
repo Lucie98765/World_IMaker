@@ -50,8 +50,8 @@ namespace glimac{
 			void build(std::vector<glm::vec3> points, std::vector<glm::vec3> points_ctrl, std::function<float (glm::vec3 x, glm::vec3 y)> func);
 
 
-			float g(glm::vec3 point);
-			bool is_displayable(glm::vec3 point, float pivot, std::function<bool (glm::vec3, float)> predicate);
+			float g(glm::vec3 point) const;
+			bool is_displayable(glm::vec3 point, float pivot, std::function<bool (glm::vec3, float)> predicate) const;
 
 	};
 

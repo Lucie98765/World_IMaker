@@ -71,19 +71,19 @@ namespace glimac{
 
 
 	//GET
-	std::vector<glm::vec3> Cube::vertices() {
+	std::vector<glm::vec3> Cube::vertices() const {
 		return m_vertices_position;
 	}
-	glm::vec4 Cube::face_color() {
+	glm::vec4 Cube::face_color() const {
 		return m_face_color;
 	}
-	glm::vec4 Cube::edge_color() {
+	glm::vec4 Cube::edge_color() const {
 		return m_edge_color;
 	}
-	bool Cube::is_visible() {
+	bool Cube::is_visible() const {
 		return m_is_visible;
 	}
-	bool Cube::is_selected() {
+	bool Cube::is_selected() const {
 		return m_is_selected;
 	}
 }

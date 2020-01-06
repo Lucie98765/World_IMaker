@@ -89,31 +89,31 @@ class Cube
 		/// \brief Accesseur de la position des sommets du
 		/// \return std::vector<glm::vec3> m_vertices
 		///
-		std::vector<glm::vec3> vertices();
+		std::vector<glm::vec3> vertices() const;
 		///
 		/// \fn face_color()
 		/// \brief Accesseur de la couleur des faces du cube
 		/// \return glm::vec4 m_face_color
 		///
-		glm::vec4 face_color();
+		glm::vec4 face_color() const;
 		///
 		/// \fn edge_color()
 		/// \brief Accesseur de la couleur des aretes du cube
 		/// \return glm::vec4 m_edge_color
 		///
-		glm::vec4 edge_color();
+		glm::vec4 edge_color() const;
 		///
 		/// \fn is_visible()
 		/// \brief Accesseur de la visibilite du cube
 		/// \return bool m_is_visible
 		///
-		bool is_visible();
+		bool is_visible() const;
 		///
 		/// \fn is_selected()
 		/// \brief Accesseur de l'etat de selection du cube
 		/// \return bool m_is_selected
 		///
-		bool is_selected();
+		bool is_selected() const;
 
 };
 

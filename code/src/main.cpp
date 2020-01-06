@@ -283,14 +283,22 @@ int main(int argc, char** argv) {
     std::cin >> reponse;
 
     if(0 == reponse.compare("y")){
-        world.load();
+        if(!world.load()){
+            glDeleteBuffers(1, &vbo);
+            glDeleteVertexArrays(1, &vao);
+            return EXIT_FAILURE;
+        }
     }
     else{
         // CONFIG PROCEDURAL GENERATION
         std::cout << "Do you want to generate a scene ? [y|n] ";
         std::cin >> reponse;
         if(0 == reponse.compare("y")){  
-            world.generate();     
+            if(!world.generate()){
+                glDeleteBuffers(1, &vbo);
+                glDeleteVertexArrays(1, &vao);
+                return EXIT_FAILURE;
+            }   
         }
         else{
             // STARTING FROM SCRATCH
@@ -369,6 +377,11 @@ int main(int argc, char** argv) {
                     case SDLK_h: help();
                         break;
                     case SDLK_ASTERISK:
+                        std::cout << "Do you want to save the scene [y|n] ? ";
+                        std::cin >> reponse;
+
+                        if(0 == reponse.compare("n"))
+                            break;
                         world.save();
                         break;
                     case SDLK_1 :

@@ -31,11 +31,6 @@
 },
 {
   "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/glimac",
-  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/glimac.dir/src/Interface.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Interface.cpp",
-  "file": "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Interface.cpp"
-},
-{
-  "directory": "/home/louisa/IMAC2/POO/World_IMaker/build/glimac",
   "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/louisa/IMAC2/POO/World_IMaker/code/glimac/include -I/home/louisa/IMAC2/POO/World_IMaker/code/third-party/include   -Wall -g -O2 -I /usr/include/eigen3   -std=c++11 -o CMakeFiles/glimac.dir/src/Program.cpp.o -c /home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Program.cpp",
   "file": "/home/louisa/IMAC2/POO/World_IMaker/code/glimac/src/Program.cpp"
 },

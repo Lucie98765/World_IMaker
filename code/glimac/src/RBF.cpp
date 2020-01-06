@@ -78,7 +78,7 @@ namespace glimac{
 		phi = func;
 	}
 
-	float RBF::g(glm::vec3 point){
+	float RBF::g(glm::vec3 point) const{
 		MatrixXd phi_mat(pts_ctrl.size(),pts_ctrl.size());
 		for(int i = 0; i < phi_mat.cols(); i++)
 			for(int j = 0; j < phi_mat.rows(); j++)
@@ -93,7 +93,7 @@ namespace glimac{
 		return res;
 	}
 
-	bool RBF::is_displayable(glm::vec3 point, float pivot, std::function<bool (glm::vec3, float)> predicate){
+	bool RBF::is_displayable(glm::vec3 point, float pivot, std::function<bool (glm::vec3, float)> predicate) const{
 		return predicate(point, pivot);
 	}
 }
