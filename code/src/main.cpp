@@ -340,18 +340,14 @@ int main(int argc, char** argv) {
     float espace = 1.f;
 
     // FOR LIGHTS
-    bool dir_light = false;
-    bool point_light = false;
-    float x_light_pos = 1.0f;
-    float y_light_pos = 1.0f;
-    float z_light_pos = 1.0f;
+    bool dir_light = false, point_light = false;
+    float x_light_pos = 1.0f, y_light_pos = 1.0f, z_light_pos = 1.0f;
 
     // FOR APPLICATION LOOP
     const int W = world.width();
     const int H = world.height();
     const int L = world.length();
-    bool done = false;
-    bool grabbing = false;
+    bool done = false, grabbing = false;
     glm::vec3 origin;
     
     // APPLICATION LOOP
@@ -519,23 +515,24 @@ int main(int argc, char** argv) {
 
         // SENDING UNIFORM VARIABLES TO THE SHADERS
         //Directionnal light
-            glm::vec4 lightDir4 =  glm::vec4(1.0f, 1.0f, 1.0f, 0.0f);
-            lightDir4 = lightDir4 * world.camera().getViewMatrix();
-            glm::vec3 lightDir = glm::vec3(lightDir4.x, lightDir4.y, lightDir4.z);
+        glm::vec4 lightDir =  glm::vec4(0.6f, 0.6f, 0.6f, 0.0f);
+        //glm::vec4 lightDir4 =  glm::vec4(0.6f, 0.6f, 0.6f, 0.0f);
+        //lightDir4 = lightDir4 * world.camera().getViewMatrix();
+        //glm::vec3 lightDir = glm::vec3(lightDir4.x, lightDir4.y, lightDir4.z);
 
-            glUniform3fv(uKd, 1,  glm::value_ptr(glm::vec3(3.f, 1.f, 2.f)));
-            glUniform3fv(uKs, 1, glm::value_ptr(glm::vec3(2.f, 1.f, 0.1f)));
-            glUniform1f(uShininess,0.5f);
-            glUniform3fv(uLightDir_vs, 1, glm::value_ptr(lightDir));
-            glUniform3fv(uLightIntensity, 1, glm::value_ptr(glm::vec3(.5f, .5f, .5f)));
-            glUniform1ui(u_is_dir_light, dir_light);
+        glUniform3fv(uKd, 1,  glm::value_ptr(glm::vec3(0.9f, 0.9f, 0.5f)));
+        glUniform3fv(uKs, 1, glm::value_ptr(glm::vec3(0.9f, 0.9f, 0.5f)));
+        glUniform1f(uShininess,0.5f);
+        glUniform3fv(uLightDir_vs, 1, glm::value_ptr(lightDir));
+        glUniform3fv(uLightIntensity, 1, glm::value_ptr(glm::vec3(0.7f, 0.7f, 0.7f)));
+        glUniform1ui(u_is_dir_light, dir_light);
 
         //Point light
-            glm::vec4 lightPos =  glm::vec4(x_light_pos, y_light_pos, z_light_pos, 0.0f);
-            lightPos = lightPos * world.camera().getViewMatrix();
-            glm::vec3 lightPos_send = glm::vec3(lightPos.x, lightPos.y, lightPos.z);
-            glUniform3fv(uLightPos_vs, 1, glm::value_ptr(lightPos_send));
-            glUniform1ui(u_is_point_light, point_light);
+        glm::vec4 lightPos =  glm::vec4(x_light_pos, y_light_pos, z_light_pos, 0.0f);
+        lightPos = lightPos * world.camera().getViewMatrix();
+        glm::vec3 lightPos_send = glm::vec3(lightPos.x, lightPos.y, lightPos.z);
+        glUniform3fv(uLightPos_vs, 1, glm::value_ptr(lightPos_send));
+        glUniform1ui(u_is_point_light, point_light);
 
 
         glBindVertexArray(vao); 
@@ -612,7 +609,6 @@ int main(int argc, char** argv) {
         }
         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
-                 
 
         glBindVertexArray(0);
         windowManager.swapBuffers();

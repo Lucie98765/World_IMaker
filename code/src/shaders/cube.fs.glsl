@@ -29,8 +29,8 @@ vec4 blinnPhong_dir(){
 	vec3 wi = normalize(uLightDir_vs);
 	vec3 w0 = normalize(-vVertexPosition);
 	vec3 halfV = (w0 + wi)/2;
-	vec3 r1 = uKs * pow(dot(halfV, vVertexNormal), uShininess);
-	vec3 r2  = uLightDir_vs*(uKd*dot(wi, vVertexNormal));
+	vec3 r1 = (2*uKs) * pow(dot(halfV, vVertexNormal), uShininess);
+	vec3 r2  = light_pos*((2*uKd)*(dot(wi, vVertexNormal)));
 	result = uLightIntensity*(r1 + r2);
 
 	if(0 != uFaceColor.a && u_is_dir_light){
