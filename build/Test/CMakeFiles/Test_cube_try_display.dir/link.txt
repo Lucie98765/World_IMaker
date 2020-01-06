@@ -1,1 +1,0 @@
-/usr/bin/c++   -Wall -g -O2 -I /usr/include/eigen3  -rdynamic CMakeFiles/Test_cube_try_display.dir/cube_try_display.cpp.o  -o Test_cube_try_display ../glimac/libglimac.a -lSDL2 -lGL -lGLU -lGLEW 

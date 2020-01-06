@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -g -O2 -I /usr/include/eigen3  -rdynamic CMakeFiles/src_main.dir/main.cpp.o  -o src_main ../glimac/libglimac.a -lSDL2 -lGL -lGLU -lGLEW 

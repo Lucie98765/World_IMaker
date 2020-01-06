@@ -84,7 +84,6 @@ namespace glimac{
 			for(int j = 0; j < phi_mat.rows(); j++)
 				phi_mat(i,j) = phi(pts_ctrl[i],pts_ctrl[j]);
 
-		//LU solve because phi_mat is symetrical and regular
 		VectorXd omega = LU(phi_mat, values_ctrl);
 
 		float res = 0.f;

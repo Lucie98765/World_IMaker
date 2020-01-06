@@ -585,6 +585,7 @@ glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o
  /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/FilePath.hpp
  /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/Interface.hpp
  /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/Program.hpp
+ /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/RBF.hpp
  /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/SDLWindowManager.hpp
  /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/Scene.hpp
  /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/Shader.hpp
@@ -968,6 +969,7 @@ glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o
  /usr/include/SDL2/close_code.h
 glimac/CMakeFiles/glimac.dir/src/Scene.cpp.o
  /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/Cube.hpp
+ /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/RBF.hpp
  /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/Scene.hpp
  /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/TrackballCamera.hpp
  /home/louisa/IMAC2/POO/World_IMaker/code/glimac/include/glimac/common.hpp
