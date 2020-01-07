@@ -518,10 +518,7 @@ int main(int argc, char** argv) {
         // SENDING UNIFORM VARIABLES TO THE SHADERS
         //Directionnal light
         glm::vec4 lightDir =  glm::vec4(0.6f, 0.6f, 0.6f, 0.0f);
-        //glm::vec4 lightDir4 =  glm::vec4(0.6f, 0.6f, 0.6f, 0.0f);
-        //lightDir4 = lightDir4 * world.camera().getViewMatrix();
-        //glm::vec3 lightDir = glm::vec3(lightDir4.x, lightDir4.y, lightDir4.z);
-
+        
         glUniform3fv(uKd, 1,  glm::value_ptr(glm::vec3(0.9f, 0.9f, 0.5f)));
         glUniform3fv(uKs, 1, glm::value_ptr(glm::vec3(0.9f, 0.9f, 0.5f)));
         glUniform1f(uShininess,0.5f);
