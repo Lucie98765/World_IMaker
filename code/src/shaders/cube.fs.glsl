@@ -16,11 +16,11 @@ uniform vec3 uKs;
 uniform float uShininess;
 uniform vec3 uLightDir_vs;
 uniform vec3 uLightIntensity;
-uniform bool u_is_dir_light; //tells if a directionnal light is placed or not
+uniform bool uIsLightDir; //tells if a directionnal light is placed or not
 
 //Point light uniform variable
 uniform vec3 uLightPos_vs; //position of the point light
-uniform bool u_is_point_light; //tells if a point light is placed or not
+uniform bool uIsPointLight; //tells if a point light is placed or not
 
 
 //Directionnal light Blinn Phong
@@ -29,11 +29,11 @@ vec4 blinnPhong_dir(){
 	vec3 wi = normalize(uLightDir_vs);
 	vec3 w0 = normalize(-vVertexPosition);
 	vec3 halfV = (w0 + wi)/2;
-	vec3 r1 = (2*uKs) * pow(dot(halfV, vVertexNormal), uShininess);
-	vec3 r2  = light_pos*((2*uKd)*(dot(wi, vVertexNormal)));
+	vec3 r1 = uKs * pow(dot(halfV, vVertexNormal), uShininess);
+	vec3 r2  = uLightDir_vs*(uKd*dot(wi, vVertexNormal));
 	result = uLightIntensity*(r1 + r2);
 
-	if(0 != uFaceColor.a && u_is_dir_light){
+	if(0 != uFaceColor.a && uIsLightDir){
 		return vec4(result, 1);
 	} else {
 		return vec4(0, 0, 0, 0);
@@ -43,17 +43,17 @@ vec4 blinnPhong_dir(){
 
 
 //Point light Blinn Phong
-vec4 blinnPhong_point(vec3 light_pos){
+vec4 blinnPhong_point(vec3 lightPosition){
 	vec3 result;
-	vec3 wi = normalize(light_pos - vVertexPosition);
+	vec3 wi = normalize(lightPosition - vVertexPosition);
 	vec3 w0 = normalize(-vVertexPosition);
 	vec3 halfV = (w0 + wi)/2;
 	vec3 r1 = uKs * pow(dot(halfV, vVertexNormal), uShininess);
-	vec3 r2  = light_pos*(uKd*dot(wi, vVertexNormal));
-	float distance = distance (vVertexPosition, light_pos);
+	vec3 r2  = lightPosition*(uKd*dot(wi, vVertexNormal));
+	float distance = distance (vVertexPosition, lightPosition);
 	result = (uLightIntensity*2/(distance*distance))*(r1 + r2);
 	
-	if(0 != uFaceColor.a && u_is_point_light){
+	if(0 != uFaceColor.a && uIsPointLight){
 		return vec4(result, 1);
 	} else {
 		return vec4(0, 0, 0, 0);
