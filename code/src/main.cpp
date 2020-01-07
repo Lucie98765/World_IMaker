@@ -374,6 +374,8 @@ int main(int argc, char** argv) {
             }
             if( e.type == SDL_KEYDOWN){                
                 switch (e.key.keysym.sym){
+                    case SDLK_RETURN:
+                        break;
                     case SDLK_h: help();
                         break;
                     case SDLK_ASTERISK:

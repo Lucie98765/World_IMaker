@@ -352,13 +352,13 @@ namespace glimac{
 	    std::function<float (glm::vec3 x, glm::vec3 y)> func;
 
 	    std::function<float (glm::vec3 x, glm::vec3 y)> exp_phi = [](glm::vec3 x, glm::vec3 y){
-	        return exp(0.001*abs(glm::distance(x,y))*abs(glm::distance(x,y)));};
+	        return exp(0.01*abs(glm::distance(x,y))*abs(glm::distance(x,y)));};
 	    std::function<float (glm::vec3 x, glm::vec3 y)> lin_phi = [](glm::vec3 x, glm::vec3 y){
-	        return 0.001*abs(glm::distance(x,y))*abs(glm::distance(x,y));};
+	        return 0.01*abs(glm::distance(x,y))*abs(glm::distance(x,y));};
 	    std::function<float (glm::vec3 x, glm::vec3 y)> sqrt_phi = [](glm::vec3 x, glm::vec3 y){
-	        return sqrt(1+pow(0.001*abs(glm::distance(x,y))*abs(glm::distance(x,y)),2));};
+	        return sqrt(1+pow(0.01*abs(glm::distance(x,y))*abs(glm::distance(x,y)),2));};
 	    std::function<float (glm::vec3 x, glm::vec3 y)> rat_phi = [](glm::vec3 x, glm::vec3 y){
-	        return 1/(1+pow(0.001*abs(glm::distance(x,y))*abs(glm::distance(x,y)),2));};
+	        return 1/(1+pow(0.01*abs(glm::distance(x,y))*abs(glm::distance(x,y)),2));};
 
 	    if(0 == phi.compare("exp")) func = exp_phi;
 	    if(0 == phi.compare("lin")) func = lin_phi;
