@@ -44,14 +44,6 @@ namespace glimac{
         }
 	}
 
-	//SET
-	void Cube::face_color(glm::vec4 color){
-		m_face_color = color;
-	}
-
-	void Cube::edge_color(glm::vec4 color){
-		m_edge_color = color;
-	}
 
 	void Cube::visible(bool state){
 		m_is_visible = state;
@@ -70,20 +62,4 @@ namespace glimac{
 	}
 
 
-	//GET
-	std::vector<glm::vec3> Cube::vertices() const {
-		return m_vertices_position;
-	}
-	glm::vec4 Cube::face_color() const {
-		return m_face_color;
-	}
-	glm::vec4 Cube::edge_color() const {
-		return m_edge_color;
-	}
-	bool Cube::is_visible() const {
-		return m_is_visible;
-	}
-	bool Cube::is_selected() const {
-		return m_is_selected;
-	}
 }

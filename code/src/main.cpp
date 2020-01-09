@@ -330,8 +330,13 @@ int main(int argc, char** argv) {
             for(uint i = 0; i < world.width(); i++)
                 for(uint j = 0; j < world.length(); j++){
                     world.cubes()[i][0][j].visible(true);
+                    world.cubes()[i][0][j].selected(false);
+
                     world.cubes()[i][1][j].visible(true);
+                    world.cubes()[i][1][j].selected(false);
+
                     world.cubes()[i][2][j].visible(true);
+                    world.cubes()[i][2][j].selected(false);
                 }
         }
     }

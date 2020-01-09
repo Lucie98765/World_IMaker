@@ -63,13 +63,13 @@ class Cube
 		/// \param vec4 color
 		/// \brief Modifie la couleur des faces du cube
 		///
-		void face_color(glm::vec4 color);
+		inline void face_color(glm::vec4 color){m_face_color = color;};
 		///
 		/// \fn edge_volor()
 		/// \param vec4 color
 		/// \brief Modifie la couleur des aretes du cube
 		///
-		void edge_color(glm::vec4 color);
+		inline void edge_color(glm::vec4 color){m_edge_color = color;};
 		///
 		/// \fn visible()
 		/// \param bool state
@@ -82,38 +82,36 @@ class Cube
 		/// \brief Modifie l'etat de selection du cube
 		///
 		void selected(bool state);
-
-		
 		///
 		/// \fn vertices()
 		/// \brief Accesseur de la position des sommets du
 		/// \return std::vector<glm::vec3> m_vertices
 		///
-		std::vector<glm::vec3> vertices() const;
+		inline std::vector<glm::vec3> vertices() const{return m_vertices_position;};
 		///
 		/// \fn face_color()
 		/// \brief Accesseur de la couleur des faces du cube
 		/// \return glm::vec4 m_face_color
 		///
-		glm::vec4 face_color() const;
+		inline glm::vec4 face_color() const{return m_face_color;};
 		///
 		/// \fn edge_color()
 		/// \brief Accesseur de la couleur des aretes du cube
 		/// \return glm::vec4 m_edge_color
 		///
-		glm::vec4 edge_color() const;
+		inline glm::vec4 edge_color() const{return m_edge_color;};
 		///
 		/// \fn is_visible()
 		/// \brief Accesseur de la visibilite du cube
 		/// \return bool m_is_visible
 		///
-		bool is_visible() const;
+		inline bool is_visible() const{return m_is_visible;};
 		///
 		/// \fn is_selected()
 		/// \brief Accesseur de l'etat de selection du cube
 		/// \return bool m_is_selected
 		///
-		bool is_selected() const;
+		inline bool is_selected() const{return m_is_selected;};
 
 };
 

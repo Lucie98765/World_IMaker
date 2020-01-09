@@ -16,6 +16,8 @@
 
 #include "glimac/Scene.hpp"
 
+#define EPSILON 0.01
+
 namespace glimac{
 
 	Scene::Scene(uint w, uint h, uint l):m_width(w),m_height(h),m_length(l),m_camera(),m_cubes(w, std::vector<std::vector<Cube>>(h, std::vector<Cube>(l))),m_cursor(w/2,h/2,l/2){
@@ -38,26 +40,6 @@ namespace glimac{
 				m_cubes[i][j].resize(l);
 			}
 		m_length = l;
-	}
-
-
-	uint Scene::width() const{
-		return m_width;
-	}
-	uint Scene::height() const{
-		return m_height;
-	}
-	uint Scene::length() const{
-		return m_length;
-	}
-	std::vector<std::vector<std::vector<Cube>>>& Scene::cubes(){
-		return m_cubes;
-	}
-	TrackballCamera& Scene::camera(){
-		return m_camera;
-	}
-	glm::vec3 Scene::cursor()const{
-		return m_cursor;
 	}
 
 	void Scene::add_cube(){
@@ -352,13 +334,13 @@ namespace glimac{
 	    std::function<float (glm::vec3 x, glm::vec3 y)> func;
 
 	    std::function<float (glm::vec3 x, glm::vec3 y)> exp_phi = [](glm::vec3 x, glm::vec3 y){
-	        return exp(0.01*abs(glm::distance(x,y))*abs(glm::distance(x,y)));};
+	        return exp(EPSILON*abs(glm::distance(x,y))*abs(glm::distance(x,y)));};
 	    std::function<float (glm::vec3 x, glm::vec3 y)> lin_phi = [](glm::vec3 x, glm::vec3 y){
-	        return 0.01*abs(glm::distance(x,y))*abs(glm::distance(x,y));};
+	        return EPSILON*abs(glm::distance(x,y))*abs(glm::distance(x,y));};
 	    std::function<float (glm::vec3 x, glm::vec3 y)> sqrt_phi = [](glm::vec3 x, glm::vec3 y){
-	        return sqrt(1+pow(0.01*abs(glm::distance(x,y))*abs(glm::distance(x,y)),2));};
+	        return sqrt(1+pow(EPSILON*abs(glm::distance(x,y))*abs(glm::distance(x,y)),2));};
 	    std::function<float (glm::vec3 x, glm::vec3 y)> rat_phi = [](glm::vec3 x, glm::vec3 y){
-	        return 1/(1+pow(0.01*abs(glm::distance(x,y))*abs(glm::distance(x,y)),2));};
+	        return 1/(1+pow(EPSILON*abs(glm::distance(x,y))*abs(glm::distance(x,y)),2));};
 
 	    if(0 == phi.compare("exp")) func = exp_phi;
 	    if(0 == phi.compare("lin")) func = lin_phi;
@@ -416,7 +398,7 @@ namespace glimac{
 
 	    if(0 == display.compare("moy")){
 	        predicate = [rbf](glm::vec3 p, float pivot) mutable {
-	                            return 0.001 >= abs(rbf.g(p) - pivot);
+	                            return EPSILON >= abs(rbf.g(p) - pivot);
 	                        };
 	        pivot = std::accumulate(g_p.begin(), g_p.end(), 0.f)/g_p.size();
 	    }

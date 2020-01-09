@@ -51,12 +51,12 @@ class Scene
 		void height(uint const h);
 		void length(uint const l);
 
-		uint width() const;		
-		uint height() const;		
-		uint length() const;
-		std::vector<std::vector<std::vector<Cube>>>& cubes();
-		TrackballCamera& camera();
-		glm::vec3 cursor() const;		
+		inline uint width() {return m_width;};		
+		inline uint height() {return m_height;};		
+		inline uint length() {return m_length;};
+		inline std::vector<std::vector<std::vector<Cube>>>& cubes(){return m_cubes;};
+		inline TrackballCamera& camera(){return m_camera;};
+		inline glm::vec3 cursor() {return m_cursor;};		
 
 		void add_cube();
 		void delete_cube();
