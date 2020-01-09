@@ -94,6 +94,18 @@ namespace glimac{
 		m_cubes[current_x][current_y][current_z].visible(false);
 	}
 
+
+	void Scene::reset(){
+		for(int i = 0; i < m_width; i++)
+			for(int j = 0; j < m_height; j++)
+				for(int k = 0; k < m_length; k++){
+					m_cubes[i][j][k].visible(false);
+					m_cubes[i][j][k].selected(false);
+				}
+		m_cursor = glm::vec3(m_width/2, m_height/2, m_length/2);
+		m_cubes[m_cursor[0]][m_cursor[1]][m_cursor[2]].selected(true);
+	}
+
 	void Scene::move_cursor(int direction){
 		float current_x, current_y, current_z;
 		current_x = m_cursor[0];

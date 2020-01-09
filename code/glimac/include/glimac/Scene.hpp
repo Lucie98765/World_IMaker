@@ -62,7 +62,7 @@ class Scene
 		void delete_cube();
 		void extrude_cube();
 		void dig_cube();
-		void move_cube(glm::vec3 dst);
+		void reset();
 
 		void move_cursor(int direction);
 		void change_color(glm::vec4 color);

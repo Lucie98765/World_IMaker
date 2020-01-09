@@ -377,12 +377,14 @@ int main(int argc, char** argv) {
                 switch (e.key.keysym.sym){
                     case SDLK_RETURN:
                         break;
+                    case SDLK_d:
+                        world.reset();
+                        break;
                     case SDLK_h: help();
                         break;
                     case SDLK_ASTERISK:
                         std::cout << "Do you want to save the scene [y|n] ? ";
                         std::cin >> reponse;
-
                         if(0 == reponse.compare("n"))
                             break;
                         world.save();
