@@ -34,6 +34,7 @@ void help(){
     std::cout << "Press 9 to paint in MAGENTA" << std::endl;
     std::cout << "Press left, right, up down, P or M to MOVE CURSOR" << std::endl;
     std::cout << "Press * to SAVE your work" << std::endl;
+    std::cout << "Press D to delete your scene" << std::endl;
     std::cout << "Press S to add SUN" << std::endl;
     std::cout << "Press L to add LAMP" << std::endl;
     std::cout << "Press G to GRAB a cube, ESCAPE to cancel, SPACE to validate\n\n" << std::endl;
@@ -302,20 +303,12 @@ int main(int argc, char** argv) {
         }
         else{
             // STARTING FROM SCRATCH
-            std::cout << "Please enter scene dimensions (width height depth) : ";
-            std::cin >> reponse;
+            std::cout << "Please enter scene dimensions (width height depth) : " << std::endl;
+            int w,h,d;
+            std::cin >> w;
+            std::cin >> h;
+            std::cin >> d;
 
-            std::stringstream repponse_stream(reponse);
-            std::string token;
-            std::getline(repponse_stream, token, ' ');
-
-            int w = std::stoi(token);
-            std::getline(repponse_stream, token, ' ');
-            
-            int h = std::stoi(token);
-            std::getline(repponse_stream, token, ' ');
-            
-            int d = std::stoi(token);
 
             world.width(w);
             world.height(h);
@@ -354,7 +347,7 @@ int main(int argc, char** argv) {
     const int L = world.length();
     bool done = false, grabbing = false;
     glm::vec3 origin;
-    
+    std::string rep_save;
     // APPLICATION LOOP
     while(!done) {
         // EVENT LOOP
@@ -384,10 +377,9 @@ int main(int argc, char** argv) {
                         break;
                     case SDLK_ASTERISK:
                         std::cout << "Do you want to save the scene [y|n] ? ";
-                        std::cin >> reponse;
-                        if(0 == reponse.compare("n"))
-                            break;
-                        world.save();
+                        std::cin >> rep_save;
+                        if(0 == rep_save.compare("y"))
+                            world.save();
                         break;
                     case SDLK_1 :
                         std::cout<<"Create a new cube" << std::endl;
@@ -500,10 +492,6 @@ int main(int argc, char** argv) {
                         break;
                     case SDLK_l :
                         std::cout<<"Add lamp" << std::endl;
-                        if(world.cubes()[world.cursor().x][world.cursor().y][world.cursor().z].is_visible()){
-                            std::cerr << "\tWARNING : Occupied" << std::endl;
-                            break;
-                        }
                         pointLightBool = true;
                         xLightPos = world.cursor().x;
                         yLightPos = world.cursor().y;
@@ -534,9 +522,9 @@ int main(int argc, char** argv) {
         glUniform1ui(uIsLightDir, dirLightBool);
 
         //Point light
-        glm::vec4 lightPos =  glm::vec4(xLightPos, yLightPos, ZlightPos, 0.0f);
-        lightPos = lightPos * world.camera().getViewMatrix();
-        glm::vec3 lightPosSend = glm::vec3(lightPos.x, lightPos.y, lightPos.z);
+        //glm::vec4 lightPos =  glm::vec4(xLightPos, yLightPos, ZlightPos, 0.0f);
+        //lightPos = lightPos * world.camera().getViewMatrix();
+        glm::vec3 lightPosSend = glm::vec3(xLightPos, yLightPos, ZlightPos);
         glUniform3fv(uLightPos_vs, 1, glm::value_ptr(lightPosSend));
         glUniform1ui(uIsPointLight, pointLightBool);
 

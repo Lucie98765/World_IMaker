@@ -49,9 +49,9 @@ vec4 blinnPhong_point(vec3 lightPosition){
 	vec3 w0 = normalize(-vVertexPosition);
 	vec3 halfV = (w0 + wi)/2;
 	vec3 r1 = uKs * pow(dot(halfV, vVertexNormal), uShininess);
-	vec3 r2  = lightPosition*(uKd*dot(wi, vVertexNormal));
+	vec3 r2  = lightPosition*(uKd *dot(wi, vVertexNormal));
 	float distance = distance (vVertexPosition, lightPosition);
-	result = (uLightIntensity*2/(distance*distance))*(r1 + r2);
+	result = ((uLightIntensity*5)/(distance*distance))*(r1 + r2);
 	
 	if(0 != uFaceColor.a && uIsPointLight){
 		return vec4(result, 1);
